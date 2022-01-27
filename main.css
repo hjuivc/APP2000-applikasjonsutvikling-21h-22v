@@ -1,0 +1,157 @@
+body {
+    background-color: #f7f1f0;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    width: 100vw;
+    position: relative;
+    font-family: sans-serif;
+  }
+  
+  main {
+    padding-bottom: 2.5rem;
+  }
+  
+  .block {
+    display: flex;
+    justify-content: center;
+    color: #262220;
+    font-weight: bold;
+    width: 100vw;
+  }
+  
+  .block > h2 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .contentBox {
+    background-color: #c3a6a0;
+    margin: 20px 50px;
+    border-radius: 15px;
+  }
+  
+  h1 {
+    font-size: 48px;
+  }
+  
+  .contentBox > h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .contentBox > p {
+    font-size: 18px;
+    margin: 0 50px 25px;
+  }
+  
+  .contentBox > h3 {
+    text-align: center;
+  }
+  
+  .contentBox > h3 > a {
+    font-size: 18px;
+    color: #262220;
+    text-decoration: none;
+  }
+  
+  .contentBox > h3 > a:hover,
+  .contentBox > h3 > a:active {
+    color: #ffffff;
+  }
+  
+  .contentBox > label {
+    display: block;
+    font-size: 25px;
+    margin: 25px 25px 5px;
+  }
+  
+  .contentBox > input {
+    background-color: #f7f1f0;
+    font-size: 25px;
+  
+    margin: 0 25px;
+    max-width: 80%;
+    min-height: 30px;
+    border: 0;
+    border-radius: 3px;
+  }
+  
+  .loginButton {
+    display: block;
+  
+    background-color: #a15c38;
+    color: #ffffff;
+    border-color: black;
+  
+    font-size: 20px;
+  
+    width: 140px;
+    padding: 5px 0;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 20px auto 50px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .loginButton:hover {
+    color: #262220;
+  }
+  
+  .headerLogo {
+    width: 50px;
+    height: 50px;
+    margin: 35px 10px 0;
+  }
+  
+  .sideMenuIcon {
+    width: 40px;
+    height: 40px;
+    margin: -5px 30px 0;
+  }
+  
+  .sideMenuItem {
+    justify-content: left;
+    padding-top: 40px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: normal;
+  }
+  
+  #sideMenu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 420px;
+    background-color: #a15c38;
+    margin: 100px 0 0;
+    border-radius: 0 15px 0 0;
+    height: calc(100vh - 100px);
+    visibility: hidden;
+    position: fixed;
+  }
+  
+  #menuClosed {
+    position: fixed;
+  }
+  
+  footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+  }
+  
+  footer ul {
+    width: 95%;
+  }
+  
+  footer li {
+    display: inline-block;
+    margin: 10px;
+  }
+  
