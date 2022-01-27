@@ -105,7 +105,7 @@ body {
   .headerLogo {
     width: 50px;
     height: 50px;
-    margin: 35px 10px 0;
+    margin: 25px 10px 0;
   }
   
   .sideMenuIcon {
@@ -137,21 +137,26 @@ body {
   #menuClosed {
     position: fixed;
   }
-  
+
+/* Footer styling */
   footer {
     text-align: center;
     position: absolute;
     bottom: 0;
     height: 2.5rem;
-    width: 100%;
   }
   
-  footer ul {
-    width: 95%;
-  }
-  
-  footer li {
-    display: inline-block;
-    margin: 10px;
-  }
-  
+/* Center photos on top */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.roundImg {
+  border-radius: 50%;
+  width:50px;
+  height: 50px;
+  margin: 25px 10px 0;
+}
