@@ -216,3 +216,52 @@ footer ul a:hover {
   font-size: 125%;
 }
 /* End of footer styling */
+
+
+/* FAQ styling start */
+.contentBoxFAQ > h2 {
+  font-size: 30px;
+  margin: 25px 50px 25px;
+}
+
+.contentBoxFAQ > h3 > a {
+  font-size: 18px;
+  color: #262220;
+  text-decoration: none;
+}
+
+.contentBoxFAQ > h3 > a:hover,
+.contentBoxFAQ > h3 > a:active {
+  color: #ffffff;
+}
+
+.contentBoxFAQ > label {
+  display: block;
+  font-size: 25px;
+  margin: 25px 25px 5px;
+}
+
+.contentBoxFAQ > input {
+  background-color: #f7f1f0;
+  font-size: 25px;
+
+  margin: 10px 25px;
+  max-width: 80%;
+  min-height: 30px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.contentBoxFAQ {
+  background-color: #c3a6a0;
+  margin: 50px 50px;
+  border-radius: 10px;
+}
+
+.contentBoxFAQ > p {
+  font-size: 18px;
+  margin: 0 50px 25px;
+  font-style: italic;
+}
+
+/* FAQ styling ends here */
