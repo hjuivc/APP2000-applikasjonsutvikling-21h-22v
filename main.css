@@ -218,6 +218,109 @@ footer ul a:hover {
 /* End of footer styling */
 
 
+
+
+
+/* Budget planner styling start */
+
+.contentBoxBudgetPlanner > h2 {
+  font-size: 30px;
+  margin: 25px 50px 25px;
+  text-align: center;
+}
+
+.contentBoxBudgetPlanner > h3 > a {
+  font-size: 18px;
+  color: #262220;
+  text-decoration: none;
+}
+
+.contentBoxBudgetPlanner > h3 > a:hover,
+.contentBoxBudgetPlanner > h3 > a:active {
+  color: #ffffff;
+}
+
+.contentBoxBudgetPlanner > label {
+  display: inline-block;
+  font-size: 25px;
+  margin: 25px 25px 5px;
+}
+
+.contentBoxBudgetPlanner > input {
+  background-color: #f7f1f0;
+  font-size: 25px;
+
+  margin: 10px 25px;
+  max-width: 80%;
+  min-height: 30px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.contentBoxBudgetPlanner {
+  background-color: #c3a6a0;
+  margin: 50px 50px;
+  border-radius: 10px;
+}
+
+.contentBoxBudgetPlanner > p {
+  font-size: 18px;
+  margin: 0 50px 25px;
+  font-style: italic;
+}
+
+.removeButton {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #a15c38;
+  color: #ffffff;
+}
+
+.removeButton:hover {
+  color: #262220;
+}
+
+.addButton {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #a15c38;
+  color: #ffffff;
+}
+
+.addButton:hover {
+  color: #262220;
+}
+
+.submitButton {
+  display: block;
+
+  background-color: #a15c38;
+  color: #ffffff;
+  border-color: black;
+
+  font-size: 20px;
+
+  width: 140px;
+  padding: 5px 0;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 20px auto 50px;
+}
+
+.submitButton:hover {
+  color: #262220;
+}
+
+/* Budget planner styling end */
+
+
+
+
+
 /* FAQ styling start */
 .contentBoxFAQ > h2 {
   font-size: 30px;
