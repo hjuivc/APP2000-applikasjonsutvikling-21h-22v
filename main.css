@@ -27,10 +27,8 @@ main {
 
 .block {
   display: flex;
-  justify-content: center;
   color: #262220;
   font-weight: bold;
-  width: 100vw;
 }
 
 .block > h2 {
@@ -223,6 +221,17 @@ footer ul a:hover {
 
 /* Budget planner styling start */
 
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    '. myArea'
+    '. myArea';
+}
+
+#high {
+  grid-area: myArea;
+}
+
 .contentBoxBudgetPlanner > h2 {
   font-size: 30px;
   margin: 25px 50px 25px;
@@ -250,8 +259,8 @@ footer ul a:hover {
   background-color: #f7f1f0;
   font-size: 25px;
 
-  margin: 10px 25px;
-  max-width: 80%;
+  margin: 10px 15px;
+  max-width: 100%;
   min-height: 30px;
   border: 0;
   border-radius: 5px;
