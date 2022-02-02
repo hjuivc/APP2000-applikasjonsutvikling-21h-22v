@@ -29,6 +29,7 @@ main {
   display: flex;
   color: #262220;
   font-weight: bold;
+  justify-content: center;
 }
 
 .block > h2 {
