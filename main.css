@@ -378,3 +378,39 @@ footer ul a:hover {
 }
 
 /* FAQ styling ends here */
+
+
+
+/* Achievement styling starts here */
+
+.contentBoxAchievements {
+  background-color: #c3a6a0;
+  margin: 50px 50px;
+  border-radius: 10px;
+}
+
+.contentBoxAchievements > h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.contentBoxAchievements > output {
+  display: inline-block;
+  font-size: 25px;
+  margin: 25px 25px 5px;
+}
+
+.contentBoxAchievements > label {
+  display: inline-block;
+  font-size: 20px;
+  margin: 25px 25px 5px;
+}
+
+.contentBoxAchievements > section {
+  display: flex;
+  font-size: 15px;
+  margin: 25px 25px 5px;
+  text-align: center;
+}
+
+/* Achievement styling ends here */
