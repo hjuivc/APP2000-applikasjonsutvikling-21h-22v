@@ -421,3 +421,26 @@ footer ul a:hover {
 }
 
 /* Achievement styling ends here */
+
+/* profile styling starts here */
+
+.contentBoxprofile {
+  background-color: #c3a6a0;
+  margin: 20px 50px;
+  border-radius: 15px;
+}
+
+.contentBoxprofile > h2 {
+  font-size: 30px;
+  margin: 0 50px 15px;
+}
+
+.contentBoxprofile > p {
+  font-size: 18px;
+  margin: 0 50px 15px;
+}
+.contentBoxprofile > h3 {
+  margin: 0 50px 15px;
+}
+
+/* profile styling ends here */
