@@ -25,6 +25,13 @@ main {
   padding-bottom: 10rem;
 }
 
+/* styling for chart canvas */
+canvas { 
+  margin: auto;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+}  
+
 .block {
   display: flex;
   color: #262220;
