@@ -12,21 +12,23 @@
       <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
 
-    <main class="block">
-      <div class="contentBox">
-        <label style="margin-top: 50px;">Username</label>
-        <input type="text" />
-        <label >Email</label>
-        <input type="text" />
-        <label>Password</label>
-        <input type="password" />
-        <label>Confirm Password</label>
-        <input type="password" />
-        <a href="home.html"><button class="loginButton">sign up</button></a>
-        <p>
-        </p>
-        <h3 style="margin-top: 100px;"><a href="index.html">Allready have an account?</a></h3>
-      </div>
+    <main>
+      <form class="block" method="post">
+        <div class="contentBox" action="insert.php">
+          <label style="margin-top: 50px;">Username</label>
+          <input type="text" name='username'/>
+          <label >Email</label>
+          <input type="text" name='email'/>
+          <label>Password</label>
+          <input type="password" name='password'/>
+          <label>Confirm Password</label>
+          <input type="password" /> <!-- Har ikke laget noe som sjekker om passordene er like. Kan legges til seinere-->
+          <a action="insert.php"><button class="loginButton">Register</button></a>
+          <p>
+          </p>
+          <h3 style="margin-top: 100px;"><a href="index.html">Allready have an account?</a></h3>
+        </div>
+      </form>
     </main>
 
     <footer>
