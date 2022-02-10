@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Finance Budget App</title>
+  </head>
+  <body>
+    <header class="block" style="margin-top: 30px;">
+      <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
+      <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
+    </header>
+
+    <main>
+      <form class="block" method="post">
+        <div class="contentBox" action="insert.php">
+          <label style="margin-top: 50px;">Username</label>
+          <input type="text" name='username'/>
+          <label >Email</label>
+          <input type="text" name='email'/>
+          <label>Password</label>
+          <input type="password" name='password'/>
+          <label>Confirm Password</label>
+          <input type="password" /> <!-- Har ikke laget noe som sjekker om passordene er like. Kan legges til seinere-->
+          <a action="insert.php"><button class="loginButton">Register</button></a>
+          <p>
+          </p>
+          <h3 style="margin-top: 100px;"><a href="index.html">Allready have an account?</a></h3>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="home.html">Home</a>
+        </li>
+        <li>
+          <a href="faq.html">FAQ</a>
+        </li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
+        <li>
+          <a href="contacts.html">Contact</a>
+        </li>
+      </ul>
+      <p>&copy; 2021 Finance Budget App AS</p>
+    </footer>
+  </body>
+</html>
