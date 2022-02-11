@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<?php
+  include('login/session.php')
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->

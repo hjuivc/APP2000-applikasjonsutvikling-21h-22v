@@ -1,43 +1,30 @@
 <?php
-$username = $_GET['username'];
-$password = $_GET['password'];
- 
-if($username == 'bjurneiz' and $password == '1234')
-{    
-    session_start();
-    $_SESSION['sid']=session_id();
-    require_once __DIR__ . '/home.html';
-}else {
-   echo "Your username or password was invalid";
-   require_once __DIR__ . '/index.html';
-}
+   include '../connect_mysql/connect.php';
+   $conn = OpenCon();
 
-
-function start() {
-//session_start();
+   session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($db,$_GET['username']);
-      $mypassword = mysqli_real_escape_string($db,$_GET['password']); 
+      $myemail = mysqli_real_escape_string($conn,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
       
-      $sql = "SELECT username, password FROM customer WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
+      $sql = "SELECT CustomerID FROM Customer WHERE EMail = '$myemail' and Password = '$mypassword'";
+      $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
+      $active = $row['CustomerID'];
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row
+      // If result matched $myemail and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
+         $_SESSION['login_user'] = $myemail;
          
-         header("location: home.html");
+         header("location: ../home.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
    }
-}
+?>
