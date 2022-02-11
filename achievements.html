@@ -79,7 +79,6 @@
           </div>
         </div>
         
-
         <img
             id="menuClosed"
             alt="menuLogo"
@@ -92,7 +91,6 @@
             src="Pictures/logo_header.png" 
             alt="logo_header" 
             class="finance-logo"
-            
         />
         
         <img 
@@ -103,27 +101,31 @@
         
       </header>
 
-
       <main>
         <h1 style="text-align: center;">Achievements</h1>
         <div class="block">
             <div class="contentBoxAchievements" style="max-width: 500px; width: 100%; height: fit-content;">
                 <h2>Overview</h2>
-                <label>Total Achievements</label>
-                <output name="*"></output> </br>
+                <label id="contentBox-achievements" style="margin-top: 50px;">Total Achievements</label>
+                <!-- Legger inn som input for å visualisere hva som skal inn -->
+                <input type="text" />
+                <!--<output name="*"></output> </br> -->
                 
                 <label>Totale Percentage</label>
-                <output name="*"></output> </br>
+                <!-- Legger inn som input for å visualisere hva som skal inn -->
+                <input type="text" />
 
                 <label style="margin-bottom: 10%;">Member Rank</label>
-                <img></img>
+                <img
+                    src="Pictures/rank.png"
+                    alt="member rank"
+                    class="achievementspicture"
+                    style="width: 40px; height: 40; margin-left: 20%; margin-top: 5%;"
+                />
             </div>
-        
-
         
             <div class="contentBoxAchievements" style="max-width: 500px; width: 100%;">
                 <h2>Unlocked</h2>
-
                 <section> 
                     <img
                         src="Pictures/graph.png"
@@ -131,10 +133,9 @@
                         class="achievementspicture"
                         style="width: 40px; height: 40; margin-left: 2%;"
                     />
-                    <h3 style="margin-left: 2%;">Net positive</h3>
-                    <p>Earn more than you spend</p>
+                    <h3>Net positive</h3>
                 </section>
-
+                <under style="margin-left: 15%; font-style: italic;">Earn more than you spend</under>
                 <section>
                     <img
                         src="Pictures/bigspender.png"
@@ -142,37 +143,52 @@
                         class="achievementspicture"
                         style="width: 40px; height: 40; margin-left: 2%;"
                     />
-                    <h3 style="margin-left: 2%;">Big spender</h3>
-                    <p>Spend more than 10 000$ on month</p>
+                    <h3>Big spender</h3> 
                 </section>
-
+                <under style="margin-left: 15%; font-style: italic;">Spend more than 10 000$ one month</under>
                 <section>
-                    <img></img>
-                    <h3 style="margin-left: 2%;">Welcome!</h3>
-                    <p>Made an acoount</p>
+                    <img
+                        src="Pictures/smile.ico"
+                        alt="welcome"
+                        class="achievemntspicture"
+                        style="width: 40px; height: 40; margin-left: 2%;"
+                    />
+                    <h3>Welcome!</h3>
                 </section>
-
+                <under style="margin-left: 15%; font-style: italic;">Made an acoount</under>
                 <section>
-                    <img></img>
-                    <h3 style="margin-left: 2%;">Smart investor</h3>
-                    <p>Have anadditional source of income</p>
+                    <img
+                        src="Pictures/smart.jpg"
+                        alt="smart investor"
+                        class="achievementspicture"
+                        style="width: 40px; height: 40; margin-left: 2%;"
+                    />
+                    <h3>Smart investor</h3>
                 </section>
-
+                <under style="margin-left: 15%; font-style: italic;">Have an additional source of income</under>
                 <section>
-                    <img></img>
-                    <h3 style="margin-left: 2%;">First budget</h3>
-                    <p>Create your first budget</p>
+                    <img
+                        src="Pictures/investor.png"
+                        alt="first budget"
+                        class="achievemntspicture"
+                        style="width: 40px; height: 40; margin-left: 2%;"
+                    />
+                    <h3>First budget</h3>
                 </section>
-
+                <under style="margin-left: 15%; font-style: italic;">Create your first budget</under>
                 <section>
-                    <img></img>
-                    <h3 style="margin-left: 2%;">Acomplished</h3>
-                    <p>Complete 10 achievements</p>
+                    <img
+                        src="Pictures/person.png"
+                        alt="accomplished"
+                        class="achievementspicture"
+                        style="width: 40px; height: 40; margin-left: 2%;"
+                    />
+                    <h3>Accomplished</h3>
                 </section>
+                <under style="margin-left: 15%; font-style: italic;">Complete 10 achievements</under>
             </div>   
         </div>
       </main>
-
 
       <footer>
         <ul>
@@ -186,7 +202,7 @@
             <a href="about.html">About</a>
           </li>
           <li>
-            <a href="contact.html">Contact</a>
+            <a href="contactForm/index.php">Contact</a>
           </li>
         </ul>
         <p>&copy; 2021 Finance Budget App AS</p>
