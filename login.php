@@ -6,13 +6,15 @@ if($username == 'bjurneiz' and $password == '1234')
 {    
     session_start();
     $_SESSION['sid']=session_id();
-    echo "Logged in successfully";
+    require_once __DIR__ . '/home.html';
+}else {
+   echo "Your username or password was invalid";
+   require_once __DIR__ . '/index.html';
 }
-?>
 
 
-    
-session_start();
+function start() {
+//session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
@@ -38,3 +40,4 @@ session_start();
          $error = "Your Login Name or Password is invalid";
       }
    }
+}
