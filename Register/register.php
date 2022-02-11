@@ -2,7 +2,7 @@
 include '../connect_mysql/connect.php';
 $conn = OpenCon();
 echo "Connect Successfully";
-echo "'\n"
+echo "'\n";
 
 $email = $_POST['email'];
 $password = $_POST['password'];
