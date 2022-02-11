@@ -13,17 +13,17 @@
     </header>
 
     <main>
-      <form class="block" method="post">
-        <div class="contentBox" action="insert.php">
+      <form class="block" action="register.php">
+        <div class="contentBox">
           <label style="margin-top: 50px;">Username</label>
-          <input type="text" name='username'/>
+          <input type="text" name='username'>
           <label >Email</label>
-          <input type="text" name='email'/>
+          <input type="text" name='email'>
           <label>Password</label>
-          <input type="password" name='password'/>
+          <input type="password" name='password'>
           <label>Confirm Password</label>
-          <input type="password" /> <!-- Har ikke laget noe som sjekker om passordene er like. Kan legges til seinere-->
-          <a action="insert.php"><button class="loginButton">Register</button></a>
+          <input type="password" > <!-- Har ikke laget noe som sjekker om passordene er like. Kan legges til seinere-->
+          <a><button type="submit" class="loginButton" value="Register">Register</button></a>
           <p>
           </p>
           <h3 style="margin-top: 100px;"><a href="index.html">Allready have an account?</a></h3>

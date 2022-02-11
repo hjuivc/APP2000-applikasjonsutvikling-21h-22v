@@ -32,16 +32,17 @@
           et
         </p>
       </div>
-
-      <div class="contentBox" style="max-width: 320px;">
-        <label style="margin-top: 50px;">Username</label>
-        <input type="text" />
-        <label>Password</label>
-        <input type="password" />
-        <a href="home.html"><button class="loginButton">Log in</button></a>
-        <a href="register.html"><button class="loginButton">Register</button></a>
-        <h3 style="margin-top: 100px;"><a href="#">Forgot password</a></h3>
-      </div>
+      <form class="block" action="login.php">
+        <div class="contentBox" style="max-width: 320px;">
+          <label style="margin-top: 50px;">Username</label>
+          <input type="text" name='username'>
+          <label>Password</label>
+          <input type="password" name='password'>
+          <a><button type="submit" value="login" class="loginButton">Log in</button></a>
+          <a href="register.html"><button class="loginButton">Register</button></a>
+          <h3 style="margin-top: 100px;"><a href="#">Forgot password</a></h3>
+        </div>
+      </form>
     </main>
 
     <footer>
@@ -56,7 +57,7 @@
           <a href="about.html">About</a>
         </li>
         <li>
-          <a href="contacts.html">Contact</a>
+          <a href='contactForm/index.php'>Contact</a>
         </li>
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
