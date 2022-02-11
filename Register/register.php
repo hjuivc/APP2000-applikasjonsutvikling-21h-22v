@@ -1,31 +1,19 @@
 <?php
-$host = 'finance-budget-app.mysql.database.azure.com';
-$username = 'FinanceBudgetApp';
-$password = 'Gruppe654321';
-$db_name = 'financebudgetapp';
+include '../connect_mysql/connect.php';
+$conn = OpenCon();
+echo "Connect Successfully";
+echo "'\n"
 
-//Establishes the connection
-$conn = mysqli_connect($host,$username,$password,$db_name);
-if(!$conn)
-{
-	die('Connection failed!'.mysqli_error($conn));
-}
-
-$username = $_GET['username'];
-$email = $_GET['email'];
-$password = $_GET['password'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 // Run the create table query
-$sql = "INSERT INTO customer(CustomerID, Username, EMail, Password) VALUES('6', '$username', '$email','$password')";
+$sql = "INSERT INTO customer(CustomerID, EMail, Password) VALUES('1', '$email','$password')";
 
- if(mysqli_query($conn,$sql))
- {
+ if(mysqli_query($conn,$sql)) {
 	 echo "Registerd Successfully";
- }
- else
- {
+ } else {
 	 echo mysqli_error($conn);
- }
+}
  
- ?>
-/*
+?>
