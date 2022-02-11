@@ -9,7 +9,7 @@
   <body>
     <header class="block" style="margin-top: 30px;">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
-      <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
+      <img src="pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
 
     <main class="block" style="flex-wrap: wrap-reverse;">
@@ -31,14 +31,14 @@
               App, please feel free to <a href="contactForm/index.php"><u>contact and ask us!</u></a>
         </p>
       </div>
-      <form class="block" action="login.php">
+      <form class="block" action="login/login.php" method="post">
         <div class="contentBox" style="max-width: 320px;">
-          <label style="margin-top: 50px;">Username</label>
-          <input type="text" name='username'>
+          <label style="margin-top: 50px;">E-mail</label>
+          <input type="text" name='email'>
           <label>Password</label>
           <input type="password" name='password'>
           <a><button type="submit" value="login" class="loginButton">Log in</button></a>
-          <a href="register.html"><button class="loginButton">Register</button></a>
+          <a><button type="submit" formaction="register/register.html" class="loginButton">Register</button></a>
           <h3 style="margin-top: 100px;"><a href="#">Forgot password</a></h3>
         </div>
       </form>
