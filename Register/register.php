@@ -11,12 +11,13 @@ $row = mysqli_fetch_array( $rowSQL );
 $largestNumber = $row['max'] += 1;
 
 // Run the create table query
-$sql = "INSERT INTO customer(CustomerID, EMail, Password) VALUES('$largestNumber', '$email','$password')";
-
- if(mysqli_query($conn,$sql)) {
-	 echo "Registerd Successfully";
- } else {
-	 echo mysqli_error($conn);
+$select = mysqli_query($conn, "SELECT * FROM customer WHERE email = '".$_POST['email']."'");
+if(mysqli_num_rows($select)) {
+    exit('This email address is already used!');
+}
+else{
+	$sql = mysqli_query( $conn, "INSERT INTO customer(CustomerID, EMail, Password) VALUES('$largestNumber', '$email','$password')");
+    echo('Record Entered Successfully');
 }
 
 header("Location: ../index.html")
