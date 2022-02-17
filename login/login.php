@@ -16,11 +16,11 @@
    $count = mysqli_num_rows($result); 
                  
    if($count > 0){  
-       header("Location: ../home.html");  
+       header("Location: ../home.php");  
    }  
    else{  
        echo "<h1><center> Login failed. Invalid email or password.</center></h1>";
        echo "<h1><center> Redirecting to front page in 5 seconds...</center></h1>";
-       header("Refresh: 5; url=../index.html");    
+       header("Refresh: 5; url=../index.php");    
    }   
 ?>

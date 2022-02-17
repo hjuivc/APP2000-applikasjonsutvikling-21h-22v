@@ -20,6 +20,6 @@ else{
     echo('Record Entered Successfully');
 }
 
-header("Location: ../index.html")
+header("Location: ../index.php")
  
 ?>
