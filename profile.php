@@ -126,15 +126,8 @@
             <img src="Pictures/profile_photo.jpg" alt="profile_photo" width="390" height="390" style="padding: 30px; text-align: center; display: block; border-radius: 15%;" > 
             <br>
             <p>Email: <?php echo $row['EMail'] ?></p>
-            <p>
-              address: Road name, 1234 honefoss
-            </p>
-            <p>
-              phone nr: 99 99 99 99
-            </p>
-            <p>
-              Title: Student
-            </p>
+            <p>Phone: <?php echo $row['phone'] ?></p> 
+            <p>Address: <?php echo $row['home'] ?></p> 
             <a href="edit/edit.html"><button type="submit" class="loginButton">Edit profile</button></a>
           </div>
 
