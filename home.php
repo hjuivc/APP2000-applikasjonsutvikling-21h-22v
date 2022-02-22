@@ -44,7 +44,7 @@
           >
         </div>
         <div style="align-self: flex-end; margin-bottom: 40px;">
-          <a href="profile.html"
+          <a href="profile.php"
             ><div class="block sideMenuItem">
               <img
                 src="https://www.svgrepo.com/show/7025/user.svg"
