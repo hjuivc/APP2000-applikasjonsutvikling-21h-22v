@@ -17,11 +17,11 @@
       <form class="block" action="register.php" method="post">
         <div class="contentBox">
           <label style="margin-top: 50px;">Email</label>
-          <input type="text" name='email'>
+          <input type="text" name='email' required>
           <label>Password</label>
-          <input type="password" name='password'>
+          <input type="password" name='password' required>
           <label>Confirm Password</label>
-          <input type="password" > <!-- Har ikke laget noe som sjekker om passordene er like. Kan legges til seinere-->
+          <input type="password" name="password_confirm" required> <!-- Har ikke laget noe som sjekker om passordene er like. Kan legges til seinere-->
           <a><button type="submit" class="loginButton" value="Register">Register</button></a>
           <p>
           </p>

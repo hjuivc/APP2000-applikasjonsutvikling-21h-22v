@@ -4,7 +4,13 @@ $conn = OpenCon();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
+/*$password_confirm = $_POST['password_confirm'];
 
+if ($_POST['password']!= $_POST['password_confirm'])
+ {
+     echo("Oops! Password did not match! Try again. ");
+ }
+*/
 // Generate new ID number
 $rowSQL = mysqli_query( $conn, "SELECT MAX( CustomerID ) AS max FROM `Customer`;" );
 $row = mysqli_fetch_array( $rowSQL );
