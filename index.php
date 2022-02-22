@@ -12,7 +12,7 @@
     if(isset($_POST['login_btn'])) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $password=mysqli_real_escape_string($conn,$_POST['password']);
-      //$password=md5($password); //Remember we hashed password before storing last time
+      $password=md5($password); //Remember we hashed password before storing last time
       $sql="SELECT * FROM Customer WHERE email='$email' AND password='$password'";
       $result=mysqli_query($conn,$sql);
       
