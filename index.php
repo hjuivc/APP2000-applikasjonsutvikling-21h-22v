@@ -1,3 +1,35 @@
+<?php
+  // Ny kode for å lage session
+  session_start();
+  if(isset($_SESSION['email'])) {
+    header("location: home.php");
+    die();
+  }
+  // Connect to database    
+  include 'connect_mysql/connect.php';
+  $conn = OpenCon();
+  if($conn) {
+    if(isset($_POST['login_btn'])) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $password=mysqli_real_escape_string($conn,$_POST['password']);
+      //$password=md5($password); //Remember we hashed password before storing last time
+      $sql="SELECT * FROM Customer WHERE email='$email' AND password='$password'";
+      $result=mysqli_query($conn,$sql);
+      
+      if($result){
+        if( mysqli_num_rows($result)>=1) {
+            $_SESSION['message']="You are now Loggged In";
+            $_SESSION['email']=$email;
+            header("location:home.php");
+        } else{
+              $_SESSION['message']="email and Password combiation incorrect";
+       }
+    }
+  }
+}
+  
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,6 +46,12 @@
     </header>
 
     <main class="block" style="flex-wrap: wrap-reverse;">
+    <?php
+    if(isset($_SESSION['message'])) {
+         echo "<div id='error_msg'>".$_SESSION['message']."</div>";
+         unset($_SESSION['message']);
+    }
+    ?>
       <div class="contentBox" style="max-width: 640px;">
         <h2>Why finance budgeting app</h2>
         <p>
@@ -32,14 +70,14 @@
               App, please feel free to <a href="contactForm/index.php"><u>contact and ask us!</u></a>
         </p>
       </div>
-      <form class="block" action="login/login.php" method="post">
+      <form class="block" action="index.php" method="post">
         <div class="contentBox" style="max-width: 320px;">
           <label style="margin-top: 50px;">E-mail</label>
           <input type="text" name='email' required>
           <label>Password</label>
           <input type="password" name='password' required>
-          <a><button type="submit" value="login" class="loginButton">Log in</button></a>
-          <button class="loginButton"><a href="register/register.php">Register</a></button>
+          <a><button type="submit" value="login" class="loginButton" name="login_btn">Log in</button></a>
+          <button class="loginButton"><a href="register/register.html">Register</a></button>
           <h3 style="margin-top: 100px;"><a href="forgot-password/forgot-password.php">Forgot password</a></h3>
         </div>
       </form>
