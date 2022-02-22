@@ -39,7 +39,7 @@
           <label>Password</label>
           <input type="password" name='password' required>
           <a><button type="submit" value="login" class="loginButton">Log in</button></a>
-          <a><button type="submit" formaction="register/register.html" class="loginButton">Register</button></a>
+          <button class="loginButton"><a href="register/register.php">Register</a></button>
           <h3 style="margin-top: 100px;"><a href="forgot-password/forgot-password.php">Forgot password</a></h3>
         </div>
       </form>
