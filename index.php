@@ -22,7 +22,9 @@
             $_SESSION['email']=$email;
             header("location:home.php");
         } else{
-              $_SESSION['message']="email and Password combiation incorrect";
+          echo '<script language="javascript">';
+          echo 'alert("Email and password combination is not correct!")';
+          echo '</script>';
        }
     }
   }
