@@ -86,7 +86,7 @@ h1 {
   margin: 25px 25px 5px;
 }
 
-.contentBox > input {
+.contentBox > input, .plannerIncome > input {
   background-color: #f7f1f0;
   font-size: 25px;
 
@@ -95,6 +95,10 @@ h1 {
   min-height: 30px;
   border: 0;
   border-radius: 3px;
+}
+
+.plannerIncome {
+  margin-bottom: 20px;
 }
 
 .loginButton {
