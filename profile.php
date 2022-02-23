@@ -102,11 +102,9 @@
             alt="logo_header" 
             class="finance-logo"
         />
-        <img 
-            src="pictures/profile_photo.jpg" 
-            alt="profile_photo" 
-            class="profile-logo"
-        />
+
+        
+
     </header>
 
     <main>
