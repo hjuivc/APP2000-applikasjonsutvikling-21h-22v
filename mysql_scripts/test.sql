@@ -10,8 +10,12 @@ EMail varchar(100) NOT NULL,
 Password varchar(100) NOT NULL,
 phone varchar(15),
 home varchar(40),
-PRIMARY KEY (CustomerID)
+CONSTRAINT UC_Person UNIQUE (ID,LastName)
 );
+ALTER TABLE Customer DROP PRIMARY KEY, ADD PRIMARY KEY (CustomerID, EMail ); 
+
+ALTER TABLE Customer
+ADD UNIQUE (EMail);
 
 SELECT *
 FROM Customer;

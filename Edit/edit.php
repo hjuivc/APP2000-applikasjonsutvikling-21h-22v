@@ -13,23 +13,21 @@
 		$email=mysqli_real_escape_string($conn,$_POST['email']);
 		$phone=mysqli_real_escape_string($conn,$_POST['phone']);
 		$home=mysqli_real_escape_string($conn,$_POST['home']); 
-		$query = "SELECT * FROM Customer WHERE email = '$email'";
-		$result=mysqli_query($conn,$query);
-		if($result) {
-			if(mysqli_num_rows($result) > 0) {
-				echo '<script language="javascript">';
-                echo 'alert("Email already exists!!")';
-                echo '</script>';
-			} elseif($email == True) {
-				$sql =	"UPDATE Customer SET EMail = '$email'WHERE CustomerID = '$id'";
-				// Oppdaterer session igjen etter endring av e-post
-				$_SESSION['email'] = $email;
-				if ($phone == True) {
-					$sql =	"UPDATE Customer SET phone = '$phone' WHERE CustomerID = '$id'";
-				}
-			} 
-		} 
-	}
+    
+    try {
+      $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home' WHERE CustomerID = '$id'";
+      mysqli_query($conn,$sql);  
+      $_SESSION['email']=$email;
+      echo '<script language="javascript">';
+      echo 'alert("Your profile is now updated!")';
+      echo '</script>'; 
+      header("location:../profile.php");
+    } catch (Exception $e) {
+      echo '<script language="javascript">';
+      echo 'alert("That e-mail is already owned by someone else!")';
+      echo '</script>'; 
+    }
+  } 
 ?>
 
 
