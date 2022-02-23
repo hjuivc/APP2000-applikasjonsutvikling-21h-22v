@@ -93,11 +93,13 @@
             class="finance-logo"
         />
         
+        <a href="profile.php" style="margin-top: 2%; margin-right: 1%">
         <img 
             src="pictures/profile_photo.jpg" 
             alt="profile_photo" 
             class="profile-logo"
         />
+        </a>
         
       </header>
 
@@ -108,7 +110,7 @@
                 <h2>Overview</h2>
                 <label id="contentBox-achievements" style="margin-top: 50px;">Total Achievements</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
-                <input type="text" />
+                <input style="" type="text" />
                 <!--<output name="*"></output> </br> -->
                 
                 <label>Totale Percentage</label>
@@ -131,61 +133,61 @@
                         src="Pictures/graph.png"
                         alt="graph"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%;"
+                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
                     />
                     <h3>Net positive</h3>
                 </section>
-                <under style="margin-left: 15%; font-style: italic;">Earn more than you spend</under>
+                <under style="margin-left: 18%; font-style: italic;">Earn more than you spend</under>
                 <section>
                     <img
                         src="Pictures/bigspender.png"
                         alt="big spender"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%;"
+                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
                     />
                     <h3>Big spender</h3> 
                 </section>
-                <under style="margin-left: 15%; font-style: italic;">Spend more than 10 000$ one month</under>
+                <under style="margin-left: 18%; font-style: italic;">Spend more than 10 000$ one month</under>
                 <section>
                     <img
                         src="Pictures/smile.ico"
                         alt="welcome"
                         class="achievemntspicture"
-                        style="width: 40px; height: 40; margin-left: 2%;"
+                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
                     />
                     <h3>Welcome!</h3>
                 </section>
-                <under style="margin-left: 15%; font-style: italic;">Made an acoount</under>
+                <under style="margin-left: 18%; font-style: italic;">Made an acoount</under>
                 <section>
                     <img
                         src="Pictures/smart.jpg"
                         alt="smart investor"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%;"
+                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
                     />
                     <h3>Smart investor</h3>
                 </section>
-                <under style="margin-left: 15%; font-style: italic;">Have an additional source of income</under>
+                <under style="margin-left: 18%; font-style: italic;">Have an additional source of income</under>
                 <section>
                     <img
                         src="Pictures/investor.png"
                         alt="first budget"
                         class="achievemntspicture"
-                        style="width: 40px; height: 40; margin-left: 2%;"
+                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
                     />
                     <h3>First budget</h3>
                 </section>
-                <under style="margin-left: 15%; font-style: italic;">Create your first budget</under>
+                <under style="margin-left: 18%; font-style: italic;">Create your first budget</under>
                 <section>
                     <img
                         src="Pictures/person.png"
                         alt="accomplished"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%;"
+                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
                     />
                     <h3>Accomplished</h3>
                 </section>
-                <under style="margin-left: 15%; font-style: italic;">Complete 10 achievements</under>
+                <under style="margin-left: 18%; font-style: italic;">Complete 10 achievements</under>
             </div>   
         </div>
       </main>

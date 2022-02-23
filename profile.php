@@ -106,11 +106,9 @@
             alt="logo_header" 
             class="finance-logo"
         />
-        <img 
-            src="pictures/profile_photo.jpg" 
-            alt="profile_photo" 
-            class="profile-logo"
-        />
+
+        
+
     </header>
 
     <main>
@@ -163,5 +161,7 @@
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>

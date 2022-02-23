@@ -89,11 +89,16 @@
                   alt="logo_header"
                   class="finance-logo"
               />
-              <img
-                  src="pictures/profile_photo.jpg"
-                  alt="profile_photo"
-                  class="profile-logo"
+              
+              <a href="profile.php" style="margin-top: 2%; margin-right: 1%">
+              <img 
+                src="pictures/profile_photo.jpg" 
+                alt="profile_photo" 
+                class="profile-logo"
               />
+              </a>
+
+
         </header>
 
         <main>
@@ -102,7 +107,7 @@
                 <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 10px 0;">
                     <h2>Question</h2>
                     <p>Q: How to change password</p>
-                    <p>A: Click on "forgot password" and follow the steps from the recieved mail.</p>
+                    <p>A: Click on <a href="forgot-password.php">"forgot password"</a> and follow the steps from the recieved mail.</p>
                 </div>
             </div>
         </main>
