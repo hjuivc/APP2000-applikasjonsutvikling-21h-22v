@@ -38,13 +38,13 @@
     <footer>
         <ul>
           <li>
-            <a href="home.html">Home</a>
+            <a href="home.php">Home</a>
           </li>
           <li>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.php">FAQ</a>
           </li>
           <li>
-            <a href="about.html">About</a>
+            <a href="about.php">About</a>
           </li>
           <li>
             <a href="contactForm/index.php">Contact</a>

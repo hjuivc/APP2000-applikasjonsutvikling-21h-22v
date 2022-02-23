@@ -10,7 +10,7 @@
       <header class="block" style="justify-content: left;">
         <div id="sideMenu">
           <div style="align-self: flex-start;">
-            <a href="home.html"
+            <a href="home.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/14443/home.svg"
@@ -18,7 +18,7 @@
                 />Home
               </div></a
             >
-            <a href="budget.html"
+            <a href="budget.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/17167/pie-chart.svg"
@@ -26,7 +26,7 @@
                 />Budget
               </div></a
             >
-            <a href="budget-planner.html"
+            <a href="budget-planner.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
@@ -34,7 +34,7 @@
                 />Budget planner
               </div></a
             >
-            <a href="achievements.html"
+            <a href="achievements.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/84275/trophy.svg"
@@ -44,7 +44,7 @@
             >
           </div>
           <div style="align-self: flex-end; margin-bottom: 40px;">
-            <a href="profile.html"
+            <a href="profile.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/7025/user.svg"
@@ -52,7 +52,7 @@
                 />Profile
               </div></a
             >
-            <a href="settings.html"
+            <a href="settings.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/198090/gear.svg"
@@ -60,7 +60,7 @@
                 />Settings
               </div></a
             >
-            <a href="faq.html"
+            <a href="faq.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/348371/help.svg"
@@ -68,7 +68,7 @@
                 />Help
               </div></a
             >
-            <a href="index.html"
+            <a href="index.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
@@ -193,13 +193,13 @@
       <footer>
         <ul>
           <li>
-            <a href="home.html">Home</a>
+            <a href="home.php">Home</a>
           </li>
           <li>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.php">FAQ</a>
           </li>
           <li>
-            <a href="about.html">About</a>
+            <a href="about.php">About</a>
           </li>
           <li>
             <a href="contactForm/index.php">Contact</a>
