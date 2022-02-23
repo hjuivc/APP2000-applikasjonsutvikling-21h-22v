@@ -90,11 +90,11 @@ if(isset($_POST["forgot-submit"])) {
 
     echo "<script>
     	alert('Reset email sent. Check your email!');
-    	window.location.href='../index.html';
+    	window.location.href='../index.php';
     </script>";
 
 } else {
-	header("Location:../index.html");
+	header("Location:../index.php");
 }
 
 /*
