@@ -101,7 +101,7 @@
             class="finance-logo"
         />
 
-        <a href="profile.php" style="margin-top: 2%; margin-right: 1%">
+        <a href="profile.php" style="margin-top: 2%; margin-right: 1%; position: absolute; right: 0">
         <img 
             src="pictures/profile_photo.jpg" 
             alt="profile_photo" 
@@ -139,11 +139,11 @@
           
           <div class="contentBoxBudgetPlanner" style="margin: 50px 50px 50px 70px; padding: 50px;">
             <h2>Summary</h2>
-            <label id="contentBox-budget-planner" style="margin-top: 50px">Total income</label>
+            <label id="contentBox-budget-planner" style="margin-top: 50px; width: 180px;">Total income</label>
             <input type="number" id="totalIncome"/> <br>
-            <label id="contentBox-budget-planner">Total expenses</label>
+            <label id="contentBox-budget-planner" style="width: 180px;">Total expenses</label>
             <input type="number" id="totalExpense"/> <br>
-            <label id="contentBox-budget-planner">Difference</label>
+            <label id="contentBox-budget-planner" style="width: 180px;">Difference</label>
             <input type="number" id="difference" /> <br>
           </div>
         </div>   

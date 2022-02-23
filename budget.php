@@ -103,7 +103,7 @@
             class="finance-logo"
         />
 
-        <a href="profile.php" style="margin-top: 2%; margin-right: 1%">
+        <a href="profile.php" style="margin-top: 2%; margin-right: 1%; position: absolute; right: 0">
         <img 
             src="pictures/profile_photo.jpg" 
             alt="profile_photo" 
