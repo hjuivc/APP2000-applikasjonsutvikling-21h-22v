@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  $email = $_SESSION['email'];
+
+  include 'connect_mysql/connect.php';
+  $conn = connectMysqli();
+
+  $sql = "SELECT * FROM Customer WHERE EMail='$email'";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -108,17 +120,6 @@
     </header>
 
     <main>
-        <?php
-            include 'connect_mysql/connect.php';
-            $conn = connectMysqli();
-
-            $id = 1;
-
-            $sql = "SELECT * FROM customer WHERE CustomerID='$id'";
-            $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
-
-        ?>
         <div class="block" style="flex-wrap: wrap-reverse;">       
           <div class="contentBoxprofile" style="max-width: 450px;">
             <img src="Pictures/profile_photo.jpg" alt="profile_photo" width="390" height="390" style="padding: 30px; text-align: center; display: block; border-radius: 15%;" > 
