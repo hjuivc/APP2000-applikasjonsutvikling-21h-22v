@@ -89,11 +89,16 @@
                   alt="logo_header"
                   class="finance-logo"
               />
-              <img
-                  src="pictures/profile_photo.jpg"
-                  alt="profile_photo"
-                  class="profile-logo"
+              
+              <a href="profile.php" style="margin-top: 2%; margin-right: 1%">
+              <img 
+                src="pictures/profile_photo.jpg" 
+                alt="profile_photo" 
+                class="profile-logo"
               />
+              </a>
+
+
         </header>
 
         <main>
