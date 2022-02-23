@@ -170,5 +170,7 @@
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>
