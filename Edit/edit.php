@@ -9,27 +9,132 @@
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 	$id = $row['CustomerID'];
+  $phone_old = $row['phone'];
+  $home_old = $row['home'];
+
 	if(isset($_POST['update_btn'])) {
-		$email=mysqli_real_escape_string($conn,$_POST['email']);
-		$phone=mysqli_real_escape_string($conn,$_POST['phone']);
-		$home=mysqli_real_escape_string($conn,$_POST['home']); 
-    
-    try {
-      $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home' WHERE CustomerID = '$id'";
-      mysqli_query($conn,$sql);  
-      $_SESSION['email']=$email;
-      echo '<script language="javascript">';
-      echo 'alert("Your profile is now updated!")';
-      echo '</script>'; 
-      header("location:../profile.php");
-    } catch (Exception $e) {
-      echo '<script language="javascript">';
-      echo 'alert("That e-mail is already owned by someone else!")';
-      echo '</script>'; 
+    if($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $home=mysqli_real_escape_string($conn,$_POST['home']); 
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+
+    } elseif($_POST['email'] == True && $_POST['phone'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+
+    } elseif($_POST['email'] == True && $_POST['home'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $home=mysqli_real_escape_string($conn,$_POST['home']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['phone'] == True && $_POST['home'] == True) {
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $home=mysqli_real_escape_string($conn,$_POST['home']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['email'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['phone'] == True) {
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['home'] == True) {
+      $home=mysqli_real_escape_string($conn,$_POST['home']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
     }
   } 
 ?>
-
 
 	<!DOCTYPE html>
 <html lang="en">
@@ -51,13 +156,14 @@
     <main>
       <div></div>
       <form class="block" action="edit.php" method="post">
+
         <div class="contentBox">
-          <label style="margin-top: 50px;">Confirm/Update e-mail</label>
-          <input type="text" name='email' required>
+          <label style="margin-top: 50px;">Update e-mail</label>
+          <input type="text" name='email'>
           <!-- Må legges inn adresse og telefonnr i databasen så det også kan edites -->
-          <label>New phone number</label>
+          <label>Update phone number</label>
           <input type="text" name='phone'>
-          <label>New address</label>
+          <label>Update address</label>
           <input type="text" name='home'>
           <a><button type="submit" class="loginButton" value="Edit" name="update_btn">Save changes</button></a>
           <p>
