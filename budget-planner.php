@@ -326,7 +326,7 @@
         if(updateExpense) { updateExpenseInput(0, false); }
 
         // Total income
-        var totalincome = 0;
+        var totalIncome = 0;
         for(var i = 0;i < incomeInput.length;i++) {
           totalIncome += parseInput(incomeInput[i][1]);
         }
