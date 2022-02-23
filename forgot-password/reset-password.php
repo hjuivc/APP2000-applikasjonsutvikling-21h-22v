@@ -106,7 +106,7 @@ if(isset($_POST["reset-password-submit"])) {
 								// Ferdig, gå tilbake til index
 							    echo "<script>
 							    	alert('Password changed');
-							    	window.location.href='../index.html';
+							    	window.location.href='../index.php';
 							    </script>";								
 							}
 						}
@@ -117,5 +117,5 @@ if(isset($_POST["reset-password-submit"])) {
 	}
 
 } else {
-	header("Location: ../index.html");
+	header("Location: ../index.php");
 }
