@@ -10,14 +10,13 @@ function OpenCon() {
 	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
  
 	return $conn;
-	}
+}
 	
-   function CloseCon($conn)
-	{
-	$conn -> close();
+   function CloseCon($conn) {
+		$conn -> close();
 	}
 
-
+// Denne koden er lik som den over? Kanskje formatere denne koden som er tilknyttet her til å fungere til den over?
 // For å resete passord
 function connectMysqli() {
 

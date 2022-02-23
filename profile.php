@@ -3,7 +3,7 @@
   $email = $_SESSION['email'];
 
   include 'connect_mysql/connect.php';
-  $conn = connectMysqli();
+	$conn = OpenCon();
 
   $sql = "SELECT * FROM Customer WHERE EMail='$email'";
   $result = $conn->query($sql);
@@ -21,85 +21,77 @@
   <body>
 
 
-    <header>
-        <div id="sideMenu">
-          <div style="align-self: flex-start;">
-            <a href="home.php"
-              ><div class="block sideMenuItem">
-                <img
-                alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/14443/home.svg"
-                  class="sideMenuIcon"
-                />Home
-              </div></a
-            >
-            <a href="budget.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/17167/pie-chart.svg"
-                  class="sideMenuIcon"
-                />Budget
-              </div></a
-            >
-            <a href="budget-planner.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
-                  class="sideMenuIcon"
-                />Budget planner
-              </div></a
-            >
-            <a href="achievements.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/84275/trophy.svg"
-                  class="sideMenuIcon"
-                />Achievements
-              </div></a
-            >
-          </div>
-          <div style="align-self: flex-end; margin-bottom: 40px;">
-            <a href="profile.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/7025/user.svg"
-                  class="sideMenuIcon"
-                />Profile
-              </div></a
-            >
-            <a href="settings.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/198090/gear.svg"
-                  class="sideMenuIcon"
-                />Settings
-              </div></a
-            >
-            <a href="faq.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/348371/help.svg"
-                  class="sideMenuIcon"
-                />Help
-              </div></a
-            >
-            <a href="index.php"
-              ><div class="block sideMenuItem">
-                <img
-                  alt="side_menu_icon"
-                  src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
-                  class="sideMenuIcon"
-                />Log out
-              </div>
-            </a>
-          </div>
+  <header class="block" style="justify-content: left;">
+      <div id="sideMenu">
+        <div style="align-self: flex-start;">
+          <a href="home.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/14443/home.svg"
+                class="sideMenuIcon"
+              />Home
+            </div></a
+          >
+          <a href="budget.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/17167/pie-chart.svg"
+                class="sideMenuIcon"
+              />Budget
+            </div></a
+          >
+          <a href="budget-planner.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
+                class="sideMenuIcon"
+              />Budget planner
+            </div></a
+          >
+          <a href="achievements.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/84275/trophy.svg"
+                class="sideMenuIcon"
+              />Achievements
+            </div></a
+          >
         </div>
+        <div style="align-self: flex-end; margin-bottom: 40px;">
+          <a href="profile.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/7025/user.svg"
+                class="sideMenuIcon"
+              />Profile
+            </div></a
+          >
+          <a href="settings.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/198090/gear.svg"
+                class="sideMenuIcon"
+              />Settings
+            </div></a
+          >
+          <a href="faq.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/348371/help.svg"
+                class="sideMenuIcon"
+              />Help
+            </div></a
+          >
+          <a href="login/logout.php"
+            ><div class="block sideMenuItem">
+              <img
+                src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
+                class="sideMenuIcon"
+              />Log out
+            </div></a
+          >
+        </div>
+      </div>
   
         <img
             id="menuClosed"
@@ -129,7 +121,7 @@
             <p>Email: <?php echo $row['EMail'] ?></p>
             <p>Phone: <?php echo $row['phone'] ?></p> 
             <p>Address: <?php echo $row['home'] ?></p> 
-            <a href="edit/edit.html"><button type="submit" class="loginButton">Edit profile</button></a>
+            <button type="submit" class="loginButton"><a href="edit/edit.php">Edit profile</a></button>
           </div>
 
           <div class="contentBoxprofile" style="width: 1000px;">
