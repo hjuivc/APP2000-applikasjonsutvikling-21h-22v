@@ -88,7 +88,7 @@ if(isset($_POST["reset-password-submit"])) {
 
 							// Bør egt. byttes ut etterhvert for å kryptere passordet i databasen
 							// ---------------------------------------------------------
-							mysqli_stmt_bind_param($stmt, "ss", $mewPasswordHash, $tokenEmail);
+							mysqli_stmt_bind_param($stmt, "ss", $newPasswordHash, $tokenEmail);
 							// ---------------------------------------------------------
 							mysqli_stmt_execute($stmt);
 
