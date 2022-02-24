@@ -20,5 +20,3 @@ ADD UNIQUE (EMail);
 SELECT *
 FROM Customer;
 
-
-
