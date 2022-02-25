@@ -165,6 +165,10 @@
           <input type="text" name='phone'>
           <label>Update address</label>
           <input type="text" name='home'>
+          <label>Update name</label>
+          <input type="text" name='name'>
+          <label>Update title</label>
+          <input type="text" name='title'>
           <a><button type="submit" class="loginButton" value="Edit" name="update_btn">Save changes</button></a>
           <p>
           </p>
