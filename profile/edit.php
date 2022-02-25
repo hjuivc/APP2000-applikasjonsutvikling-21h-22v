@@ -28,9 +28,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your email, phone, address, title and name is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -48,9 +47,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your email, phone, address and title is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -67,9 +65,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your phone, address, title and name is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -84,9 +81,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your email and address is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -101,9 +97,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your phone and address is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -117,9 +112,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
-        echo '</script>'; 
-        header("location:../profile.php");
+        echo 'alert("Your email is now updated!")';
+        echo '</script>';  
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -133,9 +127,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your phone is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -149,9 +142,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your address is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -165,9 +157,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your title is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
@@ -181,9 +172,8 @@
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
-        echo 'alert("Your profile is now updated!")';
+        echo 'alert("Your name is now updated!")';
         echo '</script>'; 
-        header("location:../profile.php");
       } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
