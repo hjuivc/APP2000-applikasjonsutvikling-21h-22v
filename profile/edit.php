@@ -77,7 +77,7 @@
       $name=mysqli_real_escape_string($conn,$_POST['name']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home', title = '$title', name = '$name' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home', title = '$title', name = '$name' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
@@ -95,11 +95,29 @@
       $name=mysqli_real_escape_string($conn,$_POST['name']);
       
       try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home_old', title = '$title', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your email, phone, title and name is now updated!")';
+        echo '</script>'; 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True && $_POST['name'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $home=mysqli_real_escape_string($conn,$_POST['home']); 
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
         $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old', title = '$title', name = '$name' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
-        echo 'alert("Your email, address, title and name is now updated!")';
+        echo 'alert("Your email, phone, address and name is now updated!")';
         echo '</script>'; 
       } catch (Exception $e) {
         echo '<script language="javascript">';
