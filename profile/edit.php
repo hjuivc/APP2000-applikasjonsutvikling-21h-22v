@@ -108,7 +108,7 @@
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home_old' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home_old', title = '$title_old', name = '$name_old' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
@@ -123,7 +123,7 @@
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old', title = '$title_old', name = '$name_old's WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
@@ -138,7 +138,7 @@
       $home=mysqli_real_escape_string($conn,$_POST['home']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home', title = '$title_old', name = '$name_old' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
