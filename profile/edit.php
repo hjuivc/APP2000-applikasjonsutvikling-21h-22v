@@ -11,15 +11,20 @@
 	$id = $row['CustomerID'];
   $phone_old = $row['phone'];
   $home_old = $row['home'];
+  $title_old = $row['title'];
+  $name_old = $row['name'];
+
 
 	if(isset($_POST['update_btn'])) {
-    if($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True) {
+    if($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True && $_POST['title']  == True && $_POST['name']) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
       $home=mysqli_real_escape_string($conn,$_POST['home']); 
+      $name=mysqli_real_escape_string($conn,$_POST['name']); 
+      $title=mysqli_real_escape_string($conn,$_POST['title']); 
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home', title = '$title', name = '$name' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
@@ -32,12 +37,14 @@
         echo '</script>'; 
       }
 
-    } elseif($_POST['email'] == True && $_POST['phone'] == True) {
+    } elseif($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True && $_POST['name'] == True) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $home=mysqli_real_escape_string($conn,$_POST['home']); 
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home_old' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home_old', name = '$name' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
@@ -132,6 +139,38 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       }
+    } elseif($_POST['title'] == True) {
+      $title=mysqli_real_escape_string($conn,$_POST['title']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home_old', title = '$title', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['name'] == True) {
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home_old', title = '$title_old', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        echo '<script language="javascript">';
+        echo 'alert("Your profile is now updated!")';
+        echo '</script>'; 
+        header("location:../profile.php");
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
     }
   } 
 ?>
@@ -165,10 +204,10 @@
           <input type="text" name='phone'>
           <label>Update address</label>
           <input type="text" name='home'>
-          <label>Update name</label>
-          <input type="text" name='name'>
           <label>Update title</label>
           <input type="text" name='title'>
+          <label>Update name</label>
+          <input type="text" name='name'>
           <a><button type="submit" class="loginButton" value="Edit" name="update_btn">Save changes</button></a>
           <p>
           </p>
