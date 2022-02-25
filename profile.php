@@ -119,7 +119,8 @@
             <p>Email: <?php echo $row['EMail'] ?></p>
             <p>Phone: <?php echo $row['phone'] ?></p> 
             <p>Address: <?php echo $row['home'] ?></p> 
-            <button type="submit" class="loginButton"><a href="edit/edit.php">Edit profile</a></button>
+            <button type="submit" class="loginButton"><a href="profile/edit.php">Edit profile</a></button>
+            <h3 style="text-align:center;"><a href="profile/delete.php">Delete account?</a></h3>
           </div>
 
           <div class="contentBoxprofile" style="width: 1000px;">
