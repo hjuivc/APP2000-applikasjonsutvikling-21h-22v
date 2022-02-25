@@ -124,8 +124,8 @@
           </div>
 
           <div class="contentBoxprofile" style="width: 1000px;">
-            <h2 style="margin-top: 50px;">Ola Nordmann</h2>
-            <h3>Student</h3>
+            <h2 style="margin-top: 10px;"><?php echo $row['name'] ?></h2>
+            <h3><?php echo $row['title'] ?></h3>
             <h2>Friends</h2>
             <p>
               Henrik Holstad hamburger
