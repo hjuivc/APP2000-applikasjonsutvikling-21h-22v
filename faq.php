@@ -145,7 +145,7 @@
         <footer>
             <ul>
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="home.php">Home</a>
                 </li>
                 <li>
                     <a href="faq.php">FAQ</a>
