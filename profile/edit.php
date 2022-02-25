@@ -14,7 +14,6 @@
   $title_old = $row['title'];
   $name_old = $row['name'];
 
-
 	if(isset($_POST['update_btn'])) {
     if($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True && $_POST['title']  == True && $_POST['name']) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
@@ -35,7 +34,6 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       }
-
     } elseif($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True && $_POST['title'] == True) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
@@ -72,12 +70,48 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       }
+    } elseif($_POST['email'] == True && $_POST['home'] == True && $_POST['title'] == True && $_POST['name'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $home=mysqli_real_escape_string($conn,$_POST['home']);
+      $title=mysqli_real_escape_string($conn,$_POST['title']); 
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home', title = '$title', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your email, address, title and name is now updated!")';
+        echo '</script>'; 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['email'] == True && $_POST['phone'] == True && $_POST['title'] == True && $_POST['name'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $title=mysqli_real_escape_string($conn,$_POST['title']); 
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old', title = '$title', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your email, address, title and name is now updated!")';
+        echo '</script>'; 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
     } elseif($_POST['email'] == True && $_POST['home'] == True) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $home=mysqli_real_escape_string($conn,$_POST['home']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home', title = '$title_old', name = '$name_old' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         echo '<script language="javascript">';
@@ -87,13 +121,13 @@
         echo '<script language="javascript">';
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
-      }
+      } 
     } elseif($_POST['phone'] == True && $_POST['home'] == True) {
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
       $home=mysqli_real_escape_string($conn,$_POST['home']);
       
       try {
-        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home' WHERE CustomerID = '$id'";
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home', title = '$title_old', name = '$name_old' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         echo '<script language="javascript">';
