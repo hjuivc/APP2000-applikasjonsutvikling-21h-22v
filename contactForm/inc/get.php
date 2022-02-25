@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="styleContact.css"/>
     <title>Finance Budget App</title>
 </head>
 <body>
@@ -91,15 +91,18 @@
                 />
 
                 <img
-                    src="Pictures/logo_header.png"
+                    src="../Pictures/logo_header.png"
                     alt="logo_header"
                     class="finance-logo"
                 />
+
+                <a href="../profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
                 <img
-                    src="Pictures/profile_photo.jpg"
+                    src="../Pictures/profile_photo.jpg"
                     alt="profile_photo"
                     class="profile-logo"
                 />
+                </a>
     </header>
     <main>
 
