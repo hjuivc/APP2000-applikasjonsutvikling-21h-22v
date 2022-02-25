@@ -1,28 +1,23 @@
-<?php if (isset($message)) : ?>
-    <div class="alert alert-success">
-        <?= $message ?>
-    </div>
-<?php endif ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleContact.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <title>Finance Budget App</title>
 </head>
 <body>
     <header class="block" style="justify-content: left;">
                 <div id="sideMenu">
                     <div style="align-self: flex-start;">
-                        <a href="../home.php"
+                        <a href="home.html"
                         ><div class="block sideMenuItem">
                             <img src="https://www.svgrepo.com/show/14443/home.svg"
                             class="sideMenuIcon"
                             />Home
                         </div></a>
-                        <a href="../budget.php"
+                        <a href="budget.html"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/17167/pie-chart.svg"
@@ -30,7 +25,7 @@
                         />Budget
                         </div></a
                     >
-                    <a href="../budget-planner.php"
+                    <a href="budget-planner.html"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
@@ -38,7 +33,7 @@
                         />Budget planner
                         </div></a
                     >
-                    <a href="../achievements.php"
+                    <a href="achievements.html"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/84275/trophy.svg"
@@ -48,7 +43,7 @@
                     >
                     </div>
                     <div style="align-self: flex-end; margin-bottom: 40px;">
-                    <a href="../profile.php"
+                    <a href="profile.html"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/7025/user.svg"
@@ -56,7 +51,7 @@
                         />Profile
                         </div></a
                     >
-                    <a href="../settings.php"
+                    <a href="#"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/198090/gear.svg"
@@ -64,7 +59,7 @@
                         />Settings
                         </div></a
                     >
-                    <a href="../faq.php"
+                    <a href="faq.html"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/348371/help.svg"
@@ -72,7 +67,7 @@
                         />Help
                         </div></a
                     >
-                    <a href="../index.php"
+                    <a href="index.html"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
@@ -91,22 +86,19 @@
                 />
 
                 <img
-                    src="../Pictures/logo_header.png"
+                    src="Pictures/logo_header.png"
                     alt="logo_header"
                     class="finance-logo"
                 />
-
-                <a href="../profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
                 <img
-                    src="../Pictures/profile_photo.jpg"
+                    src="Pictures/profile_photo.jpg"
                     alt="profile_photo"
                     class="profile-logo"
                 />
-                </a>
     </header>
     <main>
-
-    <form action="index.php" method="post">
+    
+    <form method="post">
         <header2>
             <h1>Contact Us</h1>
         </header2>
@@ -145,16 +137,16 @@
         <footer>
                 <ul>
                     <li>
-                        <a href="../home.php">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="../faq.php">FAQ</a>
+                        <a href="faq.html">FAQ</a>
                     </li>
                     <li>
-                        <a href="../about.php">About</a>
+                        <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="index.php">Contact</a>
+                        <a href="contactform.php">Contact</a>
                     </li>
                 </ul>
                 <p>&copy; 2021 Finance Budget App AS</p>
@@ -163,3 +155,133 @@
             <script src="main.js"></script>
     </body>
 </html>
+
+<?php
+
+function honeypot() {
+    // check the honeypot
+    $honeypot = filter_input(INPUT_POST, 'nickname', FILTER_SANITIZE_STRING);
+    if ($honeypot) {
+        header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+        exit;
+    }
+
+    // validate name
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $inputs['name'] = $name;
+    if (!$name || trim($name) === '') {
+        $errors['name'] = 'Please enter your name';
+    }
+
+    // validate email
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $inputs['email'] = $email;
+    if ($email) {
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        if (!$email) {
+            $errors['email'] = 'Please enter a valid email';
+        }
+    } else {
+        $errors['email'] = 'Please enter an email';
+    }
+
+    // validate subject
+    $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
+    $inputs['subject'] = $subject;
+    if (!$subject || trim($subject) === '') {
+        $errors['subject'] = 'Please enter the subject';
+    }
+
+    // validate message
+    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+    $inputs['message'] = $message;
+    if (!$message || trim($message) === '') {
+        $errors['message'] = 'Please enter the message';
+    }
+    
+}
+?>
+
+<?php
+function config() {
+    return [
+        'mail' => [
+            'to_email' => '#' /* Må legge inn en mail her */
+        ]
+    ];
+}
+?>
+
+<?php
+
+
+$errors = [];
+$inputs = [];
+
+$request_method = strtoupper($_SERVER['REQUEST_METHOD']);
+
+if ($request_method === 'GET') {
+
+    // show the message
+    if (isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+        unset($_SESSION['message']);
+    } elseif (isset($_SESSION['inputs']) && isset($_SESSION['errors'])) {
+        $errors = $_SESSION['errors'];
+        unset($_SESSION['errors']);
+        $inputs = $_SESSION['inputs'];
+        unset($_SESSION['inputs']);
+    }
+    
+} elseif ($request_method === 'POST') {
+    // check the honeypot and validate the field
+    honeypot();
+
+    if (!$errors) {
+        config();
+        // set the message
+        $_SESSION['message'] =  'Thanks for contacting us! We will be in touch with you shortly.';
+    } else {
+        $_SESSION['errors'] = $errors;
+        $_SESSION['inputs'] = $inputs;
+    }
+    exit;
+}
+
+if (isset($inputs['name'])) {
+    $contact_name = $inputs['name'];
+    unset($inputs['name']);
+}elseif (isset($inputs['email'])) {
+    $contact_email = $inputs['email'];
+    unset($inputs['email']);
+}elseif (isset($inputs['message'])) {
+    $message = $inputs['message'];
+    unset($inputs['message']);
+}elseif (isset($inputs['subject'])) {
+    $subject = $inputs['subject'];
+    unset($inputs['subject']);
+}
+
+exit;
+
+// get email from the config function
+$config = config();
+
+$recipient_email = $config['mail']['to_email'];
+
+// contact information
+$contact_name = $inputs['name'];
+$contact_email = $inputs['email'];
+$message = $inputs['message'];
+$subject = $inputs['subject'];
+
+// Email header
+$headers[] = 'MIME-Version: 1.0';
+$headers[] = 'Content-type: text/html; charset=utf-8';
+$headers[] = "To: $recipient_email";
+$headers[] = "From: $contact_email";
+$header = implode('\r\n', $headers);
+
+mail($recipient_email, $subject, $message, $header);
+
+?>

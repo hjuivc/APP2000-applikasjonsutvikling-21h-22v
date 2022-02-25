@@ -85,20 +85,33 @@
         src="https://www.svgrepo.com/show/336031/hamburger-button.svg"
         style="position: fixed;"
       />
-      <h1 style="margin-left: 100px;">Finance Budget App</h1>
+
+      <img
+          src="Pictures/logo_header.png"
+          alt="logo_header"
+          class="finance-logo"
+      />
+
+      <a href="profile.php" style="margin-top: 2%; margin-right: 1%; position: absolute; right: 0;">
+      <img
+          src="Pictures/profile_photo.jpg"
+          alt="profile_photo"
+          class="profile-logo"
+      />
+      </a>
     </header>
 
     <main>
       <div class="block" style="">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
-          <h2>yoyo</h2>
-          <p>yoyo</p>
-          <p>balla</p>
+          <h2>Overview</h2>
+          <p>Summary</p>
+          <p>Summary</p>
         </div>
       </div>
       <div class="block" style="">
         <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0; margin-right: 50px">
-          <h2>budget</h2>
+          <h2>Budget</h2>
           <p>Quisque risus libero, feugiat id condimentum a, iaculis a dui. Fusce est leo, congue id felis sit amet, interdum bibendum mauris. Integer vestibulum.</p>
           <p>orci at tellus lobortis lobortis. Nam sed pharetra lorem. Nunc ultrices metus nulla. Nullam augue nulla, pharetra ut vulputate quis, accumsan a velit. Etiam gravida sollicitudin ipsum eu aliquam. Sed diam leo, hendrerit et nisi id, laoreet com</p>
           <p>modo elit. Fusce euismod metus felis, consequat fermentum neque consequat nec. Pellentesque habitant morbi tristique senectus et netus et</p>

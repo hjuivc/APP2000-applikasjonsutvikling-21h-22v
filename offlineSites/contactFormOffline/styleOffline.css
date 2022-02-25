@@ -50,71 +50,13 @@ footer {
   }
   /* End of footer styling */
 
-  
+  .block {
+    /*display: flex;*/
+    color: #262220;
+    font-weight: bold;
+    justify-content: center;
+  }
 
-  /* Header content starts here */
-
-header {
-  display: flex;
-  width: 100%;
-}
-.headerLogo {
-  width: 50px;
-  height: 50px;
-  margin-top:2%;
-  margin-left: 1%;
-  margin-right: auto;
-}
-
-.sideMenuIcon {
-  width: 40px;
-  height: 40px;
-  margin: -5px 25px 0;
-}
-
-.sideMenuItem {
-  justify-content: left;
-  padding-top: 40px;
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: normal;
-}
-
-#sideMenu {
-  display: flex;
-  flex-wrap: wrap;
-  width: 420px;
-  background-color: #a15c38;
-  margin: 100px 0 0;
-  border-radius: 0 15px 0 0;
-  height: calc(100vh - 100px);
-  visibility: hidden;
-  position: fixed;
-  z-index: 1;
-}
-
-#menuClosed {
-  position: fixed;
-}
-
-/* Center photos on top */
-.finance-logo {
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-}
-  
-.profile-logo {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-top:2%;
-  margin-right: 1%;
-  margin-left: auto;
-  
-}
-
-  /* Header content ends here */
 
   /* contact styling */
 
@@ -183,7 +125,7 @@ header {
 
 
 * {
-  margin: 0;
+  margin: 5;
   padding: 0;
   box-sizing: border-box;
 }

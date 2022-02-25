@@ -71,7 +71,7 @@
         <p>
           Therefore, we wanted to make this app so we could both help ourselves and others
              wether you are a student or not. If you have any questions about The Finance Budgeting
-              App, please feel free to <a href="contactForm/index.php"><u>contact and ask us!</u></a>
+              App, please feel free to <a href="offlineSites/contactFormOffline/index.php"><u>contact and ask us!</u></a>
         </p>
       </div>
       <form class="block" action="index.php" method="post">
@@ -90,16 +90,13 @@
     <footer>
       <ul>
         <li>
-          <a href="home.php">Home</a>
+          <a href="offlineSites/faqOffline.php">FAQ</a>
         </li>
         <li>
-          <a href="faq.php">FAQ</a>
+          <a href="offlineSites/aboutOffline.php">About</a>
         </li>
         <li>
-          <a href="about.php">About</a>
-        </li>
-        <li>
-          <a href='contactForm/index.php'>Contact</a>
+          <a href='offlineSites/contactFormOffline/index.php'>Contact</a>
         </li>
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
