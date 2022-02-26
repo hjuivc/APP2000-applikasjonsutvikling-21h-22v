@@ -124,6 +124,22 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       }
+    } elseif($_POST['email'] == True && $_POST['phone'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home_old', title = '$title_old', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your email and phone nr is now updated!")';
+        echo '</script>'; 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
     } elseif($_POST['email'] == True && $_POST['home'] == True) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $home=mysqli_real_escape_string($conn,$_POST['home']);
@@ -140,6 +156,22 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       } 
+    } elseif($_POST['email'] == True && $_POST['home'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $title=mysqli_real_escape_string($conn,$_POST['title']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home_old', title = '$title', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        echo '<script language="javascript">';
+        echo 'alert("Your email and title is now updated!")';
+        echo '</script>'; 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
     } elseif($_POST['phone'] == True && $_POST['home'] == True) {
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
       $home=mysqli_real_escape_string($conn,$_POST['home']);
