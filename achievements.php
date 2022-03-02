@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  // Connect to database    
+  include 'connect_mysql/connect.php';
+  $conn = OpenCon();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -125,9 +132,25 @@
                     style="width: 40px; height: 40; margin-left: 20%; margin-top: 5%;"
                 />
             </div>
-        
+
             <div class="contentBoxAchievements" style="max-width: 500px; width: 100%; padding: 10px;">
-                <h2>Unlocked</h2>
+            <h2>Unlocked</h2>
+
+            <?php 
+            // sjekker databasen på 2 kriterier og henter ut rowsa om kriterien er møtt
+            // må bytte ut customer id "16" med session iden!!!!!
+              $rowsql1 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '1'");
+              $rowsql2 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '2'");
+              $rowsql3 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '3'");
+              $rowsql4 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '4'");
+              $rowsql5 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '5'");
+              $rowsql6 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '6'");
+            ?>
+            
+            <!-- Sjekker om $rowsql1 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+            <?php if (mysqli_num_rows($rowsql1) > 0) 
+            { ?>
+
                 <section style="display:flex"> 
                     <img
                         src="Pictures/graph.png"
@@ -138,7 +161,11 @@
                     <h3>Net positive</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Earn more than you spend</under>
-
+                
+                <!-- Sjekker om $rowsql2 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+                <?php }
+                  if (mysqli_num_rows($rowsql2) > 0) 
+                { ?>
 
                 <section style="display:flex; margin-top: 20px">
                     <img
@@ -150,7 +177,11 @@
                     <h3>Big spender</h3> 
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Spend more than 10 000$ one month</under>
-
+                
+                <!-- Sjekker om $rowsql3 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+                <?php } 
+                  if (mysqli_num_rows($rowsql3) > 0) 
+                { ?>
 
                 <section style="display:flex; margin-top: 20px">
                     <img
@@ -162,7 +193,11 @@
                     <h3>Welcome!</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Made an acoount</under>
-
+                
+                <!-- Sjekker om $rowsql4 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+                <?php } 
+                  if (mysqli_num_rows($rowsql4) > 0) 
+                { ?>
 
                 <section style="display:flex ; margin-top: 20px">
                     <img
@@ -174,7 +209,11 @@
                     <h3>Smart investor</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Have an additional source of income</under>
-
+                
+                <!-- Sjekker om $rowsql5 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+                <?php } 
+                  if (mysqli_num_rows($rowsql5) > 0) 
+                { ?>
 
                 <section style="display:flex; margin-top: 20px">
                     <img
@@ -186,7 +225,11 @@
                     <h3>First budget</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Create your first budget</under>
-
+                
+                <!-- Sjekker om $rowsql6 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+                <?php } 
+                  if (mysqli_num_rows($rowsql6) > 0) 
+                { ?>
 
                 <section style="display:flex; margin-top: 20px">
                     <img
@@ -197,9 +240,15 @@
                     />
                     <h3>Accomplished</h3>
                 </section>
-                <under style="margin-left: 14%; font-style: italic;">Complete 10 achievements</under>
+                <under style="margin-left: 14%; font-style: italic;">Complete 5 achievements</under>
+                
+                <?php } else {
+                    
+                  }  ?>
             </div>   
         </div>
+
+
       </main>
 
       <footer>

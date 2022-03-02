@@ -20,3 +20,21 @@ ADD UNIQUE (EMail);
 SELECT *
 FROM Customer;
 
+-- Achievement table
+CREATE TABLE achievement
+(
+AchievementID CHAR(10),
+AchievementName CHAR(50),
+AchievementDescr CHAR(50),
+CONSTRAINT achievementPK PRIMARY KEY(AchievementID)
+);
+
+-- UserAchievement table
+CREATE TABLE userachievement
+(
+AchievementID CHAR(10),
+CustomerID int,
+CONSTRAINT userachievementPK PRIMARY KEY(AchievementID,CustomerID),
+CONSTRAINT AchievementIDFK FOREIGN KEY(AchievementID) REFERENCES achievement(AchievementID),
+CONSTRAINT CustomerIDFK FOREIGN KEY(CustomerID) REFERENCES customer(CustomerID)
+);
