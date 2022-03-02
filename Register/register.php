@@ -22,7 +22,10 @@ if(isset($_POST['register_btn'])) {
             if($password==$password2) {           //Create User
                 $password=md5($password); //hash password before storing for security purposes
                 $sql="INSERT INTO Customer(CustomerID, EMail, Password ) VALUES('$largestNumber','$email','$password')"; 
-                mysqli_query($conn,$sql);  
+                mysqli_query($conn,$sql);
+                $sql2="INSERT INTO images(CustomerID, name) VALUES('$largestNumber','default.jpg')";
+                mysqli_query($conn,$sql2);
+
                 $_SESSION['message']="You are now logged in"; 
                 $_SESSION['email']=$email;
                 header("location:../home.php");  //redirect home page

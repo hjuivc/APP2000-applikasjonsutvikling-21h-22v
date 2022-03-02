@@ -8,6 +8,42 @@
   $sql = "SELECT * FROM Customer WHERE EMail='$email'";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
+  $id = $row['CustomerID'];
+
+
+  if(isset($_POST['but_upload'])){
+ 
+    $name = $_FILES['file']['name'];
+    $target_dir = "upload/";
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+  
+    // Select file type
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+  
+    // Valid file extensions
+    $extensions_arr = array("jpg","jpeg","png","gif");
+  
+    // Check extension
+    if( in_array($imageFileType,$extensions_arr) ){
+       // Upload file
+       if(move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name)){
+          // Insert record
+          $query = "UPDATE images SET name='".$name."' WHERE CustomerID='$id'";
+          mysqli_query($conn,$query);
+       }
+  
+    }
+   
+  }
+
+
+
+  $sqlimage = "SELECT name FROM images WHERE CustomerID='$id'";
+  $resultimage = mysqli_query($conn,$sqlimage);
+  $rowimage = mysqli_fetch_array($resultimage);
+
+  $image = $rowimage['name'];
+  $image_src = "upload/".$image;
 ?>
 
 <!doctype html>
@@ -114,8 +150,13 @@
     <main>
         <div class="block" style="flex-wrap: wrap-reverse;">       
           <div class="contentBoxprofile" style="max-width: 450px;">
-            <img src="Pictures/profile_photo.jpg" alt="profile_photo" width="390" height="390" style="padding: 30px; text-align: center; display: block; border-radius: 15%;" > 
+             
+            <img src='<?php echo $image_src;  ?>' alt="profile_photo" width="390" height="390" style="padding: 30px; text-align: center; display: block; border-radius: 15%;" >
             <br>
+            <form method="post" action="" enctype='multipart/form-data'>
+            <input type='file' name='file' />
+            <input type='submit' value='Save name' name='but_upload'>
+            </form>
             <p>Email: <?php echo $row['EMail'] ?></p>
             <p>Phone: <?php echo $row['phone'] ?></p> 
             <p>Address: <?php echo $row['home'] ?></p> 
