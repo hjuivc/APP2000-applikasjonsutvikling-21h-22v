@@ -142,9 +142,6 @@
             alt="logo_header" 
             class="finance-logo"
         />
-
-        
-
     </header>
 
     <main>
@@ -153,9 +150,10 @@
              
             <img src='<?php echo $image_src;  ?>' alt="profile_photo" width="390" height="390" style="padding: 30px; text-align: center; display: block; border-radius: 15%;" >
             <br>
-            <form method="post" action="" enctype='multipart/form-data'>
-            <input type='file' name='file' />
-            <input type='submit' value='Save name' name='but_upload'>
+            <button type="submit" class="changeButton" id='uploadbutton' onclick="hideButton()"><a>Change photo</a></button>
+            <form id='uploadform' method="post" action="" enctype='multipart/form-data'>
+            <input type='file' name='file' style="padding-left: 50px; padding-bottom: 54px;">
+            <input type='submit' value='Last opp' name='but_upload' onclick="hideForm()">
             </form>
             <p>Email: <?php echo $row['EMail'] ?></p>
             <p>Phone: <?php echo $row['phone'] ?></p> 
@@ -203,7 +201,20 @@
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
     </footer>
-
+    <script>
+      function hideButton() {
+        var x = document.getElementById("uploadbutton");
+        var y = document.getElementById("uploadform");
+        x.style.display = "none";
+        y.style.display = "block";
+    }
+      function hideForm() {
+        var y = document.getElementById("uploadbutton");
+        var x = document.getElementById("uploadform");
+        x.style.display = "none";
+        y.style.display = "block";
+    }
+    </script>
     <script src="main.js"></script>
   </body>
 </html>

@@ -120,6 +120,27 @@ h1 {
 .loginButton:hover {
   color: #262220;
 }
+
+.changeButton {
+  display: block;
+
+  background-color: #a15c38;
+  color: #ffffff;
+  border-color: black;
+
+  font-size: 20px;
+
+  width: 140px;
+  padding: 5px 0;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 20px;
+  margin: 20px auto 20px;
+}
+
+.changeButton:hover {
+  color: #262220;
+}
 /* Main content ends here*/
 
 
@@ -441,6 +462,10 @@ footer ul a:hover {
 }
 .contentBoxprofile > h3 {
   margin: 0 50px 15px;
+}
+
+#uploadform {
+  display: none;
 }
 
 /* profile styling ends here */

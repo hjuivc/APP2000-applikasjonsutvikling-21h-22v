@@ -1,3 +1,22 @@
+<?php
+  session_start();
+  $email = $_SESSION['email'];
+
+  include 'connect_mysql/connect.php';
+	$conn = OpenCon();
+
+  $sql = "SELECT * FROM Customer WHERE EMail='$email'";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $id = $row['CustomerID'];
+
+  $sqlimage = "SELECT name FROM images WHERE CustomerID='$id'";
+  $resultimage = mysqli_query($conn,$sqlimage);
+  $rowimage = mysqli_fetch_array($resultimage);
+
+  $image = $rowimage['name'];
+  $image_src = "upload/".$image;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -95,7 +114,7 @@
         
         <a href="profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
         <img 
-            src="pictures/profile_photo.jpg" 
+            src="<?php echo $image_src;  ?>"
             alt="profile_photo" 
             class="profile-logo"
         />

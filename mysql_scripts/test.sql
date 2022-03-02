@@ -20,3 +20,10 @@ ADD UNIQUE (EMail);
 SELECT *
 FROM Customer;
 
+DROP TABLE images;
+CREATE TABLE images (
+  CustomerID int NOT NULL,
+  name varchar(200) NOT NULL,
+  CONSTRAINT imagesPK PRIMARY KEY (CustomerID),
+  CONSTRAINT imagesFK FOREIGN KEY(CustomerID) REFERENCES customer (CustomerID)
+);
