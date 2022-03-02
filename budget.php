@@ -5,17 +5,27 @@
   include 'connect_mysql/connect.php';
 	$conn = OpenCon();
 
-  $sql = "SELECT * FROM Customer WHERE EMail='$email'";
+  $sql    = "SELECT * FROM Customer WHERE EMail='$email'";
   $result = $conn->query($sql);
-  $row = $result->fetch_assoc();
-  $id = $row['CustomerID'];
+  $row    = $result->fetch_assoc();
+  $id     = $row['CustomerID'];
 
-  $sqlimage = "SELECT name FROM images WHERE CustomerID='$id'";
-  $resultimage = mysqli_query($conn,$sqlimage);
-  $rowimage = mysqli_fetch_array($resultimage);
+  // Henter bilde
+  $sqlimage     = "SELECT name FROM images WHERE CustomerID='$id'";
+  $resultimage  = mysqli_query($conn,$sqlimage);
+  $rowimage     = mysqli_fetch_array($resultimage);
 
-  $image = $rowimage['name'];
-  $image_src = "upload/".$image;
+  $image        = $rowimage['name'];
+  $image_src    = "upload/".$image;
+
+  // Gjør klar litt data for siden
+  $sql = "SELECT * from budget WHERE customerID=" . $id .
+    " AND YEAR(creationDate)=" . (int)date('Y') . 
+    " AND MONTH(creationDate)=" . (int)date('m') . ";";
+
+  $result   = $conn->query($sql);
+  $row      = $result->fetch_assoc();
+  $budgetID = $row["budgetID"];
 ?>
 <!doctype html>
 <html lang="en">
@@ -232,13 +242,37 @@
       }
 
       // Data vi kommer til å hente fra databasen
+      
+      var incomeValues  = [];
+      var incomeNames   = [];
+
+      var expenseValues = [];
+      var expenseNames  = [];
+      
+      <?php 
+        $sql    = "SELECT * FROM transactions WHERE budgetID='$budgetID';";
+        $result = $conn->query($sql);
+
+        while($row = $result->fetch_assoc()) {
+
+          if($row["transactionType"] == "income") {
+
+            echo "incomeValues.push('" . $row['transactionValue'] . "');";
+            echo "incomeNames.push('" . $row['transactionName'] . "');";
+          } else {
+
+            echo "expenseValues.push('" . $row['transactionValue'] . "');";
+            echo "expenseNames.push('" . $row['transactionName'] . "');";
+          }
+        }
+      ?>
 
       // Monthly budget
       var largeCanvas = document.getElementById("largeCanvas").getContext("2d");
       createChart(
         largeCanvas, 
-        ["Sparing", "mat", "leie", "transport", "andre"], 
-        [5000, 4000, 10000, 7000, 2000], 
+        expenseNames, 
+        expenseValues, 
         TYPE_BAR_HORISONTAL
       );
 
@@ -246,11 +280,10 @@
       var smallUpperCanvas = document.getElementById("smallUpperCanvas").getContext("2d");
       createChart(
         smallUpperCanvas, 
-        ["Lønn", "Uber", "Gambling profit"], 
-        [50000, 8000, 100000], 
+        incomeNames, 
+        incomeValues, 
         TYPE_BAR_VERTICAL
       );
-
       // Card balances
       var smallLowerCanvas = document.getElementById("smallLowerCanvas").getContext("2d");
       createChart(
