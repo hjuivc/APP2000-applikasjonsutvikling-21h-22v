@@ -135,12 +135,26 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       } 
-    } elseif($_POST['email'] == True && $_POST['home'] == True) {
+    } elseif($_POST['email'] == True && $_POST['title'] == True) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $title=mysqli_real_escape_string($conn,$_POST['title']);
       
       try {
         $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home_old', title = '$title', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['email'] == True && $_POST['name'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone_old', home = '$home_old', title = '$title_old', name = '$name' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email;
         header('Location: ../profile.php'); 
@@ -155,6 +169,76 @@
       
       try {
         $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home', title = '$title_old', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['phone'] == True && $_POST['title'] == True) {
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $title=mysqli_real_escape_string($conn,$_POST['title']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old', title = '$title', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['phone'] == True && $_POST['name'] == True) {
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone', home = '$home_old', title = '$title_old', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['home'] == True && $_POST['title'] == True) {
+      $home=mysqli_real_escape_string($conn,$_POST['home']);
+      $title=mysqli_real_escape_string($conn,$_POST['title']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home', title = '$title', name = '$name_old' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['home'] == True && $_POST['name'] == True) {
+      $home=mysqli_real_escape_string($conn,$_POST['home']);
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home', title = '$title_old', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email_old;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
+    } elseif($_POST['title'] == True && $_POST['name'] == True) {
+      $title=mysqli_real_escape_string($conn,$_POST['title']);
+      $name=mysqli_real_escape_string($conn,$_POST['name']);
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email_old', phone = '$phone_old', home = '$home_old', title = '$title', name = '$name' WHERE CustomerID = '$id'";
         mysqli_query($conn,$sql);  
         $_SESSION['email']=$email_old;
         header('Location: ../profile.php'); 
