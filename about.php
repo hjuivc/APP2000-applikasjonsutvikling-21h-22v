@@ -7,10 +7,101 @@
     <title>Finance Budget App</title>
   </head>
   <body>
-    <header class="block" style="margin-top: 30px;">
-      <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
-      <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
-    </header>
+    <header class="block" style="justify-content: left;">
+          <div id="sideMenu">
+            <div style="align-self: flex-start;">
+              <a href="home.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/14443/home.svg"
+                    class="sideMenuIcon"
+                  />Home
+                </div></a
+              >
+              <a href="budget.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/17167/pie-chart.svg"
+                    class="sideMenuIcon"
+                  />Budget
+                </div></a
+              >
+              <a href="budget-planner.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
+                    class="sideMenuIcon"
+                  />Budget planner
+                </div></a
+              >
+              <a href="achievements.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/84275/trophy.svg"
+                    class="sideMenuIcon"
+                  />Achievements
+                </div></a
+              >
+            </div>
+            <div style="align-self: flex-end; margin-bottom: 40px;">
+              <a href="profile.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/7025/user.svg"
+                    class="sideMenuIcon"
+                  />Profile
+                </div></a
+              >
+              <a href="settings.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/198090/gear.svg"
+                    class="sideMenuIcon"
+                  />Settings
+                </div></a
+              >
+              <a href="faq.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/348371/help.svg"
+                    class="sideMenuIcon"
+                  />Help
+                </div></a
+              >
+              <a href="index.php"
+                ><div class="block sideMenuItem">
+                  <img
+                    src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
+                    class="sideMenuIcon"
+                  />Log out
+                </div></a
+              >
+            </div>
+          </div>
+          
+          <img
+              id="menuClosed"
+              alt="menuLogo"
+              class="headerLogo"
+              src="https://www.svgrepo.com/show/336031/hamburger-button.svg"
+              style="position: fixed;"
+          />
+          
+          <img 
+              src="pictures/logo_header.png" 
+              alt="logo_header" 
+              class="finance-logo"
+          />
+          
+          <a href="profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
+          <img 
+              src="<?php echo $image_src;  ?>"
+              alt="profile_photo" 
+              class="profile-logo"
+          />
+          </a>
+          
+        </header>
 
     <main class="block" style="flex-wrap: wrap-reverse;">
       <div class="contentBox" style="max-width: 640px;">
