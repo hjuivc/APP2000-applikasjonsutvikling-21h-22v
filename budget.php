@@ -25,7 +25,7 @@
 
   $result   = $conn->query($sql);
   $row      = $result->fetch_assoc();
-  $budgetID = $row["budgetID"];
+  $budgetID = isset($row["budgetID"])? $row["budgetID"] : 0;
 ?>
 <!doctype html>
 <html lang="en">
@@ -249,20 +249,24 @@
       var expenseValues = [];
       var expenseNames  = [];
       
-      <?php 
-        $sql    = "SELECT * FROM transactions WHERE budgetID='$budgetID';";
-        $result = $conn->query($sql);
+      <?php
 
-        while($row = $result->fetch_assoc()) {
+        if($budgetID != 0) {
 
-          if($row["transactionType"] == "income") {
+          $sql    = "SELECT * FROM transactions WHERE budgetID='$budgetID';";
+          $result = $conn->query($sql);
 
-            echo "incomeValues.push('" . $row['transactionValue'] . "');";
-            echo "incomeNames.push('" . $row['transactionName'] . "');";
-          } else {
+          while($row = $result->fetch_assoc()) {
 
-            echo "expenseValues.push('" . $row['transactionValue'] . "');";
-            echo "expenseNames.push('" . $row['transactionName'] . "');";
+            if($row["transactionType"] == "income") {
+
+              echo "incomeValues.push('" . $row['transactionValue'] . "');";
+              echo "incomeNames.push('" . $row['transactionName'] . "');";
+            } else {
+
+              echo "expenseValues.push('" . $row['transactionValue'] . "');";
+              echo "expenseNames.push('" . $row['transactionName'] . "');";
+            }
           }
         }
       ?>
