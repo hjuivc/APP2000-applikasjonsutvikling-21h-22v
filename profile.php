@@ -186,7 +186,7 @@
           <a href="about.php">About</a>
         </li>
         <li>
-          <a href="contacts.php">Contact</a>
+          <a href="contactForm/index.php">Contact</a>
         </li>
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
