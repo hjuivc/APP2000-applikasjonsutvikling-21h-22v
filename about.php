@@ -115,7 +115,7 @@
       <div class="contentBox" style="max-width: 640px;">
         <h2>About us</h2>
         <p>
-            The Finance Budgeting App was created 2022 and are maintained by five IT
+            The Finance Budgeting App was created 2022 and are maintained by six IT
              students attending USN Ringerike. Students are known to have a tight budget,
               which is something we all had experienced. 
         </p>
@@ -143,5 +143,6 @@
         </ul>
         <p>&copy; 2021 Finance Budget App AS</p>
       </footer>
+      <script src="main.js"></script>
     </body>
   </html>

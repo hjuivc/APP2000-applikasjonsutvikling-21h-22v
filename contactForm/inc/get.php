@@ -97,9 +97,9 @@
                 />
 
                 <a href="../profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
-                <img
-                    src="../Pictures/profile_photo.jpg"
-                    alt="profile_photo"
+                <img 
+                    src="<?php echo $image_src;  ?>"
+                    alt="profile_photo" 
                     class="profile-logo"
                 />
                 </a>
