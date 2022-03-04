@@ -137,6 +137,21 @@
         echo 'alert("That e-mail is already owned by someone else!")';
         echo '</script>'; 
       }
+    } elseif($_POST['email'] == True && $_POST['phone'] == True && $_POST['name'] == True) {
+      $email=mysqli_real_escape_string($conn,$_POST['email']);
+      $phone=mysqli_real_escape_string($conn,$_POST['phone']);
+      $name=mysqli_real_escape_string($conn,$_POST['name']); 
+      
+      try {
+        $sql =	"UPDATE Customer SET EMail = '$email', phone = '$phone', home = '$home_old', title = '$title_old', name = '$name' WHERE CustomerID = '$id'";
+        mysqli_query($conn,$sql);  
+        $_SESSION['email']=$email;
+        header('Location: ../profile.php'); 
+      } catch (Exception $e) {
+        echo '<script language="javascript">';
+        echo 'alert("That e-mail is already owned by someone else!")';
+        echo '</script>'; 
+      }
     } elseif($_POST['email'] == True && $_POST['phone'] == True) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
       $phone=mysqli_real_escape_string($conn,$_POST['phone']);
