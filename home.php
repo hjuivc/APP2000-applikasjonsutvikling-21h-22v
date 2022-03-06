@@ -17,6 +17,7 @@
   $image = $rowimage['name'];
   $image_src = "upload/".$image;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +25,36 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="main.css" />
     <title>Finance Budget App</title>
+    <style>
+      .alert {
+        padding: 20px;
+        background-color: #04AA6D;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+        border-radius: 15px;
+    
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .closebtn:hover {
+        color: black;
+      }
+    </style>
   </head>
   <body>
     <header class="block" style="justify-content: left;">
@@ -121,6 +152,23 @@
     </header>
 
     <main>
+    <div class="alert">
+            <span class="closebtn">&times;</span>  
+            <strong>UPDATE:</strong> It is now possible to delete the profile yourself under profile settings.
+          </div>
+          <!-- JavaScript code for closing the news box -->
+        <script>
+          var close = document.getElementsByClassName("closebtn");
+          var i;
+
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = "0";
+              setTimeout(function(){ div.style.display = "none"; }, 600);
+            }
+          }
+        </script>
       <div class="block" style="">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
