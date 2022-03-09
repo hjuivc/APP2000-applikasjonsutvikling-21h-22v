@@ -212,12 +212,10 @@
         var userData = [];
         for(var i = 0;i < incomeInputNames.length;i++) {
           // Legger til feltet hvis det ikke er tomt.
-          if(true) {
-            userData.push([
-              incomeInputNames[i].value,
-              incomeInputValues[i].value
-            ]);
-          }
+          userData.push([
+            incomeInputNames[i].value,
+            incomeInputValues[i].value
+          ]);
         }
 
         // Oppdaterer dataen vår
@@ -271,25 +269,30 @@
       }
 
       // Funksjon for å oppdatere Expense inputsene
-      function updateExpenseInput(index, doRemove, addData = false) {
+      function updateExpenseInput(index, doRemove, addData = false, skipRefresh = false) {
         let expenseInputsDiv   = document.getElementById("expenseInputs");
         let expenseInputNames  = document.getElementsByClassName("expenseInputName");
         let expenseInputValues = document.getElementsByClassName("expenseInputValue");
 
-        // Henter inn data som er skrevet i formen
-        var userData = [];
-        for(var i = 0;i < expenseInputNames.length;i++) {
-          // Legger til feltet hvis det ikke er tomt.
-          if(true) {
+        // Med mindre vi har kjørt funksjonen med parameter skipRefresh som true
+        // Refresher vi inputdataen vår utifra hva som faktisk finnes i tabellen,
+        // Skipen er lagt til slik at det er mulig å tvinge inn default options på en
+        // fornuftig måte.
+        if(!skipRefresh) {
+
+          // Henter inn data som er skrevet i formen
+          var userData = [];
+          for(var i = 0;i < expenseInputNames.length;i++) {
+            // Legger til feltet hvis det ikke er tomt.
             userData.push([
               expenseInputNames[i].value,
               expenseInputValues[i].value
             ]);
           }
-        }
 
-        // Oppdaterer dataen vår
-        expenseInput = userData;
+          // Oppdaterer dataen vår
+          expenseInput = userData;
+        }
         
         // Hvis vi skal fjerne en rad
         if(doRemove) {
@@ -371,6 +374,9 @@
         differenceDiv.value   = difference;
       }
 
+      // Kjører en gang for å legge inn en standard saving goal expense.
+      expenseInput.push(["Saving goal",0]);
+      updateExpenseInput(0, false, false, true);
     </script>
   </body>
 </html>
