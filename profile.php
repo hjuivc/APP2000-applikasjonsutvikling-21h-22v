@@ -10,6 +10,13 @@
   $row = $result->fetch_assoc();
   $id = $row['CustomerID'];
 
+  $query = "SELECT * FROM images WHERE CustomerID='$id'";
+  $name_result = $conn->query($query);
+  $name_row = $name_result->fetch_assoc();
+  $image_old = $name_row['name'];
+  $default = array("default.jpg");
+
+
 
   if(isset($_POST['but_upload'])){
  
@@ -30,6 +37,9 @@
           // Insert record
           $query = "UPDATE images SET name='".$name."' WHERE CustomerID='$id'";
           mysqli_query($conn,$query);
+          if(!in_array($image_old, $default)){
+            unlink("upload/$image_old");
+          }
        }
   
     }
