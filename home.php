@@ -16,6 +16,15 @@
 
   $image = $rowimage['name'];
   $image_src = "upload/".$image;
+
+  // Gjør klar litt data for siden
+  $sql = "SELECT * from budget WHERE customerID=" . $id .
+    " AND YEAR(creationDate)=" . (int)date('Y') . 
+    " AND MONTH(creationDate)=" . (int)date('m') . ";";
+
+  $result   = $conn->query($sql);
+  $row      = $result->fetch_assoc();
+  $lastBudgetID = isset($row["budgetID"])? $row["budgetID"] : 0;
 ?>
 
 <!DOCTYPE html>
@@ -179,9 +188,7 @@
       <div class="block" style="">
         <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0; margin-right: 50px">
           <h2>Budget</h2>
-          <p>Quisque risus libero, feugiat id condimentum a, iaculis a dui. Fusce est leo, congue id felis sit amet, interdum bibendum mauris. Integer vestibulum.</p>
-          <p>orci at tellus lobortis lobortis. Nam sed pharetra lorem. Nunc ultrices metus nulla. Nullam augue nulla, pharetra ut vulputate quis, accumsan a velit. Etiam gravida sollicitudin ipsum eu aliquam. Sed diam leo, hendrerit et nisi id, laoreet com</p>
-          <p>modo elit. Fusce euismod metus felis, consequat fermentum neque consequat nec. Pellentesque habitant morbi tristique senectus et netus et</p>
+          <canvas id="budgetCanvas"></canvas>
         </div>
             
         <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0;">
@@ -210,5 +217,40 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="graphs.js"></script>
+    <script>
+
+      // Henter inn data fra sql for det gjeldene busjettet denne måenden
+      var expenseNames  = [];
+      var expenseValues = [];
+
+      <?php
+
+        if($lastBudgetID != 0) {
+
+          $sql    = "SELECT * FROM transactions WHERE budgetID='$lastBudgetID';";
+          $result = $conn->query($sql);
+
+          while($row = $result->fetch_assoc()) {
+
+            if($row["transactionType"] == "expense") {
+              echo "expenseValues.push('" . $row['transactionValue'] . "');";
+              echo "expenseNames.push('" . $row['transactionName'] . "');";
+            }
+          }
+        }
+      ?>
+
+      // Monthly budget
+      var budgetCanvas = document.getElementById("budgetCanvas").getContext("2d");
+      createChart(
+        budgetCanvas, 
+        expenseNames, 
+        expenseValues, 
+        TYPE_BAR_HORISONTAL
+      );
+
+    </script>
   </body>
 </html>
