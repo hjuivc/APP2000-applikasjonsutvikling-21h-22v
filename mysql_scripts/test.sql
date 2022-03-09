@@ -30,8 +30,25 @@ CREATE TABLE UserAchievement (
   CONSTRAINT CustomerIDFK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
 );
 
+-- Budget table
+CREATE TABLE budget (
+  budgetID int NOT NULL AUTO_INCREMENT,
+  customerID int NOT NULL,
+  creationDate date,
+  PRIMARY KEY (budgetID),
+  FOREIGN KEY (customerID) REFERENCES Customer (CustomerID)
+);
 
-
+-- Transactions table
+CREATE TABLE transactions (
+  transactionID int NOT NULL AUTO_INCREMENT,
+  budgetID int NOT NULL,
+  transactionType varchar(45),
+  transactionValue decimal(5, 2),
+  transactionName varchar(45),
+  PRIMARY KEY (transactionID),
+  FOREIGN KEY (budgetID) REFERENCES Budget (budgetID)
+);
 
 
 -- Faste tabeller - ikke kjør drop på disse da innholdet er satt
