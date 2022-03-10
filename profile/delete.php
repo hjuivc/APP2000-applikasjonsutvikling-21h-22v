@@ -14,8 +14,22 @@
         $email=mysqli_real_escape_string($conn,$_POST['email']);
         if($email_old == $email) {
             try {
+                /* Delete from image table */ 
+                $sql4 = "DELETE FROM Images WHERE CustomerID ='$id'";
+                mysqli_query($conn,$sql4); 
+
+                /* Delete from user achievements table */ 
+                $sql3 =	"DELETE FROM UserAchievement WHERE CustomerID = '$id'";
+                mysqli_query($conn,$sql3); 
+
+                /* Delete from budget table */ 
+                $sql2 =	"DELETE FROM Budget WHERE CustomerID = '$id'";
+                mysqli_query($conn,$sql2); 
+
+                /* Delete from customer table */
                 $sql =	"DELETE FROM Customer WHERE CustomerID = '$id'";
                 mysqli_query($conn,$sql); 
+                
                 header("location:../index.php"); 
                 session_destroy();
               } catch (Exception $e) {
