@@ -174,7 +174,11 @@
         </div>
       </form>
     </main>
-      
+      <!-- 
+        Legg til saving goals, egen del hvor man kan legge til sluttdato for målet.
+        Budgeplanner bør foreslå måendelig savings automatisk når brukeren oppretter
+        nytt måendtlig budget.
+       -->
 
     <footer>
       <ul>
