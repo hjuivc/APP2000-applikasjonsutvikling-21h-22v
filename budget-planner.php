@@ -16,6 +16,15 @@
 
   $image = $rowimage['name'];
   $image_src = "upload/".$image;
+
+  // Gjør klar litt data for siden
+  $sql = "SELECT * from budget WHERE customerID=" . $id .
+    " AND YEAR(creationDate)=" . (int)date('Y') . 
+    " AND MONTH(creationDate)=" . (int)date('m') . ";";
+
+  $result   = $conn->query($sql);
+  $row      = $result->fetch_assoc();
+  $budgetID = isset($row["budgetID"])? $row["budgetID"] : 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -169,9 +178,7 @@
 
             <button class="submitButton" type="submit">Submit</button>
           </div>
-        </div>   
-     
-        </div>
+        </div>  
       </form>
     </main>
       <!-- 
@@ -207,23 +214,26 @@
       }
 
       // Funksjon for å oppdatere income inputsene
-      function updateIncomeInput(index, doRemove, addData = false) {
+      function updateIncomeInput(index, doRemove, addData = false, skipRefresh = false) {
         let incomeInputsDiv   = document.getElementById("incomeInputs");
         let incomeInputNames  = document.getElementsByClassName("incomeInputName");
         let incomeInputValues = document.getElementsByClassName("incomeInputValue");
 
-        // Henter inn data som er skrevet i formen
-        var userData = [];
-        for(var i = 0;i < incomeInputNames.length;i++) {
-          // Legger til feltet hvis det ikke er tomt.
-          userData.push([
-            incomeInputNames[i].value,
-            incomeInputValues[i].value
-          ]);
-        }
+        if(!skipRefresh) {
 
-        // Oppdaterer dataen vår
-        incomeInput = userData;
+          // Henter inn data som er skrevet i formen
+          var userData = [];
+          for(var i = 0;i < incomeInputNames.length;i++) {
+            // Legger til feltet hvis det ikke er tomt.
+            userData.push([
+              incomeInputNames[i].value,
+              incomeInputValues[i].value
+            ]);
+          }
+
+          // Oppdaterer dataen vår
+          incomeInput = userData;
+        }
         
         // Hvis vi skal fjerne en rad
         if(doRemove) {
@@ -378,9 +388,36 @@
         differenceDiv.value   = difference;
       }
 
-      // Kjører en gang for å legge inn en standard saving goal expense.
-      expenseInput.push(["Saving goal",0]);
+      // Funksjon for å hente inn data fra tidligere budget om det er fra samme mående
+      <?php
+
+        if($budgetID != 0) {
+
+          $sql    = "SELECT * FROM transactions WHERE budgetID='$budgetID';";
+          $result = $conn->query($sql);
+
+          while($row = $result->fetch_assoc()) {
+
+            if($row["transactionType"] == "income") {
+
+              echo "incomeInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+              echo "console.log('+1');";
+            } else {
+
+              echo "expenseInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+            }
+          }
+        } else {
+
+          // Hvis vi ikke har tidligere budget, last inn en default verdi
+          echo "expenseInput.push(['Saving goal',0]);";
+        }
+      ?>
+      // Kjører en gang
+      updateIncomeInput(0, false, false, true);
       updateExpenseInput(0, false, false, true);
+      updateSummary();
+
     </script>
   </body>
 </html>
