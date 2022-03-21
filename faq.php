@@ -43,7 +43,7 @@
                       />Budget
                     </div></a
                   >
-                  <a href="budget-planner.php"
+                  <a href="budget-planner/budget-planner.php"
                     ><div class="block sideMenuItem">
                       <img
                         src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"

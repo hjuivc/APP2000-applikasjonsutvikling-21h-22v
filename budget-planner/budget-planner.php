@@ -2,7 +2,7 @@
   session_start();
   $email = $_SESSION['email'];
 
-  include 'connect_mysql/connect.php';
+  include '../connect_mysql/connect.php';
 	$conn = OpenCon();
 
   $sql = "SELECT * FROM Customer WHERE EMail='$email'";
@@ -31,7 +31,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <title>Finance Budget App</title>
   </head>
@@ -39,7 +39,7 @@
     <header>
         <div id="sideMenu">
           <div style="align-self: flex-start;">
-            <a href="home.php"
+            <a href="../home.php"
               ><div class="block sideMenuItem">
                 <img
                 alt="side_menu_icon"
@@ -48,7 +48,7 @@
                 />Home
               </div></a
             >
-            <a href="budget.php"
+            <a href="../budget.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -57,7 +57,7 @@
                 />Budget
               </div></a
             >
-            <a href="budget-planner.php"
+            <a href="../budget-planner.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -66,7 +66,7 @@
                 />Budget planner
               </div></a
             >
-            <a href="achievements.php"
+            <a href="../achievements.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -77,7 +77,7 @@
             >
           </div>
           <div style="align-self: flex-end; margin-bottom: 40px;">
-            <a href="profile.php"
+            <a href="../profile.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -86,7 +86,7 @@
                 />Profile
               </div></a
             >
-            <a href="settings.php"
+            <a href="../settings.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -95,7 +95,7 @@
                 />Settings
               </div></a
             >
-            <a href="faq.php"
+            <a href="../faq.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -104,7 +104,7 @@
                 />Help
               </div></a
             >
-            <a href="index.php"
+            <a href="../index.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
@@ -124,14 +124,14 @@
         />
         
         <img 
-            src="pictures/logo_header.png" 
+            src="../pictures/logo_header.png" 
             alt="logo_header" 
             class="finance-logo"
         />
 
-        <a href="profile.php" style="margin-top: 2%; margin-right: 1%; position: absolute; right: 0">
+        <a href="../profile.php" style="margin-top: 2%; margin-right: 1%; position: absolute; right: 0">
         <img 
-            src="<?php echo $image_src;  ?>" 
+            src="../<?php echo $image_src;  ?>" 
             alt="profile_photo" 
             class="profile-logo"
         />
@@ -178,7 +178,12 @@
 
             <button class="submitButton" type="submit">Submit</button>
           </div>
-        </div>  
+        </div>
+        <div class="block">
+          <div class="contentBox" style="width: 100vw;">
+            <h2>Long term goals</h2>
+          </div>
+        </div>
       </form>
     </main>
       <!-- 
@@ -190,205 +195,27 @@
     <footer>
       <ul>
         <li>
-          <a href="home.php">Home</a>
+          <a href="../home.php">Home</a>
         </li>
         <li>
-          <a href="faq.php">FAQ</a>
+          <a href="../faq.php">FAQ</a>
         </li>
         <li>
-          <a href="about.php">About</a>
+          <a href="../about.php">About</a>
         </li>
         <li>
-          <a href="contactForm/index.php">Contact</a>
+          <a href="../contactForm/index.php">Contact</a>
         </li>
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
     </footer>
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
+    <script src="budget-planner.js"></script>
     <script>
-      var incomeInput = [];
- 
-      function removeIncomeEntry(index) {
-        updateIncomeInput(index, true);
-        updateSummary(false, true);
-      }
 
-      // Funksjon for å oppdatere income inputsene
-      function updateIncomeInput(index, doRemove, addData = false, skipRefresh = false) {
-        let incomeInputsDiv   = document.getElementById("incomeInputs");
-        let incomeInputNames  = document.getElementsByClassName("incomeInputName");
-        let incomeInputValues = document.getElementsByClassName("incomeInputValue");
+      // Les budget-planner js for de fleste funksjonene som blir kalt her
 
-        if(!skipRefresh) {
-
-          // Henter inn data som er skrevet i formen
-          var userData = [];
-          for(var i = 0;i < incomeInputNames.length;i++) {
-            // Legger til feltet hvis det ikke er tomt.
-            userData.push([
-              incomeInputNames[i].value,
-              incomeInputValues[i].value
-            ]);
-          }
-
-          // Oppdaterer dataen vår
-          incomeInput = userData;
-        }
-        
-        // Hvis vi skal fjerne en rad
-        if(doRemove) {
-          incomeInput.splice(index, 1);
-        }
-
-        // Hvis vi skal legge til en ny rad
-        if(addData) {
-          incomeInput.push(["Income",0]);
-        }
-
-        // Oppdaterer
-        var result = "";
-        for(var i = 0;i < incomeInput.length;i++) {
-          result +=
-            "<div class='plannerIncome'>" +
-            "<button class='removeButton' type='button' onclick='removeIncomeEntry(" + i + ")'>" +
-            "<i class='fas fa-minus-square'></i>" +
-            "</button>" +
-
-            "<input class='incomeInputName' type='text' name='incomeIN[]' value='" +
-            incomeInput[i][0] +
-
-            "'><input class='incomeInputValue' type='number' name='incomeIV[]' value='" +
-            incomeInput[i][1] +
-            "'></div>";
-        }
-        incomeInputsDiv.innerHTML = result;
-      }
-
-      // Legger til nye entries i expenseInput arrayen
-      document.getElementById("addButtonIncome").onclick = function() {
-        updateIncomeInput(0, false, true);
-        updateSummary(false, true);
-      }
-
-      ////////////////////////////////////////////////////////////
-      // Akkurat det samme for expense (Kanskje slå sammen senere)
-      ////////////////////////////////////////////////////////////
-
-
-      var expenseInput = [];
- 
-      function removeExpenseEntry(index) {
-        updateExpenseInput(index, true);
-        updateSummary(true, false);
-      }
-
-      // Funksjon for å oppdatere Expense inputsene
-      function updateExpenseInput(index, doRemove, addData = false, skipRefresh = false) {
-        let expenseInputsDiv   = document.getElementById("expenseInputs");
-        let expenseInputNames  = document.getElementsByClassName("expenseInputName");
-        let expenseInputValues = document.getElementsByClassName("expenseInputValue");
-
-        // Med mindre vi har kjørt funksjonen med parameter skipRefresh som true
-        // Refresher vi inputdataen vår utifra hva som faktisk finnes i tabellen,
-        // Skipen er lagt til slik at det er mulig å tvinge inn default options på en
-        // fornuftig måte.
-        if(!skipRefresh) {
-
-          // Henter inn data som er skrevet i formen
-          var userData = [];
-          for(var i = 0;i < expenseInputNames.length;i++) {
-            // Legger til feltet hvis det ikke er tomt.
-            userData.push([
-              expenseInputNames[i].value,
-              expenseInputValues[i].value
-            ]);
-          }
-
-          // Oppdaterer dataen vår
-          expenseInput = userData;
-        }
-        
-        // Hvis vi skal fjerne en rad
-        if(doRemove) {
-          expenseInput.splice(index, 1);
-        }
-
-        // Hvis vi skal legge til en ny rad
-        if(addData) {
-          expenseInput.push(["expense",0]);
-        }
-
-        // Oppdaterer
-        var result = "";
-        for(var i = 0;i < expenseInput.length;i++) {
-          result +=
-            "<div class='plannerExpense'>" +
-            "<button class='removeButton' type='button' onclick='removeExpenseEntry(" + i + ")'>" +
-            "<i class='fas fa-minus-square'></i>" +
-            "</button>" +
-
-            "<input class='expenseInputName' type='text' name='expenseIN[]' value='" +
-            expenseInput[i][0] +
-            "'><input class='expenseInputValue' type='number' name='expenseIV[]' value='" +
-            expenseInput[i][1] +
-            "'>" +
-            "</div>";
-        }
-        expenseInputsDiv.innerHTML = result;
-      }
-
-      // Legger til nye entries i expenseInput arrayen
-      document.getElementById("addButtonExpense").onclick = function() {
-        updateExpenseInput(0, false, true);
-        updateSummary(true, false);
-      }
-
-      /////////////////////
-      // Mer
-      /////////////////////
-
-      function parseInput(value) {
-        let parsed = parseInt(value);
-        var result = 0;
-
-        if(!isNaN(parsed)) {
-          result = parsed;
-        }
-
-        return result;
-      }
-
-      function updateSummary(updateIncome = false, updateExpense = false) {
-
-        let totalIncomeDiv  = document.getElementById("totalIncome");
-        let totalExpenseDiv = document.getElementById("totalExpense");
-        let differenceDiv   = document.getElementById("difference");
-
-        if(updateIncome) { updateIncomeInput(0, false); }
-        if(updateExpense) { updateExpenseInput(0, false); }
-
-        // Total income
-        var totalIncome = 0;
-        for(var i = 0;i < incomeInput.length;i++) {
-          totalIncome += parseInput(incomeInput[i][1]);
-        }
-
-        // Total Expenses
-        var totalExpense = 0;
-        for(var i = 0;i < expenseInput.length;i++) {
-          totalExpense += parseInput(expenseInput[i][1]);
-        }
-
-        // Difference
-        var difference = totalIncome - totalExpense;
-
-        // Oppdater summary
-        totalIncomeDiv.value  = totalIncome;
-        totalExpenseDiv.value = totalExpense;
-        differenceDiv.value   = difference;
-      }
-
-      // Funksjon for å hente inn data fra tidligere budget om det er fra samme mående
+      //funnksjon for å hente inn data fra tidligere budget om det er fra samme mående
       <?php
 
         if($budgetID != 0) {
@@ -401,7 +228,6 @@
             if($row["transactionType"] == "income") {
 
               echo "incomeInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
-              echo "console.log('+1');";
             } else {
 
               echo "expenseInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";

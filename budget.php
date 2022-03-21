@@ -59,7 +59,7 @@
                 />Budget
               </div></a
             >
-            <a href="budget-planner.php"
+            <a href="budget-planner/budget-planner.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"

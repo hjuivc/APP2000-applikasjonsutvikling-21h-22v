@@ -4,7 +4,7 @@
 session_start();
 $email = $_SESSION['email'];
 
-include 'connect_mysql/connect.php';
+include '../connect_mysql/connect.php';
 $conn = OpenCon();
 
 $sql 	= "SELECT * FROM Customer WHERE EMail='$email'";
@@ -83,5 +83,5 @@ if($conn->query($sql) === TRUE) {
 
 echo "<script>
 	alert('New budget uploaded');
-	window.location.href='../budget-planner.php';
+	window.location.href='budget-planner.php';
 </script>";
