@@ -144,9 +144,18 @@
             alt="logo_header" 
             class="finance-logo"
         />
+
+        <a href="profile.php" style="margin-top: 2%; margin-right: 1%; position: absolute; right: 0;">
+      <img
+          src="<?php echo $image_src;  ?>"
+          alt="profile_photo"
+          class="profile-logo"
+      />
+      </a>
     </header>
 
     <main>
+        <h1 style="text-align: center;">Profile</h1>
         <div class="block" style="flex-wrap: wrap-reverse;">       
           <div class="contentBoxprofile" style="max-width: 450px;">
              
