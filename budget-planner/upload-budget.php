@@ -14,11 +14,11 @@ $id 	= $row['CustomerID'];
 
 
 // Sammle POST data
-$incomeNames 	= $_POST["incomeIN"];
-$incomeValues	= $_POST["incomeIV"];
+$incomeNames 	= $_POST["income-name"];
+$incomeValues	= $_POST["income-value"];
 
-$expenseNames	= $_POST["expenseIN"];
-$expenseValues	= $_POST["expenseIV"];
+$expenseNames	= $_POST["expense-name"];
+$expenseValues	= $_POST["expense-value"];
 
 // Se om det finnes gamle budgets for brukeren
 $sql 	= "

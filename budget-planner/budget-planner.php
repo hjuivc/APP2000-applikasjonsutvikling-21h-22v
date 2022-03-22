@@ -135,10 +135,10 @@
       <form action="upload-budget.php" method="post">
 
         <!-- Sender første entrien i arrayen, slik at vi ikke får feil ved tomm form -->
-        <input type="hidden" name="incomeIN[]" value="0">
-        <input type="hidden" name="incomeIV[]" value="0">
-        <input type="hidden" name="expenseIN[]" value="0">
-        <input type="hidden" name="expenseIV[]" value="0">
+        <input type="hidden" name="income-name[]" value="0">
+        <input type="hidden" name="income-value[]" value="0">
+        <input type="hidden" name="expense-name[]" value="0">
+        <input type="hidden" name="expense-value[]" value="0">
 
         <h1 style="text-align: center;">Budget Planner</h1>
         <div class="grid-container">
@@ -147,7 +147,7 @@
             <div id="incomeInputs">
             <!-- Her legger scriptet til forskjellige incomes -->
             </div>
-            <button class="addButton" type="button" id="addButtonIncome"><i class="fas fa-plus-square"></i></button>
+            <button class="addButton" type="button" id="addButton-income"><i class="fas fa-plus-square"></i></button>
           </div>
 
           <div class="contentBoxBudgetPlanner" id="high" style="margin: 50px 70px 50px 50px; padding: 50px;">
@@ -155,7 +155,7 @@
             <div id="expenseInputs">
             <!-- Her legger scriptet til forskjellige expenses -->
             </div>
-            <button class="addButton" type="button" id="addButtonExpense"><i class="fas fa-plus-square"></i></button>
+            <button class="addButton" type="button" id="addButton-expense"><i class="fas fa-plus-square"></i></button>
           </div>
           
           <div class="contentBoxBudgetPlanner" style="margin: 50px 50px 50px 70px; padding: 50px;">
@@ -204,6 +204,29 @@
     <script src="budget-planner.js"></script>
     <script>
 
+      // constructor(name, classes, defaultArr, arr = [])
+      var name, classes, defaultArr;
+
+      // Income
+      name        = "income";
+      classes     = [new Field("name", "text"), new Field("value", "number")];
+      defaultArr  = ["income", 0];
+
+      var incomePlanner = new Planner(name, classes, defaultArr);
+      document.getElementById("addButton-income").onclick = function() {
+        incomePlanner.add();
+      }
+
+      // Expense
+      name        = "expense";
+      classes     = [new Field("name", "text"), new Field("value", "number")];
+      defaultArr  = ["expense", 0];
+
+      var expensePlanner = new Planner(name, classes, defaultArr);
+      document.getElementById("addButton-expense").onclick = function() {
+        expensePlanner.add();
+      }
+
       // Les budget-planner js for de fleste funksjonene som blir kalt her
 
       //funnksjon for å hente inn data fra tidligere budget om det er fra samme mående
@@ -213,27 +236,30 @@
 
           $sql    = "SELECT * FROM transactions WHERE budgetID='$budgetID';";
           $result = $conn->query($sql);
-
+          echo "console.log(" . $budgetID . ");";
           while($row = $result->fetch_assoc()) {
 
             if($row["transactionType"] == "income") {
 
-              echo "incomeInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+              //echo "incomeInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+              echo "incomePlanner.add(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+
             } else {
 
-              echo "expenseInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+              //echo "expenseInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+              echo "expensePlanner.add(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
             }
           }
         } else {
 
           // Hvis vi ikke har tidligere budget, last inn en default verdi
-          echo "expenseInput.push(['Saving goal',0]);";
+          //echo "expenseInput.push(['Saving goal',0]);";
         }
       ?>
       // Kjører en gang
-      updateIncomeInput(0, false, false, true);
-      updateExpenseInput(0, false, false, true);
-      updateSummary();
+      //updateIncomeInput(0, false, false, true);
+      //updateExpenseInput(0, false, false, true);
+      //updateSummary();
 
     </script>
   </body>
