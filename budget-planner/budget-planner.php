@@ -139,6 +139,9 @@
         <input type="hidden" name="income-value[]" value="0">
         <input type="hidden" name="expense-name[]" value="0">
         <input type="hidden" name="expense-value[]" value="0">
+        <input type="hidden" name="future-name[]" value="0">
+        <input type="hidden" name="future-value[]" value="0">
+        <input type="hidden" name="future-date[]" value="0">
 
         <h1 style="text-align: center;">Budget Planner</h1>
         <div class="grid-container">
@@ -173,6 +176,10 @@
         <div class="block">
           <div class="contentBox" style="width: 100vw;">
             <h2>Long term goals</h2>
+            <div id="futureInputs">
+              <!-- Her legger scriptet til forskjellige saving goals -->
+            </div>
+            <button class="addButton" type="button" id="addButton-future"><i class="fas fa-plus-square"></i></button>
           </div>
         </div>
       </form>
@@ -227,6 +234,16 @@
         expensePlanner.add();
       }
 
+      // Saving goals
+      name        = "future";
+      classes     = [new Field("name", "text"), new Field("value", "number"), new Field("date", "date")];
+      defaultArr  = ["saving goal", 0, null, 0];
+
+      var futurePlanner = new Planner(name, classes, defaultArr);
+      document.getElementById("addButton-future").onclick = function() {
+        futurePlanner.add();
+      }
+
       // Les budget-planner js for de fleste funksjonene som blir kalt her
 
       //funnksjon for å hente inn data fra tidligere budget om det er fra samme mående
@@ -247,13 +264,16 @@
             } else {
 
               //echo "expenseInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
-              echo "expensePlanner.add(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
+              echo "expensePlanner.add(['" . $row['transactionName'] . "', " . $row['transactionValue'] . ", 1]);";
             }
           }
-        } else {
+        }
 
-          // Hvis vi ikke har tidligere budget, last inn en default verdi
-          //echo "expenseInput.push(['Saving goal',0]);";
+        $sql = "SELECT * FROM goal WHERE customerID='$id';";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()) {
+
+          echo "futurePlanner.add(['" . $row['goalName'] . "', " . $row['goalValue'] . ", '" . $row['goalDate'] . "']);"; 
         }
       ?>
       // Kjører en gang

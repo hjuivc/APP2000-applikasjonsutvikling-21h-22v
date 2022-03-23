@@ -20,6 +20,10 @@ $incomeValues	= $_POST["income-value"];
 $expenseNames	= $_POST["expense-name"];
 $expenseValues	= $_POST["expense-value"];
 
+$futureNames	= $_POST["future-name"];
+$futureValues	= $_POST["future-value"];
+$futureDates	= $_POST["future-date"];
+
 // Se om det finnes gamle budgets for brukeren
 $sql 	= "
 	SELECT
@@ -79,6 +83,20 @@ if($conn->query($sql) === TRUE) {
 		";
 		$conn->query($sql);
 	}
+}
+
+// Slett tidligere goals
+$sql = "DELETE FROM goal WHERE customerID='$id'";
+$conn->query($sql);
+
+// Last opp goals
+for($i = 1;$i < count($futureNames);$i++) {
+
+	$sql = "
+		INSERT INTO goal (customerID, goalName, goalValue, goalCreationDate, goalDate)
+		VALUES ('$id', '$futureNames[$i]', '$futureValues[$i]', CURRENT_TIMESTAMP(), '$futureDates[$i]');
+	";
+	$conn->query($sql);
 }
 
 echo "<script>

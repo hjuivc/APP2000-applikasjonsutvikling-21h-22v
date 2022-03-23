@@ -50,6 +50,17 @@ CREATE TABLE transactions (
   FOREIGN KEY (budgetID) REFERENCES Budget (budgetID)
 );
 
+-- Goal table
+CREATE TABLE goal(
+  goalID int NOT NULL AUTO_INCREMENT,
+  customerID int,
+  goalName varchar(45),
+  goalValue decimal(5,2),
+  goalCreationDate date,
+  goalDate date,
+  PRIMARY KEY (goalID),
+  FOREIGN KEY (customerID) REFERENCES customer(CustomerID)
+);
 
 -- Faste tabeller - ikke kjør drop på disse da innholdet er satt
 
