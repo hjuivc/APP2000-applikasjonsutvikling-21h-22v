@@ -25,6 +25,9 @@ if(isset($_POST['register_btn'])) {
                 mysqli_query($conn,$sql);
                 $sql2="INSERT INTO images(CustomerID, name) VALUES('$largestNumber','default.jpg')";
                 mysqli_query($conn,$sql2);
+                //Legger inn achievementen "Welcome" til den nye brukeren
+                $sql3="INSERT INTO userachievement(AchievementID,CustomerID) VALUES('3','$largestNumber')";
+                mysqli_query($conn,$sql3);
 
                 $_SESSION['message']="You are now logged in"; 
                 $_SESSION['email']=$email;

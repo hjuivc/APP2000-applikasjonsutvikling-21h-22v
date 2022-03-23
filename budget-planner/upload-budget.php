@@ -81,6 +81,76 @@ if($conn->query($sql) === TRUE) {
 	}
 }
 
+// achievement for første budget
+$sqlachievement5=mysqli_query($conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '5'");
+
+if(mysqli_num_rows($sqlachievement5) > 0) {
+    //ingenting
+}
+else {
+    $achivement5=mysqli_query($conn, "INSERT INTO userachievement(AchievementID, CustomerID) VALUES('5','$id')");
+    //echo "Gratulere, du har opprettet ditt første budsjet!👍";
+}
+
+//achievement for brukt mer enn 10 000 cash money
+
+$achivementValues = array_sum($expenseValues);
+
+if($achivementValues > '10000') {
+    $sqlachievement2=mysqli_query($conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '2'");
+    if(mysqli_num_rows($sqlachievement2) > 0) {
+		//ingenting
+	}
+        
+	else {
+		$achivement2=mysqli_query($conn, "INSERT INTO userachievement(AchievementID, CustomerID) VALUES('2','$id')");
+		//echo "Gratulere, du har brukt mere en 10 000kr denne måneden!👍";
+	}		
+    
+}
+
+else{
+    //ingenting
+}
+
+//achievement for fleire income sources
+
+
+// achievement for å tjene meir enn man bruker
+$achivementIncome = array_sum($incomeValues);
+
+if($achivementValues < $achivementIncome) {
+    $sqlachievement1=mysqli_query($conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '1'");
+    if(mysqli_num_rows($sqlachievement1) > 0) {
+        //ingenting
+    }
+	else {
+		$achievement1=mysqli_query($conn, "INSERT INTO userachievement(AchievementID, CustomerID) VALUES('1','$id')");
+        //echo "Gratulere, du har tjent mere en du skal bruke denne måneden!👍";
+	}
+}
+else{
+    //ingenting
+}
+
+//achievement for meir enn 1 income source
+$incomeCount = count($incomeNames);
+
+if($incomeCount > '1') {
+    $sqlachievement4=mysqli_query($conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '4'");
+    if(mysqli_num_rows($sqlachievement4) > 0) {
+        //ingenting
+    }
+	else {
+		$achievement4=mysqli_query($conn, "INSERT INTO userachievement(AchievementID, CustomerID) VALUES('4','$id')");
+        //echo "Gratulere, du har mer enn en 👍";
+	}
+}
+else{
+    //ingenting
+}
+
+
 echo "<script>
 	alert('New budget uploaded');
 	window.location.href='budget-planner.php';
