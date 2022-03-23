@@ -6,6 +6,8 @@ body {
   width: 100%;
   position: relative;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -82,7 +84,7 @@ h1 {
   margin: 25px 25px 5px;
 }
 
-.contentBox > input, .plannerIncome > input {
+.contentBox > input, .contentBox > div > div > input {
   background-color: #f7f1f0;
   font-size: 25px;
 
@@ -91,10 +93,6 @@ h1 {
   min-height: 30px;
   border: 0;
   border-radius: 3px;
-}
-
-.plannerIncome {
-  margin-bottom: 20px;
 }
 
 .loginButton {

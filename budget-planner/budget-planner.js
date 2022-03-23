@@ -10,43 +10,6 @@ function parseInput(value) {
   return result;
 }
 
-function updateSummary(income, expense) {
-
-  let totalIncomeDiv  = document.getElementById("totalIncome");
-  let totalExpenseDiv = document.getElementById("totalExpense");
-  let differenceDiv   = document.getElementById("difference");
-
-  income.refresh();
-  income.update();
-
-  expense.refresh();
-  expense.update();
-
-  var totalIncome   = 0;
-  var totalExpense  = 0;
-  var difference    = 0;
-
-  // Income
-  for(var i = 0;i < income.arr.length;i++) {
-    totalIncome += parseInput(income.arr[i][1]);
-  }
-
-  totalIncomeDiv.value = totalIncome;
-
-  // Expense
-  for(var i = 0;i < expense.arr.length;i++) {
-    totalExpense += parseInput(expense.arr[i][1]);
-  }
-
-  totalExpenseDiv.value = totalExpense;
-
-  // Difference
-  difference = totalIncome - totalExpense;
-
-  differenceDiv.value = difference;
-
-}
-
 class Field {
   constructor(name, type) {
     this.name = name;

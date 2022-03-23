@@ -34,6 +34,34 @@
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <title>Finance Budget App</title>
+    <style>
+      .contentBox > input, .contentBox > div > div > input {
+        background-color: #f7f1f0;
+        font-size: 25px;
+
+        margin: 0 25px;
+        max-width: 10vw;
+        min-height: 30px;
+        border: 0;
+        border-radius: 3px;
+      }
+
+      .planner {
+        max-width: 90%;
+        margin: auto;
+        margin-bottom: 10px;
+      }
+
+      .removeButton {
+        position: relative;
+        top: -4px;
+      }
+
+      .addButton {
+        margin: 0 0 5% 5%;
+      }
+
+    </style>
   </head>
   <body>
     <header>
@@ -131,10 +159,61 @@
 
     </header>
 
-    <main>
+    <main style="max-width: calc(1100px + 550px + 50px); margin: auto;">
+      <h1 style="text-align: center;">Budget Planner</h1>
       <form action="upload-budget.php" method="post">
 
-        <!-- Sender første entrien i arrayen, slik at vi ikke får feil ved tomm form -->
+        <input type="hidden" name="income-name[]" value="0">
+        <input type="hidden" name="income-value[]" value="0">
+        <input type="hidden" name="expense-name[]" value="0">
+        <input type="hidden" name="expense-value[]" value="0">
+        <input type="hidden" name="future-name[]" value="0">
+        <input type="hidden" name="future-value[]" value="0">
+        <input type="hidden" name="future-date[]" value="0">
+
+        <div class="block">
+          <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.6);">
+            <h2>Saving goals</h2>
+            <div class="inputBox" id="futureInputs">
+
+            </div>
+            <button class="addButton" type="button" id="addButton-future"><i class="fas fa-plus-square"></i></button>
+
+          </div>
+          <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.4);">
+            <h2>Income</h2>
+            <div class="inputBox" id="incomeInputs">
+
+            </div>
+            <button class="addButton" type="button" id="addButton-income"><i class="fas fa-plus-square"></i></button>
+          </div>
+        </div>
+        <div class="block">
+          <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.6); margin-top: 80px;">
+            <h2>Summary</h2>
+              <label>Total income</label>
+              <input type="number" id="totalIncome" readonly="readonly"/>
+              <label>Total expenses</label>
+              <input type="number" id="totalExpense" readonly="readonly"/>
+              <label>Difference</label>
+              <input type="number" id="difference" readonly="readonly"/>
+
+            <button class="submitButton" type="submit">Submit</button>
+
+          </div>
+          <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.4); margin-top: 80px;">
+            <h2>Expenses</h2>
+            <div class="inputBox" id="expenseInputs">
+
+            </div>
+            <button class="addButton" type="button" id="addButton-expense"><i class="fas fa-plus-square"></i></button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <!--
+    <main>
+      <form action="upload-budget.php" method="post">
         <input type="hidden" name="income-name[]" value="0">
         <input type="hidden" name="income-value[]" value="0">
         <input type="hidden" name="expense-name[]" value="0">
@@ -148,7 +227,7 @@
           <div class="contentBoxBudgetPlanner" id="lol" style="margin: 50px 50px 50px 70px; padding: 50px;">
             <h2>Income</h2>
             <div id="incomeInputs">
-            <!-- Her legger scriptet til forskjellige incomes -->
+
             </div>
             <button class="addButton" type="button" id="addButton-income"><i class="fas fa-plus-square"></i></button>
           </div>
@@ -156,7 +235,7 @@
           <div class="contentBoxBudgetPlanner" id="high" style="margin: 50px 70px 50px 50px; padding: 50px;">
             <h2>Expenses</h2>
             <div id="expenseInputs">
-            <!-- Her legger scriptet til forskjellige expenses -->
+
             </div>
             <button class="addButton" type="button" id="addButton-expense"><i class="fas fa-plus-square"></i></button>
           </div>
@@ -177,13 +256,14 @@
           <div class="contentBox" style="width: 100vw;">
             <h2>Long term goals</h2>
             <div id="futureInputs">
-              <!-- Her legger scriptet til forskjellige saving goals -->
+
             </div>
             <button class="addButton" type="button" id="addButton-future"><i class="fas fa-plus-square"></i></button>
           </div>
         </div>
       </form>
     </main>
+  -->
 
     <footer>
       <ul>
@@ -272,24 +352,62 @@
         }
       ?>
 
-      // Legger til saving goals i expense
-      for(var i = 0;i < futurePlanner.arr.length;i++) {
-        var name  = futurePlanner.arr[i][0];
-        var match = false;
+      function updateSummary(income, expense) {
 
-        for(var j = 0;j < expensePlanner.arr.length;j++) {
-          if(name == expensePlanner.arr[j][0]) {
-            match = true;
-            break;
-          }
+        let totalIncomeDiv  = document.getElementById("totalIncome");
+        let totalExpenseDiv = document.getElementById("totalExpense");
+        let differenceDiv   = document.getElementById("difference");
+
+        income.refresh();
+        income.update();
+
+        expense.refresh();
+        expense.update();
+
+        var totalIncome   = 0;
+        var totalExpense  = 0;
+        var difference    = 0;
+
+        // Income
+        for(var i = 0;i < income.arr.length;i++) {
+          totalIncome += parseInput(income.arr[i][1]);
         }
 
-        if(!match) {
-          expensePlanner.add([name, 0]);
+        totalIncomeDiv.value = totalIncome;
+
+        // Expense
+        for(var i = 0;i < expense.arr.length;i++) {
+          totalExpense += parseInput(expense.arr[i][1]);
         }
 
+        totalExpenseDiv.value = totalExpense;
+
+        // Difference
+        difference = totalIncome - totalExpense;
+
+        differenceDiv.value = difference;
       }
 
+      // Legger til saving goals i expense
+      function addGoalsToExpenses() {
+        for(var i = 0;i < futurePlanner.arr.length;i++) {
+          var name  = futurePlanner.arr[i][0];
+          var match = false;
+
+          for(var j = 0;j < expensePlanner.arr.length;j++) {
+            if(name == expensePlanner.arr[j][0]) {
+              match = true;
+              break;
+            }
+          }
+
+          if(!match) {
+            expensePlanner.add([name, 0]);
+          }
+        }
+      }
+
+      addGoalsToExpenses();
       updateSummary(incomePlanner, expensePlanner);
 
     </script>
