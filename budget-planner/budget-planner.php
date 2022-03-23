@@ -211,59 +211,6 @@
         </div>
       </form>
     </main>
-    <!--
-    <main>
-      <form action="upload-budget.php" method="post">
-        <input type="hidden" name="income-name[]" value="0">
-        <input type="hidden" name="income-value[]" value="0">
-        <input type="hidden" name="expense-name[]" value="0">
-        <input type="hidden" name="expense-value[]" value="0">
-        <input type="hidden" name="future-name[]" value="0">
-        <input type="hidden" name="future-value[]" value="0">
-        <input type="hidden" name="future-date[]" value="0">
-
-        <h1 style="text-align: center;">Budget Planner</h1>
-        <div class="grid-container">
-          <div class="contentBoxBudgetPlanner" id="lol" style="margin: 50px 50px 50px 70px; padding: 50px;">
-            <h2>Income</h2>
-            <div id="incomeInputs">
-
-            </div>
-            <button class="addButton" type="button" id="addButton-income"><i class="fas fa-plus-square"></i></button>
-          </div>
-
-          <div class="contentBoxBudgetPlanner" id="high" style="margin: 50px 70px 50px 50px; padding: 50px;">
-            <h2>Expenses</h2>
-            <div id="expenseInputs">
-
-            </div>
-            <button class="addButton" type="button" id="addButton-expense"><i class="fas fa-plus-square"></i></button>
-          </div>
-          
-          <div class="contentBoxBudgetPlanner" style="margin: 50px 50px 50px 70px; padding: 50px;">
-            <h2>Summary</h2>
-            <label id="contentBox-budget-planner" style="margin-top: 50px; width: 180px;">Total income</label>
-            <input type="number" id="totalIncome" readonly="readonly"/> <br>
-            <label id="contentBox-budget-planner" style="width: 180px;">Total expenses</label>
-            <input type="number" id="totalExpense" readonly="readonly"/> <br>
-            <label id="contentBox-budget-planner" style="width: 180px;">Difference</label>
-            <input type="number" id="difference" readonly="readonly"/> <br>
-
-            <button class="submitButton" type="submit">Submit</button>
-          </div>
-        </div>
-        <div class="block">
-          <div class="contentBox" style="width: 100vw;">
-            <h2>Long term goals</h2>
-            <div id="futureInputs">
-
-            </div>
-            <button class="addButton" type="button" id="addButton-future"><i class="fas fa-plus-square"></i></button>
-          </div>
-        </div>
-      </form>
-    </main>
-  -->
 
     <footer>
       <ul>
