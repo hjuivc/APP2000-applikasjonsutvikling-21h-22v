@@ -16,6 +16,28 @@
 
   $image = $rowimage['name'];
   $image_src = "upload/".$image;
+  
+  $sqlachievementcount = mysqli_query($conn, "SELECT count(CustomerID) AS count FROM userachievement WHERE CustomerID = '$id'");
+  $achcount = $sqlachievementcount->fetch_assoc();
+
+  $sqlachievement6=mysqli_query($conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '6'");
+
+  if(mysqli_num_rows($sqlachievement6) > 0) {
+    //ingenting
+  }
+    
+  elseif ($achcount['count'] >= 5) {
+      $achivement6=mysqli_query($conn, "INSERT INTO userachievement(AchievementID, CustomerID) VALUES('6','$id')");
+      echo '<script>alert("Gratulere, du har oppnådd 5 achievements!👍🎉")</script>';
+    }
+  
+  //legger inn tellingene på nytt, slik at det blir oppdatert etter achievement 6
+  $sqlachievementcount1 = mysqli_query($conn, "SELECT count(CustomerID) AS count FROM userachievement WHERE CustomerID = '$id'");
+  $achcount1 = $sqlachievementcount1->fetch_assoc();
+
+  $totalPerc = $achcount1['count'] / 6 * 100;
+  $totalPercentage = round($totalPerc,0);
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +68,7 @@
                 />Budget
               </div></a
             >
-            <a href="budget-planner/budget-planner.php"
+            <a href="budget-planner.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
@@ -70,6 +92,14 @@
                   src="https://www.svgrepo.com/show/7025/user.svg"
                   class="sideMenuIcon"
                 />Profile
+              </div></a
+            >
+            <a href="settings.php"
+              ><div class="block sideMenuItem">
+                <img
+                  src="https://www.svgrepo.com/show/198090/gear.svg"
+                  class="sideMenuIcon"
+                />Settings
               </div></a
             >
             <a href="faq.php"
@@ -122,12 +152,12 @@
                 <h2>Overview</h2>
                 <label id="contentBox-achievements" style="width: 200px;margin: 10px;">Total Achievements</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
-                <input style="" type="text" />
-                <!--<output name="*"></output> </br> -->
+                <!--<input style="" type="text" /> -->
+                <output> <?php echo $achcount1['count'] ?></output>
                 
                 <label style="width: 200px;margin: 10px;">Totale Percentage</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
-                <input type="text" />
+                <output> <?php echo $totalPercentage ?>%</output> <br>
 
                 <label style="margin: 10px;">Member Rank</label>
                 <img
@@ -143,13 +173,12 @@
 
             <?php 
             // sjekker databasen på 2 kriterier og henter ut rowsa om kriterien er møtt
-            // må bytte ut customer id "16" med session iden!!!!!
-              $rowsql1 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '1'");
-              $rowsql2 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '2'");
-              $rowsql3 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '3'");
-              $rowsql4 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '4'");
-              $rowsql5 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '5'");
-              $rowsql6 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '16' AND AchievementID = '6'");
+              $rowsql1 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '1'");
+              $rowsql2 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '2'");
+              $rowsql3 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '3'");
+              $rowsql4 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '4'");
+              $rowsql5 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '5'");
+              $rowsql6 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '6'");
             ?>
             
             <!-- Sjekker om $rowsql1 inneholder data, om det er innhold i spørringen sender den ut html koden -->
