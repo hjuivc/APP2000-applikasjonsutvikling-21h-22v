@@ -44,7 +44,7 @@ CREATE TABLE transactions (
   transactionID int NOT NULL AUTO_INCREMENT,
   budgetID int NOT NULL,
   transactionType varchar(45),
-  transactionValue decimal(5, 2),
+  transactionValue decimal(17, 2),
   transactionName varchar(45),
   PRIMARY KEY (transactionID),
   FOREIGN KEY (budgetID) REFERENCES Budget (budgetID)
@@ -55,7 +55,7 @@ CREATE TABLE goal(
   goalID int NOT NULL AUTO_INCREMENT,
   customerID int,
   goalName varchar(45),
-  goalValue decimal(5,2),
+  goalValue decimal(17, 2),
   goalCreationDate date,
   goalDate date,
   PRIMARY KEY (goalID),

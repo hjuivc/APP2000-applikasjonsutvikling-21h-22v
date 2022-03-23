@@ -164,11 +164,11 @@
           <div class="contentBoxBudgetPlanner" style="margin: 50px 50px 50px 70px; padding: 50px;">
             <h2>Summary</h2>
             <label id="contentBox-budget-planner" style="margin-top: 50px; width: 180px;">Total income</label>
-            <input type="number" id="totalIncome"/> <br>
+            <input type="number" id="totalIncome" readonly="readonly"/> <br>
             <label id="contentBox-budget-planner" style="width: 180px;">Total expenses</label>
-            <input type="number" id="totalExpense"/> <br>
+            <input type="number" id="totalExpense" readonly="readonly"/> <br>
             <label id="contentBox-budget-planner" style="width: 180px;">Difference</label>
-            <input type="number" id="difference" /> <br>
+            <input type="number" id="difference" readonly="readonly"/> <br>
 
             <button class="submitButton" type="submit">Submit</button>
           </div>
@@ -184,11 +184,6 @@
         </div>
       </form>
     </main>
-      <!-- 
-        Legg til saving goals, egen del hvor man kan legge til sluttdato for målet.
-        Budgeplanner bør foreslå måendelig savings automatisk når brukeren oppretter
-        nytt måendtlig budget.
-       -->
 
     <footer>
       <ul>
@@ -276,10 +271,26 @@
           echo "futurePlanner.add(['" . $row['goalName'] . "', " . $row['goalValue'] . ", '" . $row['goalDate'] . "']);"; 
         }
       ?>
-      // Kjører en gang
-      //updateIncomeInput(0, false, false, true);
-      //updateExpenseInput(0, false, false, true);
-      //updateSummary();
+
+      // Legger til saving goals i expense
+      for(var i = 0;i < futurePlanner.arr.length;i++) {
+        var name  = futurePlanner.arr[i][0];
+        var match = false;
+
+        for(var j = 0;j < expensePlanner.arr.length;j++) {
+          if(name == expensePlanner.arr[j][0]) {
+            match = true;
+            break;
+          }
+        }
+
+        if(!match) {
+          expensePlanner.add([name, 0]);
+        }
+
+      }
+
+      updateSummary(incomePlanner, expensePlanner);
 
     </script>
   </body>

@@ -96,7 +96,10 @@ for($i = 1;$i < count($futureNames);$i++) {
 		INSERT INTO goal (customerID, goalName, goalValue, goalCreationDate, goalDate)
 		VALUES ('$id', '$futureNames[$i]', '$futureValues[$i]', CURRENT_TIMESTAMP(), '$futureDates[$i]');
 	";
-	$conn->query($sql);
+	
+	if(!$conn->query($sql)) {
+		echo $conn->error;
+	}
 }
 
 // achievement for første budget
