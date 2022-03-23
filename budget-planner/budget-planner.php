@@ -40,7 +40,7 @@
         font-size: 25px;
 
         margin: 0 25px;
-        max-width: 10vw;
+        max-width: 9vw;
         min-height: 30px;
         border: 0;
         border-radius: 3px;
