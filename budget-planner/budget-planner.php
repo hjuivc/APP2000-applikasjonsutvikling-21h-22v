@@ -171,7 +171,7 @@
         <input type="hidden" name="future-value[]" value="0">
         <input type="hidden" name="future-date[]" value="0">
 
-        <div class="block">
+        <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
           <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.6);">
             <h2>Saving goals</h2>
             <div class="inputBox" id="futureInputs">
@@ -188,7 +188,7 @@
             <button class="addButton" type="button" id="addButton-income"><i class="fas fa-plus-square"></i></button>
           </div>
         </div>
-        <div class="block">
+        <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
           <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.6); margin-top: 80px;">
             <h2>Summary</h2>
               <label>Total income</label>
