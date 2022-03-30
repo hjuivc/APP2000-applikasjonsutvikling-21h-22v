@@ -60,7 +60,7 @@
       $innerResult  = $conn->query($sql);
       $innerRow     = $innerResult->fetch_assoc();
 
-      $sumSaved += $innerRow["transactionValue"];
+      $sumSaved += isset($innerRow["transactionValue"])? $innerRow["transactionValue"] : 0;
     }
 
     $percentage = $sumSaved / $goalValue * 100;
