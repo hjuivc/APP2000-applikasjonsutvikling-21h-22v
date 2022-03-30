@@ -150,16 +150,16 @@
         <div class="block">
             <div class="contentBoxAchievements" style="max-width: 500px; width: 100%; height: fit-content;">
                 <h2>Overview</h2>
-                <label id="contentBox-achievements" style="width: 200px;margin: 10px;">Total Achievements</label>
+                <label id="contentBox-achievements" style="width: 200px; padding-left: 20px; margin: 10px;">Total Achievements</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
                 <!--<input style="" type="text" /> -->
                 <output> <?php echo $achcount1['count'] ?></output>
                 
-                <label style="width: 200px;margin: 10px;">Totale Percentage</label>
+                <label style="width: 200px; padding-left: 20px; margin: 10px;">Totale Percentage</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
                 <output> <?php echo $totalPercentage ?>%</output> <br>
 
-                <label style="margin: 10px;">Member Rank</label>
+                <label style="margin: 10px; padding-left: 20px; padding-bottom: 20px;">Member Rank</label>
                 <img
                     src="Pictures/rank.png"
                     alt="member rank"
