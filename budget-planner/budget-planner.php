@@ -198,7 +198,13 @@
               <label>Difference</label>
               <input type="number" id="difference" readonly="readonly"/>
 
-            <button class="submitButton" type="submit">Submit</button>
+            <?php
+            if($budgetID == 0) {
+              echo "<button class='submitButton' type='submit'>Submit</button>";
+            } else {
+              echo "<button class='submitButton' type='submit'>Update</button>";
+            }
+            ?>
 
           </div>
           <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.4); margin-top: 80px;">
@@ -279,13 +285,9 @@
           while($row = $result->fetch_assoc()) {
 
             if($row["transactionType"] == "income") {
-
-              //echo "incomeInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
               echo "incomePlanner.add(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
 
             } else {
-
-              //echo "expenseInput.push(['" . $row['transactionName'] . "', " . $row['transactionValue'] . "]);";
               echo "expensePlanner.add(['" . $row['transactionName'] . "', " . $row['transactionValue'] . ", 1]);";
             }
           }

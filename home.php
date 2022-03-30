@@ -25,6 +25,47 @@
   $result   = $conn->query($sql);
   $row      = $result->fetch_assoc();
   $lastBudgetID = isset($row["budgetID"])? $row["budgetID"] : 0;
+
+  $sql = "SELECT goalValue, goalName, goalCreationDate from goal WHERE customerID='$id'
+    AND goalDate > CURDATE()
+    ORDER BY goalValue DESC
+    LIMIT 1;";
+
+  $result     = $conn->query($sql);
+  $row        = $result->fetch_assoc();
+
+  $goalValue;
+  $goalName;
+  $goalDate;
+  $sumSaved = 0.0;
+  $percentage;
+
+  $doesGoalExist = isset($row["goalValue"])? true : false;
+
+
+  if($doesGoalExist) {
+    $goalValue  = $row["goalValue"];
+    $goalName   = $row["goalName"];
+    $goalDate   = $row["goalCreationDate"];
+
+    $sql = "SELECT budgetID FROM budget WHERE customerID='$id'
+      AND creationDate <= '$goalDate';";
+
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      $currentID = $row["budgetID"];
+      $sql = "SELECT * FROM transactions WHERE budgetID='$currentID'
+        AND transactionName='$goalName';";
+
+      $innerResult  = $conn->query($sql);
+      $innerRow     = $innerResult->fetch_assoc();
+
+      $sumSaved += $innerRow["transactionValue"];
+    }
+
+    $percentage = $sumSaved / $goalValue * 100;
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -173,8 +214,15 @@
       <div class="block" style="">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
-          <p>Summary</p>
-          <p>Summary</p>
+          <div style="width: 30%; float: left;">
+            <h2 id="progressLabel" style="text-align: center;">Saving goal</h2>
+            <div id="progressBar"></div>
+          </div>
+          <div style="width: 30%; float: left;">
+            <h2 style="text-align: center;">Budget</h2>
+            <h3 id="incomeDiv" style="text-align: center;"></h3>
+            <h3 id="expenseDiv" style="text-align: center;"></h3>
+          </div>
         </div>
       </div>
       <div class="block" style="">
@@ -211,11 +259,14 @@
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
     <script src="graphs.js"></script>
+    <script src="progress.js"></script>
     <script>
 
       // Henter inn data fra sql for det gjeldene busjettet denne måenden
       var expenseNames  = [];
       var expenseValues = [];
+      var incomeNames  = [];
+      var incomeValues = [];
 
       <?php
 
@@ -229,10 +280,32 @@
             if($row["transactionType"] == "expense") {
               echo "expenseValues.push('" . $row['transactionValue'] . "');";
               echo "expenseNames.push('" . $row['transactionName'] . "');";
+            } else {
+              echo "incomeValues.push('" . $row['transactionValue'] . "');";
+              echo "incomeNames.push('" . $row['transactionName'] . "');";
             }
           }
         }
       ?>
+
+      if(incomeValues.length > 0 || expenseValues > 0) {
+        var totalIncome   = 0;
+        var totalExpense  = 0;
+
+        for(var i = 0;i < incomeValues.length;i++) {
+          totalIncome += parseInt(incomeValues[i]);
+        }
+
+        for(var i = 0;i < expenseValues.length;i++) {
+          totalExpense += parseInt(expenseValues[i]);
+        }
+
+        document.getElementById("incomeDiv").innerHTML = "Total income: " + totalIncome + " kr";
+        document.getElementById("expenseDiv").innerHTML = "Total Expense: " + totalExpense + " kr";
+
+      } else {
+        document.getElementById("incomeDiv").innerHTML = "You do not yet have a budget. Create one in budget planner";
+      }
 
       // Monthly budget
       var budgetCanvas = document.getElementById("budgetCanvas").getContext("2d");
@@ -242,6 +315,14 @@
         expenseValues, 
         TYPE_BAR_HORISONTAL
       );
+
+      <?php
+        if($doesGoalExist) {
+          echo "progressBar('progressBar', 'progressLabel', '" . $goalName . "', " . $percentage . ", " . $goalValue . ");";
+        } else {
+          echo "document.getElementById('progressLabel').innerHTML='No saving goals. Create your first saving goal in budget planner!';";
+        }
+      ?>
 
     </script>
   </body>

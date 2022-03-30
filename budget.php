@@ -26,6 +26,47 @@
   $result   = $conn->query($sql);
   $row      = $result->fetch_assoc();
   $budgetID = isset($row["budgetID"])? $row["budgetID"] : 0;
+
+  $sql = "SELECT goalValue, goalName, goalCreationDate from goal WHERE customerID='$id'
+    AND goalDate > CURDATE()
+    ORDER BY goalValue DESC
+    LIMIT 1;";
+
+  $result     = $conn->query($sql);
+  $row        = $result->fetch_assoc();
+
+  $goalValue;
+  $goalName;
+  $goalDate;
+  $sumSaved = 0.0;
+  $percentage;
+
+  $doesGoalExist = isset($row["goalValue"])? true : false;
+
+  if($doesGoalExist) {
+    $goalValue  = $row["goalValue"];
+    $goalName   = $row["goalName"];
+    $goalDate   = $row["goalCreationDate"];
+
+    $sql = "SELECT budgetID FROM budget WHERE customerID='$id'
+      AND creationDate <= '$goalDate';";
+
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      $currentID = $row["budgetID"];
+      $sql = "SELECT * FROM transactions WHERE budgetID='$currentID'
+        AND transactionName='$goalName';";
+
+      $innerResult  = $conn->query($sql);
+      $innerRow     = $innerResult->fetch_assoc();
+
+      $sumSaved += $innerRow["transactionValue"];
+    }
+
+    $percentage = $sumSaved / $goalValue * 100;
+  }
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -147,8 +188,8 @@
             <canvas id="smallUpperCanvas"></canvas>
           </div>
           <div class="contentBox" style="margin: 0; min-width: 100%;">
-            <h2>Card balances</h2>
-            <canvas id="smallLowerCanvas"></canvas>
+            <h2 id="progressLabel">Saving Goal</h2>
+            <div id="progressBar" style="max-width: 80%; margin: auto;"></div>
           </div>
         </div>
 
@@ -176,6 +217,7 @@
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
     <script src="graphs.js"></script>
+    <script src="progress.js"></script>
     <script>
       
       // Data vi kommer til å hente fra databasen
@@ -225,15 +267,14 @@
         incomeValues, 
         TYPE_BAR_VERTICAL
       );
-      // Card balances
-      var smallLowerCanvas = document.getElementById("smallLowerCanvas").getContext("2d");
-      createChart(
-        smallLowerCanvas, 
-        ["10.05", "11.05", "12.05", "13.05", "14.05", "15.05", "16.05", "17.05", "18.05", "19.05", "20.05", "21.05"], 
-        [100000, 97500, 96403, 85931, 76301, 156043, 156043, 155371, 150379, 140579, 130271, 60000], 
-        TYPE_LINE
-      );
-
+      // Progress bar for saving goal
+      <?php
+        if($doesGoalExist) {
+          echo "progressBar('progressBar', 'progressLabel', '" . $goalName . "', " . $percentage . ", " . $goalValue . ");";
+        }  else {
+          echo "document.getElementById('progressLabel').innerHTML='No saving goals. Create your first saving goal in budget planner!';";
+        }
+      ?>
 
     </script>
   </body>
