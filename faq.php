@@ -114,38 +114,29 @@
 
         <main>
             <h1 style="text-align: center;">Help / FAQ</h1>
-            <div class="block">
-                <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 10px 0;">
-                    <h2>Question</h2>
-                    <p>Q: How to change password</p>
+            <div class="block"style="width: 90%; margin-left:auto; margin-right:auto;">
+                <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
+                    <h2>Getting started on Finance Budget App</h2>
+                    <p>Navigate to start page and press register button. On the next page you have to enter your credentials and press register.</p>
                     <p>A: Click on <a href="forgot-password.php">"forgot password"</a> and follow the steps from the recieved mail.</p>
                 </div>
             </div>
-        </main>
-
-        <main>
-            <div class="block">
-            <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 10px 0;">
+            <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
+            <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
                 <h2>Question</h2>
                 <p>Q: Curriculum Vitae</p>
                 <p>A: Congratulation</p>
             </div>
             </div>
-        </main>
-
-        <main>
-            <div class="block">
-            <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 10px 0;">
+            <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
+            <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
                 <h2>Question</h2>
                 <p>Q</p>
                 <p>A</p>
             </div>
             </div>
-        </main>
-
-        <main>
-            <div class="block">
-                <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 10px 0;">
+            <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
+                <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
                     <h2>Question</h2>
                     <p>Q</p>
                     <p>A</p>
