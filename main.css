@@ -1,5 +1,4 @@
 /* Generalised styling for the page */
-
 body {
   background-color: #f7f1f0;
   min-height: 100%;
@@ -18,11 +17,8 @@ main {
   padding-bottom: 10rem;
 }
 
-/* End of generalised styling */
 
-
-
-/* styling for chart canvas */
+/* Styling for chart canvas */
 canvas { 
   margin: auto;
   width: calc(100% - 40px);
@@ -135,7 +131,6 @@ h1 {
   color: #262220;
 }
 /* Main content ends here*/
-
 
 
 
