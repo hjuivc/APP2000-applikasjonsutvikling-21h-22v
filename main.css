@@ -14,14 +14,13 @@ a {
   text-decoration: none;
 }
 
-/* End of generalised styling */
-
-
-
-/* Main content starts here */
 main {
   padding-bottom: 10rem;
 }
+
+/* End of generalised styling */
+
+
 
 /* styling for chart canvas */
 canvas { 
