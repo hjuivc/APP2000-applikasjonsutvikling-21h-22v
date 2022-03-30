@@ -86,16 +86,16 @@ if(isset($_POST['register_btn'])) {
     <footer>
       <ul>
         <li>
-          <a href="../home.html">Home</a>
+          <a href="../home.php">Home</a>
         </li>
         <li>
-          <a href="../faq.html">FAQ</a>
+          <a href="../faq.php">FAQ</a>
         </li>
         <li>
-          <a href="../about.html">About</a>
+          <a href="../about.php">About</a>
         </li>
         <li>
-          <a href="../contacts.html">Contact</a>
+          <a href="../contacts.php">Contact</a>
         </li>
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
