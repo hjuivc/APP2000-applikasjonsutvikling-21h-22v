@@ -102,7 +102,7 @@
                 />Help
               </div></a
             >
-            <a href="index.php"
+            <a href="login/logout.php"
               ><div class="block sideMenuItem">
                 <img
                   src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
