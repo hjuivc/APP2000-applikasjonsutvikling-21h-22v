@@ -94,14 +94,6 @@
                 />Profile
               </div></a
             >
-            <a href="settings.php"
-              ><div class="block sideMenuItem">
-                <img
-                  src="https://www.svgrepo.com/show/198090/gear.svg"
-                  class="sideMenuIcon"
-                />Settings
-              </div></a
-            >
             <a href="faq.php"
               ><div class="block sideMenuItem">
                 <img
