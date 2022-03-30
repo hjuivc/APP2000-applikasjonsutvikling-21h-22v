@@ -211,7 +211,7 @@
             }
           }
         </script>
-      <div class="block" style="">
+      <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
           <div style="width: 30%; float: left;">
@@ -225,7 +225,7 @@
           </div>
         </div>
       </div>
-      <div class="block" style="">
+      <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
         <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0; margin-right: 50px">
           <h2>Budget</h2>
           <canvas id="budgetCanvas"></canvas>
