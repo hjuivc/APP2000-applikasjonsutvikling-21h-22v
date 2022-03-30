@@ -138,7 +138,7 @@
                 />Help
               </div></a
             >
-            <a href="index.php"
+            <a href="login/logout.php"
               ><div class="block sideMenuItem">
                 <img
                   alt="side_menu_icon"
