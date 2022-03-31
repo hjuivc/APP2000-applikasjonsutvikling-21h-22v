@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleContact.css"/>
-    <title>Finance Budget App</title>
+    <title>Contact Us</title>
 </head>
 <body>
     <header class="block" style="justify-content: left;">
@@ -54,14 +54,6 @@
                             src="https://www.svgrepo.com/show/7025/user.svg"
                             class="sideMenuIcon"
                         />Profile
-                        </div></a
-                    >
-                    <a href="../settings.php"
-                        ><div class="block sideMenuItem">
-                        <img
-                            src="https://www.svgrepo.com/show/198090/gear.svg"
-                            class="sideMenuIcon"
-                        />Settings
                         </div></a
                     >
                     <a href="../faq.php"
