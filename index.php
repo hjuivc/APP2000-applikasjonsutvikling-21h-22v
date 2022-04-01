@@ -57,22 +57,15 @@
     }
     ?>
       <div class="contentBox" style="max-width: 640px;">
-        <h2>Why finance budgeting app</h2>
-        <p>
-          Are you not able to keep track of your economy and spendings? Do 
-            you want to save more money? Or do you just need a place to organize your spendings?
-             Then Finance Budgeting App is for you!
-        </p>
-        <p>
-          The Finance Budgeting App was created 2022 and are maintained by six IT
-             students attending USN Ringerike. Students are known to have a tight budget,
-              which is something we all had experienced
-        </p>
-        <p>
-          Therefore, we wanted to make this app so we could both help ourselves and others
-             wether you are a student or not. If you have any questions about The Finance Budgeting
-              App, please feel free to <a href="offlineSites/contactFormOffline/index.php"><u>contact and ask us!</u></a>
-        </p>
+        <h2>Why choose finance budgeting app &#128525</h2>
+        <ul style="margin: 10px;">
+          <li style="margin-bottom: 25px; font-size: 20px;">If you are not able to keep track of your economy and spendings &#128184</li>
+          <li style="margin-bottom: 25px; font-size: 20px;">You do not have a place to organize your spendings &#128185</li>
+          <li style="margin-bottom: 25px; font-size: 20px;">You want to have a tool that you can use together with family and friends &#128106</li>
+          <li style="margin-bottom: 25px; font-size: 20px;">You want to have fun and have a gameified experience and get achievements while saving money &#127918</li>
+          <li style="margin-bottom: 25px; font-size: 20px;">Safe place to keep your finance information secure &#128272</li>
+        </ul>
+      
       </div>
       <form class="block" action="index.php" method="post">
         <div class="contentBox" style="max-width: 320px;">
