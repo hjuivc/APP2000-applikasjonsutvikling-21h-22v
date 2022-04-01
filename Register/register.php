@@ -54,7 +54,7 @@ if(isset($_POST['register_btn'])) {
     <title>Finance Budget App</title>
   </head>
   <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
       <img src="../pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
@@ -86,7 +86,7 @@ if(isset($_POST['register_btn'])) {
     <footer>
       <ul>
         <li>
-          <a href="../home.php">Home</a>
+          <a href="../index.php">Home</a>
         </li>
         <li>
           <a href="../faq.php">FAQ</a>
