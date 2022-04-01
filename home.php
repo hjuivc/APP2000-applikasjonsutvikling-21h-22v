@@ -1,4 +1,10 @@
 <?php
+
+  // Lage en cookie for alert box
+  $cookie_name = "alert";
+  $cookie_value = "alert";
+  setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/");
+
   session_start();
   $email = $_SESSION['email'];
 
@@ -194,23 +200,28 @@
     </header>
 
     <main>
-    <div class="alert">
-            <span class="closebtn">&times;</span>  
-            <strong>UPDATE:</strong> It is now possible to delete the profile yourself under profile settings.
-          </div>
-          <!-- JavaScript code for closing the news box -->
-        <script>
-          var close = document.getElementsByClassName("closebtn");
-          var i;
+      <?php
+      // Legge inn sjekk på cookie for å fjerne varsel
+      if(!isset($_COOKIE[$cookie_name])) {
+        echo '<div class="alert">
+        <span class="closebtn">&times;</span>  
+        <strong>UPDATE:</strong> It is now possible to delete the profile yourself under profile settings.
+      </div>';
+      }
+      ?>
+      <!-- JavaScript code for closing the news box -->
+    <script>
+      var close = document.getElementsByClassName("closebtn");
+      var i;
 
-          for (i = 0; i < close.length; i++) {
-            close[i].onclick = function(){
-              var div = this.parentElement;
-              div.style.opacity = "0";
-              setTimeout(function(){ div.style.display = "none"; }, 600);
-            }
-          }
-        </script>
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+          var div = this.parentElement;
+          div.style.opacity = "0";
+          setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+      }
+    </script>
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
