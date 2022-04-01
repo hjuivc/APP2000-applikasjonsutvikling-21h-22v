@@ -44,7 +44,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
       <img src="pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
