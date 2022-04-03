@@ -178,7 +178,7 @@
     <main style="max-width: calc(1100px + 550px + 50px); margin: auto;">
       <h1 style="text-align: center;">Budget</h1>
       <div class="block" style="width: 100%; flex-wrap: wrap; gap: 50px;">
-        <div class="contentBox" style="max-width: 1100px; width: 100%; margin: 0;">
+        <div class="contentBox" style="max-width: 750px; width: 100%; margin: 0;">
           <h2>Monthly budget</h2>
           <canvas id="largeCanvas"></canvas>
         </div>
