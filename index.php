@@ -75,7 +75,7 @@
           <input type="password" name='password' required>
           <a><button type="submit" value="login" class="loginButton" name="login_btn">Log in</button></a>
           <button class="loginButton"><a href="register/register.php">Register</a></button>
-          <h3 style="margin-top: 100px;"><a href="forgot-password/forgot-password.php">Forgot password</a></h3>
+          <h3 style="margin-top: 100px;"><a href="forgot-password/forgot-password.php">Forgot password?</a></h3>
         </div>
       </form>
     </main>
