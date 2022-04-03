@@ -44,9 +44,6 @@
             <a href="faqOffline.php">FAQ</a>
           </li>
           <li>
-            <a href="aboutOffline.php">About</a>
-          </li>
-          <li>
             <a href="contactFormOffline/index.php">Contact</a>
           </li>
         </ul>
