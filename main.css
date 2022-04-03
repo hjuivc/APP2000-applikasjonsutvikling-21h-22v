@@ -442,6 +442,7 @@ footer ul a:hover {
   background-color: #c3a6a0;
   margin: 20px 50px;
   border-radius: 15px;
+  width: 1000px;
 }
 
 .contentBoxprofile > h2 {
@@ -462,3 +463,26 @@ footer ul a:hover {
 }
 
 /* profile styling ends here */
+/*
+@media only screen and (min-width: 992px) {
+  
+.contentBoxprofile {
+  background-color: #c3a6a0;
+  margin: 20px 50px;
+  border-radius: 15px;
+  width: 1200px;
+}
+
+.contentBoxprofile > h2 {
+  font-size: 30px;
+  margin: 0 50px 15px;
+}
+
+.contentBoxprofile > p {
+  font-size: 18px;
+  margin: 0 50px 15px;
+}
+.contentBoxprofile > h3 {
+  margin: 0 50px 15px;
+}
+}*/
