@@ -173,7 +173,7 @@
             <h3 style="text-align:center;"><a href="profile/delete.php">Delete account?</a></h3>
           </div>
 
-          <div class="contentBoxprofile" style="width: 1000px;">
+          <div class="contentBoxprofile" style="width: 800px;">
             <h2 style="margin-top: 10px;"><?php if($row['name'] == True){ echo $row['name']; } else { echo "No name";} ?></h2>
             <h3><?php if($row['title'] == True){ echo $row['title']; } else { echo "No title";}?></h3>
             <h2>Achievement ranking</h2>
