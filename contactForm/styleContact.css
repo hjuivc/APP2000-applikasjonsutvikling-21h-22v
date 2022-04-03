@@ -12,6 +12,11 @@ body {
   margin: 0;
   position: center;
   font-family: sans-serif;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
 }
 
 a {
@@ -87,9 +92,10 @@ footer {
   text-align: center;
   position: absolute;
   bottom: 0;
-  height: 2.5rem;
   border-top: solid 1px black;
   width: 100%;
+
+  margin-top: auto;
 }
 
 /* Remove blue color from links */
