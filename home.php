@@ -72,6 +72,14 @@
     $percentage = $sumSaved / $goalValue * 100;
   }
 
+
+  //Til achievements
+  $sqlachievementcount = mysqli_query($conn, "SELECT count(CustomerID) AS count FROM userachievement WHERE CustomerID = '$id'");
+  $achcount = $sqlachievementcount->fetch_assoc();
+
+  $totalPerc = $achcount['count'] / 6 * 100;
+  $totalPercentage = round($totalPerc,0);
+
 ?>
 
 <!DOCTYPE html>
@@ -243,7 +251,31 @@
         </div>
             
         <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0;">
-          <h2>Achivements</h2>
+          <h2 style="text-align: center;">Achievements</h2>
+          
+          <div style="margin: 10px;">
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Total Achievements</label>
+            <!-- Legger inn som input for å visualisere hva som skal inn -->
+            <!--<input style="" type="text" /> -->
+            <output style="font-size: 25px;"> <?php echo $achcount['count'] ?></output>
+          </div>
+
+          <div style="margin: 10px;">
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Totale Percentage</label>
+            <!-- Legger inn som input for å visualisere hva som skal inn -->
+            <output style="font-size: 25px;"> <?php echo $totalPercentage ?>%</output> <br>
+          </div>
+
+          <div style="margin: 10px;">
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Member Rank</label>
+            <img
+                src="Pictures/rank.png"
+                alt="member rank"
+                class="achievementspicture"
+                style="width: 40px; height: 40; margin-top: 5%;"
+            />
+          </div>
+
         </div>
       </div>
     </main>
