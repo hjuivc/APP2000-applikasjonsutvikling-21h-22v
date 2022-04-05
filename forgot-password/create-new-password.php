@@ -35,7 +35,7 @@
                 <input type="password" name='password'>
                 <label>Repeat New Password</label>
                 <input type="password" name="confirm-password">
-                <a><button type="submit" class="loginButton" name="reset-password-submit" value="Register">Register</button></a>
+                <a><button type="submit" class="loginButton" name="reset-password-submit" value="Register">Change Password</button></a>
                 <p>
                 </p>
                 <h3 style="margin-top: 100px;"><a href="../index.php">Back to the login page</a></h3>
