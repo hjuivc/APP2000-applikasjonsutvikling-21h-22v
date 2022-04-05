@@ -14,7 +14,7 @@ if(isset($_POST["forgot-submit"])) {
 	$token		= random_bytes(32);
 
 	$link		= 
-		"localhost/forgot-password/create-new-password.php?selector=" 
+		"localhost/APP2000-applikasjonsutvikling-21h-22v/forgot-password/create-new-password.php?selector=" 
 		. $selector .
 		"&validator=" 
 		. bin2hex($token);
