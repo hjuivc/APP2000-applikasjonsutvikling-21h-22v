@@ -174,5 +174,5 @@ else{
 
 echo "<script>
 	alert('New budget uploaded');
-	window.location.href='../budget.php';
+	window.location.href='budget-planner.php';
 </script>";
