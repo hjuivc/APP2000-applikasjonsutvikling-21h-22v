@@ -106,19 +106,19 @@
 
         <div>
             <label for="name">Name:<br></label>
-            <input type="text" value="<?= $inputs['name'] ?? '' ?>" name="name" id="name" placeholder="Full name*">
+            <input type="text" value="<?= $inputs['name'] ?? '' ?>" name="name" id="name">
             <small><?= $errors['name'] ?? '' ?></small>
         </div>
 
         <div>
             <label for="email">Email:<br></label>
-            <input type="email" name="email" id="email" value="<?= $inputs['email'] ?? '' ?>" placeholder="Email address*">
+            <input type="email" name="email" id="email" value="<?= $inputs['email'] ?? '' ?>">
             <small><?= $errors['email'] ?? '' ?></small>
         </div>
 
         <div>
             <label for="subject">Subject:<br></label>
-            <input type="subject" name="subject" id="subject" value="<?= $inputs['subject'] ?? '' ?>" placeholder="Enter a subject*">
+            <input type="subject" name="subject" id="subject" value="<?= $inputs['subject'] ?? '' ?>">
             <small><?= $errors['subject'] ?? '' ?></small>
         </div>
 
