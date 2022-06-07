@@ -94,8 +94,10 @@
           </a>
           
         </header>
-
-    <main class="block" style="flex-wrap: wrap-reverse;">
+        
+    <main>
+    <h1 style="text-align: center;">Budget</h1>
+      <section class="block" style="flex-wrap: wrap-reverse;">
       <div class="contentBox" style="max-width: 640px;">
         <h2>Why Finance Budgeting App?</h2>
         <p>
@@ -117,6 +119,7 @@
               App, please feel free to <a href="contactForm/index.php"><u>contact and ask us!</u></a>
         </p>
       </div>
+      </section>
     </main>
     <footer>
         <ul>
