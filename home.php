@@ -5,6 +5,10 @@
   $cookie_value = "alert";
   setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/");
 
+  $cookie_name_ach1 = "achievement1";
+  $cookie_value_ach1 = "achievement1";
+  setcookie($cookie_name_ach1, $cookie_value_ach1, time() + (86400 * 365), "/");
+
   session_start();
   $email = $_SESSION['email'];
 
@@ -120,6 +124,21 @@
       .closebtn:hover {
         color: black;
       }
+
+      .alertAchievement {
+        padding: 20px;
+        background-color:cornflowerblue;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
     </style>
   </head>
   <body>
@@ -232,6 +251,33 @@
         }
       }
     </script>
+
+
+    <?php 
+      $rowsql1 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '1'");
+      if (mysqli_num_rows($rowsql1) > 0) { 
+          // Legge inn sjekk på cookie for å fjerne varsel
+              if(!isset($_COOKIE[$cookie_name_ach1])) {
+                echo '<div class="alertAchievement">
+                <span class="closebtn">&times;</span>  
+                <strong>NEW ACHIEVEMENT!</strong> Earn more than you spend.
+              </div>';
+              }
+            }?>
+                <script>
+                  var close = document.getElementsByClassName("closebtn");
+                  var i;
+
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function(){
+                      var div = this.parentElement;
+                      div.style.opacity = "0";
+                      setTimeout(function(){ div.style.display = "none"; }, 600);
+                    }
+                  }
+                </script>
+                <!-- Sjekker om $rowsql2 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
