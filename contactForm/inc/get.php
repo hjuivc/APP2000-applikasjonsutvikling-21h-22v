@@ -30,7 +30,7 @@
                         />Budget
                         </div></a
                     >
-                    <a href="../budget-planner.php"
+                    <a href="../budget-planner/budget-planner.php"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/11983/from-a-to-z.svg"
@@ -64,7 +64,7 @@
                         />Help
                         </div></a
                     >
-                    <a href="../index.php"
+                    <a href="../login/logout.php"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
@@ -96,6 +96,7 @@
                 />
                 </a>
     </header>
+    <h1>Contact</h1>
     <main>
 
     <!-- Lagt inn autocomplete="off" for å fjerne synlighet av tidligere info -->
@@ -146,9 +147,6 @@
                     <li>
                         <a href="../about.php">About</a>
                     </li>
-                    <li>
-                        <a href="index.php">Contact</a>
-                    </li>
                 </ul>
                 <p>&copy; 2021 Finance Budget App AS</p>
             </footer>
@@ -156,3 +154,6 @@
             <script src="main.js"></script>
     </body>
 </html>
+
+<!-- Sources for this contactform, fetched from: https://www.phptutorial.net/php-tutorial/php-contact-form/,
+the setup and structure are similar, but changed so that it fits our project and structure --> 

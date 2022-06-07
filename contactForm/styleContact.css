@@ -4,23 +4,25 @@
 
 /* Generalised styling for the page */
 
-
-
 body {
-  background-color: #f7f1f0;
-  padding: 0;
-  margin: 0;
-  position: center;
-  font-family: sans-serif;
+background-color: #f7f1f0;
+padding: 0;
+margin: 0;
+position: center;
+font-family: sans-serif;
 
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 
-  min-height: 100vh;
+min-height: 100vh;
 }
 
 a {
-  text-decoration: none;
+text-decoration: none;
+}
+
+h1 {
+font-size: 48px;
 }
 
 /* End of generalised styling */
@@ -28,61 +30,61 @@ a {
 /* Header content starts here */
 
 header {
-  display: flex;
-  width: 100%;
+display: flex;
+width: 100%;
 }
 .headerLogo {
-  width: 50px;
-  height: 50px;
-  margin-top:2%;
-  margin-left: 1%;
-  margin-right: auto;
+width: 50px;
+height: 50px;
+margin-top:2%;
+margin-left: 1%;
+margin-right: auto;
 }
 
 .sideMenuIcon {
-  width: 40px;
-  height: 40px;
-  margin: -5px 25px 0;
+width: 40px;
+height: 40px;
+margin: -5px 25px 0;
 }
 
 .sideMenuItem {
-  justify-content: left;
-  padding-top: 40px;
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: normal;
+justify-content: left;
+padding-top: 40px;
+color: #ffffff;
+font-size: 25px;
+font-weight: normal;
 }
 
 #sideMenu {
-  display: flex;
-  flex-wrap: wrap;
-  width: 420px;
-  background-color: #a15c38;
-  margin: 100px 0 0;
-  border-radius: 0 15px 0 0;
-  height: calc(100vh - 100px);
-  visibility: hidden;
-  position: fixed;
-  z-index: 1;
+display: flex;
+flex-wrap: wrap;
+width: 420px;
+background-color: #a15c38;
+margin: 100px 0 0;
+border-radius: 0 15px 0 0;
+height: calc(100vh - 100px);
+visibility: hidden;
+position: fixed;
+z-index: 1;
 }
 
 #menuClosed {
-  position: fixed;
+position: fixed;
 }
 
 /* Center photos on top */
 .finance-logo {
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
+margin-left: auto;
+margin-right: auto;
+width: 500px;
 }
 
 .profile-logo {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-top:2%;
-  margin-right: 1%;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+margin-top:2%;
+margin-right: 1%;
 }
 
 /* Header content ends here */
@@ -122,10 +124,10 @@ footer ul a:hover {
 
 .block {
   /*display: flex;*/
-  font-weight: bold;
+  /*color: #262220;
+  font-weight: bold;*/
   justify-content: center;
 }
-
 
 
 /* contact styling */
@@ -142,8 +144,8 @@ footer ul a:hover {
   /* link color */
   --link-color: #7952b3;
   /* text */
-  --text-main: #363636;
-  --text-bright: #000;
+  /*--text-main: #363636;
+  --text-bright: #000;*/
   /* background */
   --background-body: #f9fafb;
   --main-bg: #fff;
@@ -167,27 +169,28 @@ footer ul a:hover {
   /* button */
   --primary: #444c56;
   --secondary: #212529;
-  --border-color: #1c1f23;
-  --button-text: #fff;
+  /*--border-color: #1c1f23;*/
+  /*--button-text: #fff;*/
   --button-focus: 0 0 0 0.25rem rgb(66 70 73 / 50%);
 
   /* link color */
   --link-color: #0d6efd;
 
   /* text */
-  --text-main: #adbac7;
+  /*--text-main: #adbac7;
   --text-bright: #adbac7;
+  */
 
   /* background */
   --background-body: #f7f1f0;
   --main-bg: #C3A6A0;
-  --main-border: 1px solid #444c56;
+  /*--main-border: 1px solid #444c56;*/
 
   /* input */
   --input-text-color: black;
   --input-placeholder-color: black;
   --input-background-color: #F7F1F0;
-  --input-border-color: #373e47;
+  /*--input-border-color: #373e47;*/
   --input-disabled: #373e47;
   --input-focus: 0 0 0 2pt rgb(49, 132, 253, 0.5);
   --box-shadow: none;
@@ -195,9 +198,9 @@ footer ul a:hover {
 
 
 * {
-  margin: 5;
-  padding: 0;
-  box-sizing: border-box;
+margin: 5;
+padding: 0;
+box-sizing: border-box;
 }
 
 
@@ -215,7 +218,7 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+  font: sans-serif;
 }
 
 li {
@@ -232,13 +235,13 @@ li {
 
 main {
   background-color: var(--main-bg);
-  border: var(--main-border);
-  border-radius: 5px;
+  /*border: var(--main-border);*/
+  border-radius: 15px;
   box-shadow: var(--box-shadow);
   max-width: 450px;
   width: 400px;
   padding: 1rem;
-  margin-top: 10%;
+  margin: 20px 50px;
 }
 
 
@@ -273,7 +276,7 @@ form > menu {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  /*margin-bottom: 1rem;*/
 }
 /*
   if the form has one button that span across 
@@ -309,6 +312,9 @@ label {
   margin-bottom: 5px;
   vertical-align: top;
   width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  
 }
 
 /* input, textarea */
@@ -322,8 +328,8 @@ select {
   display: inline-block;
   padding: 0.5rem 0.75rem;
   width: 100%;
-  font-family: inherit;
-  font-size: 1rem;
+  font-family: sans-serif;
+  font-size: 1.5rem;
 }
 
 input::placeholder {
@@ -340,7 +346,7 @@ select:focus {
 input[disabled],
 textarea[disabled] {
   background-color: var(--input-disabled);
-  border: solid 1px var(--input-border-color);
+  /*border: solid 1px var(--input-border-color);*/
   box-shadow: none;
   color: #7a7a7a;
   cursor: not-allowed;
@@ -372,7 +378,7 @@ textarea.success:focus {
 
 /* buttons DO NOT USE input with type submit or button */
 button {
-  background: #a15c38;;
+  /*background: #a15c38;;
   color: #ffffff;
   border-radius: 0.25rem;
   font-size: 1rem;
@@ -381,13 +387,29 @@ button {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   text-align: center;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.75rem;*/
+
+  display: block;
+
+  background-color: #a15c38;
+  color: #ffffff;
+  /*border-color: black;*/
+
+  font-size: 20px;
+
+  width: 140px;
+  padding: 5px 0;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 20px auto 50px;
 }
 
 button:hover {
-  background: var(--secondary);
+  /*background: var(--secondary);
   border-color: var(--border-color);
-  cursor: pointer;
+  cursor: pointer;*/
+
+  color: #262220;
 }
 
 button:focus {
@@ -400,7 +422,7 @@ button:focus {
 
 form > button {
   display: block;
-  width: 100%;
+  width: 50%;
 }
 
 /* labels for radio  & checkbox*/
