@@ -166,20 +166,26 @@
             <input type='file' name='file' style="padding-left: 50px; padding-bottom: 54px;">
             <input type='submit' value='Last opp' name='but_upload' onclick="hideForm()">
             </form>
-            <p>Email: <?php echo $row['EMail'] ?></p>
-            <p>Phone: <?php echo $row['phone'] ?></p> 
-            <p>Address: <?php echo $row['home'] ?></p> 
-            <button type="submit" class="loginButton"><a href="profile/edit.php">Edit profile</a></button>
-            <h3 style="text-align:center;"><a href="profile/delete.php">Delete account?</a></h3>
+            <button type="submit" class="loginButton"><a href="profile/edit.php">Edit profile</a></button>                        
+            <button type="submit" class="loginButton"><a href="profile/delete.php">Delete account?</a></h3>
+
           </div>
 
           <div class="contentBoxprofile" style="width: 800px;">
             <h2 style="margin-top: 10px;"><?php if($row['name'] == True){ echo $row['name']; } else { echo "No name";} ?></h2>
             <h3><?php if($row['title'] == True){ echo $row['title']; } else { echo "No title";}?></h3>
-            <h2>Achievement ranking</h2>
-            <p>
-              Diamond level
-            </p>
+            <hr style="border: 1px solid black; margin-left: 40px; margin-right: 40px;">
+            <h3>Email: <?php echo $row['EMail'] ?></h3>
+            <h3>Phone: <?php echo $row['phone'] ?></h3>
+            <h3>Address: <?php echo $row['home'] ?></h3>
+            <hr style="border: 1px solid black; margin-left: 40px; margin-right: 40px;">
+            <h2>Achievement rank</h2>
+            <img
+                src="Pictures/rank.png"
+                alt="member rank"
+                style="width: 80px; height: 80; margin-left: 15%; margin-top: 3%;"
+            />
+
           </div>
         </div>
       </form>
