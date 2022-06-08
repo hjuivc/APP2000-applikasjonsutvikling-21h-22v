@@ -463,7 +463,7 @@
   </head>
   
   <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
       <img src="../pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
@@ -487,7 +487,7 @@
           <a><button type="submit" class="loginButton" value="Edit" name="update_btn">Save changes</button></a>
           <p>
           </p>
-          <h3 style="margin-top: 100px;"><a href="../profile.php">Cancel</a></h3>
+          <button style="margin-top: 100px;" class="loginButton"><a href="../profile.php">Back to profile</a></button>
         </div>
       </form>
     </main>
