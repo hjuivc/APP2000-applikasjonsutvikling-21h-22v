@@ -281,11 +281,11 @@
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
-          <div style="width: 30%; float: left;">
+          <div style="width: 50%; float: left;">
             <h2 id="progressLabel" style="text-align: center;">Saving goal</h2>
             <div id="progressBar"></div>
           </div>
-          <div style="width: 30%; float: left;">
+          <div style="width: 50%; float: right;">
             <h2 style="text-align: center;">Budget</h2>
             <h3 id="incomeDiv" style="text-align: center;"></h3>
             <h3 id="expenseDiv" style="text-align: center;"></h3>
@@ -293,7 +293,7 @@
         </div>
       </div>
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
-        <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0; margin-right: 50px">
+        <div class="contentBox" style="max-width: 725px; width: 100%; margin: 0; margin-right: 50px; padding-bottom: 40px;">
           <h2>Budget</h2>
           <canvas id="budgetCanvas"></canvas>
         </div>
