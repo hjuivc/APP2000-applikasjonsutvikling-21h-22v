@@ -116,8 +116,8 @@
             <h1 style="text-align: center;">Help / FAQ</h1>
             <div class="block"style="width: 90%; margin-left:auto; margin-right:auto;">
                 <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
-                    <h2>Getting started on Finance Budget App</h2>
-                    <p>Navigate to start page and press register button. On the next page you have to enter your credentials and press register.</p>
+                    <h2>Lost my password</h2>
+                    <p>Q: Lost my password, what to do?</p>
                     <p>A: Click on <a href="forgot-password.php">"forgot password"</a> and follow the steps from the recieved mail.</p>
                 </div>
             </div>
@@ -131,15 +131,15 @@
             <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
             <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
                 <h2>How to see my summary for my budget</h2>
-                <p>On Home, how to see what I am saving for, and how far am I?</p>
-                <p>In Budget Planner you will have to hit the "Update" button for the app to calculate and add your summary to the Home- page.</p>
+                <p>Q: On Home, how to see what I am saving for, and how far am I?</p>
+                <p>A: In Budget Planner you will have to hit the "Update" button for the app to calculate and add your summary to the Home- page.</p>
             </div>
             </div>
             <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
                 <div class="contentBoxFAQ" style="max-width: 1500px; width: 100%; margin: 30px 0;">
                     <h2>Edit profile- information</h2>
-                    <p>I have a new email- address</p>
-                    <p>Simply navigate to your profile page, then hit "Edit profile"</p>
+                    <p>Q: I have a new email- address</p>
+                    <p>A: Simply navigate to your profile page, then hit "Edit profile"</p>
                 </div>
             </div>
         </main>
