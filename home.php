@@ -394,20 +394,20 @@ if (mysqli_num_rows($rowsql1) > 0) {
           <h2 style="text-align: center;">Achievements</h2>
           
           <div style="margin: 10px;">
-            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Total Achievements</label>
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Total Achievements:</label>
             <!-- Legger inn som input for å visualisere hva som skal inn -->
             <!--<input style="" type="text" /> -->
             <output style="font-size: 25px;"> <?php echo $achcount['count'] ?></output>
           </div>
 
           <div style="margin: 10px;">
-            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Totale Percentage</label>
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Totale Percentage:</label>
             <!-- Legger inn som input for å visualisere hva som skal inn -->
             <output style="font-size: 25px;"> <?php echo $totalPercentage ?>%</output> <br>
           </div>
 
           <div style="margin: 10px;">
-            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Member Rank</label>
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Member Rank:</label>
             <img
                 src="Pictures/rank.png"
                 alt="member rank"
