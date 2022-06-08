@@ -22,6 +22,19 @@
                 $sql3 =	"DELETE FROM UserAchievement WHERE CustomerID = '$id'";
                 mysqli_query($conn,$sql3); 
 
+                /* Delete from budget transactions */
+                $sql5 = "SELECT * FROM Budget WHERE CustomerID = '$id'";
+                $result2 = $conn->query($sql5);
+                $row2 = $result2->fetch_assoc();
+                $id2 = $row2['budgetID'];
+
+                $sql6 =	"DELETE FROM Transactions WHERE BudgetID = '$id2'";
+                mysqli_query($conn,$sql6); 
+
+                /* Delete from goals */
+                $sql7 = "DELETE FROM Goal WHERE customerID = '$id'";
+                mysqli_query($conn,$sql7); 
+
                 /* Delete from budget table */ 
                 $sql2 =	"DELETE FROM Budget WHERE CustomerID = '$id'";
                 mysqli_query($conn,$sql2); 
