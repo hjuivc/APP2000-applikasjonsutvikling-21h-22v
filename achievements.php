@@ -151,12 +151,11 @@
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
                 <output> <?php echo $totalPercentage ?>%</output> <br>
 
-                <label style="margin: 10px; padding-left: 20px; padding-bottom: 20px;">Member Rank</label>
+                <label style="margin: 10px; padding-left: 20px; padding-bottom: 20px;">Achievement Rank</label>
                 <img
                     src="Pictures/rank.png"
                     alt="member rank"
-                    class="achievementspicture"
-                    style="width: 40px; height: 40; margin-left: 20%; margin-top: 5%;"
+                    style="width: 40px; height: 40; margin-left: 10%; margin-top: 5%;"
                 />
             </div>
 
