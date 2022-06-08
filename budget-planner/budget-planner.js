@@ -11,10 +11,12 @@ function parseInput(value) {
 }
 
 class Field {
-  constructor(name, type) {
+  constructor(name, type, style = "") {
     this.name = name;
     this.type = type;
+    this.style = style;
   }
+
 }
 
 class Planner {
@@ -71,6 +73,7 @@ class Planner {
           + "' type='"  + this.classes[j].type
           + "' name='"  + this.name + "-" + this.classes[j].name + "[]"
           + "' value='" + this.arr[i][j]
+          + "' style='" + this.classes[j].style
           + "'onchange='updateSummary(incomePlanner, expensePlanner)'>";
       }
 
