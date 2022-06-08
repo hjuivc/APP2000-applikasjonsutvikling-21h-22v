@@ -54,6 +54,13 @@
 
   $image = $rowimage['name'];
   $image_src = "upload/".$image;
+
+  // legger inn dette slik achivement medaljen funker
+  $sqlachievementcount1 = mysqli_query($conn, "SELECT count(CustomerID) AS count FROM userachievement WHERE CustomerID = '$id'");
+  $achcount1 = $sqlachievementcount1->fetch_assoc();
+  
+  $totalPerc = $achcount1['count'] / 6 * 100;
+  $totalPercentage = round($totalPerc,0);
 ?>
 
 <!doctype html>
@@ -179,11 +186,34 @@
             <h3>Address: <?php echo $row['home'] ?></h3>
             <hr style="border: 1px solid black; margin-left: 40px; margin-right: 40px;">
             <h2 style="margin-top: 30px;">Achievement rank</h2>
-            <img
-                src="Pictures/rank.png"
-                alt="member rank"
-                style="width: 80px; height: 80; margin-left: 15%; margin-top: 3%;"
-            />
+            <?php if ($totalPercentage < 34)
+                {?>
+                  <img
+                    src="Pictures/bronze-medal.png"
+                    alt="member rank"
+                    style="width: 70px; height: 70; margin-left: 18%; margin-top: 2%;"
+                  />
+
+                <?php }
+                  elseif ($totalPercentage > 34 && $totalPercentage < 68)
+                  { ?>
+                  <img
+                    src="Pictures/silver-medal.png"
+                    alt="member rank"
+                    style="width: 70px; height: 70; margin-left: 18%; margin-top: 2%;"
+                  />
+
+                <?php }
+                  elseif ($totalPercentage > 68)
+                  { ?>
+                  <img
+                    src="Pictures/gold-medal.png"
+                    alt="member rank"
+                    style="width: 70px; height: 70; margin-left: 18%; margin-top: 2%;"
+                  />
+                  <?php } else {
+                    
+                  }  ?>
 
           </div>
         </div>
