@@ -407,13 +407,35 @@ if (mysqli_num_rows($rowsql1) > 0) {
           </div>
 
           <div style="margin: 10px;">
-            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Member Rank:</label>
-            <img
-                src="Pictures/rank.png"
-                alt="member rank"
-                class="achievementspicture"
-                style="width: 40px; height: 40; margin-top: 5%;"
-            />
+            <label style="width: 250px; padding-left: 20px; margin: 10px; font-size: 25px; display: inline-block;">Member Rank</label>
+            <?php if ($totalPercentage < 34)
+                {?>
+                  <img
+                    src="Pictures/bronze-medal.png"
+                    alt="member rank"
+                    style="width: 40px; height: 40; margin-left: 0.4%; margin-top: 0.4%; position: absolute;"
+                  />
+
+                <?php }
+                  elseif ($totalPercentage > 34 && $totalPercentage < 68)
+                  { ?>
+                  <img
+                    src="Pictures/silver-medal.png"
+                    alt="member rank"
+                    style="width: 40px; height: 40; margin-left: 0.4%; margin-top: 0.4%; position: absolute;"
+                  />
+
+                <?php }
+                  elseif ($totalPercentage > 68)
+                  { ?>
+                  <img
+                    src="Pictures/gold-medal.png"
+                    alt="member rank"
+                    style="width: 40px; height: 40; margin-left: 0.4%; margin-top: 0.4%; position: absolute;"
+                  />
+                  <?php } else {
+                    
+                  }  ?>
           </div>
 
         </div>
