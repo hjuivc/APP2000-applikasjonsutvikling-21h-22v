@@ -29,16 +29,16 @@
     <footer>
       <ul>
         <li>
-          <a href="../home.php">Home</a>
+          <a href="../index.php">Home</a>
         </li>
         <li>
-          <a href="../faq.php">FAQ</a>
+          <a href="../offlineSites/faqOffline.php">FAQ</a>
         </li>
         <li>
-          <a href="../about.php">About</a>
+          <a href="../offlineSites/aboutOffline.php">About</a>
         </li>
         <li>
-          <a href="../contacts.php">Contact</a>
+          <a href="../offlineSites/contactFormOffline/index.php">Contact</a>
         </li>
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
