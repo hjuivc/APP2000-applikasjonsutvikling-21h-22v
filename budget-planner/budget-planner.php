@@ -40,7 +40,7 @@
         font-size: 25px;
 
         margin: 0 25px;
-        max-width: 9vw;
+        max-width: 30%;
         min-height: 30px;
         border: 0;
         border-radius: 3px;
@@ -264,7 +264,11 @@
 
       // Saving goals
       name        = "future";
-      classes     = [new Field("name", "text"), new Field("value", "number"), new Field("date", "date")];
+      classes     = [
+        new Field("name", "text", "max-width: 25%"), 
+        new Field("value", "number", "max-width: 15%;"), 
+        new Field("date", "date", "max-width: 25%")
+      ];
       defaultArr  = ["saving goal", 0, null, 0];
 
       var futurePlanner = new Planner(name, classes, defaultArr);
