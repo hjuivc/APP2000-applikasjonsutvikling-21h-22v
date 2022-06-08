@@ -147,16 +147,42 @@
                 <!--<input style="" type="text" /> -->
                 <output> <?php echo $achcount1['count'] ?></output>
                 
-                <label style="width: 200px; padding-left: 20px; margin: 10px;">Totale Percentage</label>
+                <label style="width: 200px; padding-left: 20px; margin: 10px; padding-bottom: 20px;">Totale Percentage</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
                 <output> <?php echo $totalPercentage ?>%</output> <br>
 
                 <label style="margin: 10px; padding-left: 20px; padding-bottom: 20px;">Achievement Rank</label>
-                <img
-                    src="Pictures/rank.png"
+
+                
+                <?php if ($totalPercentage < 34)
+                {?>
+                  <img
+                    src="Pictures/bronze-medal.png"
                     alt="member rank"
                     style="width: 40px; height: 40; margin-left: 10%; margin-top: 5%;"
-                />
+                  />
+
+                <?php }
+                  elseif ($totalPercentage > 34 && $totalPercentage < 68)
+                  { ?>
+                  <img
+                    src="Pictures/silver-medal.png"
+                    alt="member rank"
+                    style="width: 40px; height: 40; margin-left: 10%; margin-top: 5%;"
+                  />
+
+                <?php }
+                  elseif ($totalPercentage > 68)
+                  { ?>
+                  <img
+                    src="Pictures/gold-medal.png"
+                    alt="member rank"
+                    style="width: 40px; height: 40; margin-left: 2.5%; margin-top: 0.1%; position: absolute;"
+                  /> 
+                  <?php } else {
+                    
+                  }  ?>
+
             </div>
 
             <div class="contentBoxAchievements" style="max-width: 500px; width: 100%; padding: 10px;">
@@ -173,7 +199,8 @@
             ?>
             
             <!-- Sjekker om $rowsql1 inneholder data, om det er innhold i spørringen sender den ut html koden -->
-            <?php if (mysqli_num_rows($rowsql1) > 0) 
+            <?php 
+            if (mysqli_num_rows($rowsql1) > 0) 
             { ?>
 
                 <section style="display:flex"> 
@@ -181,9 +208,9 @@
                         src="Pictures/graph.png"
                         alt="graph"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
+                        style="width: 40px; height: 50; margin-left: 2%; margin: 1.4% 1%; position: absolute;"
                     />
-                    <h3>Net positive</h3>
+                    <h3 style = "margin-left: 14%">Net positive</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Earn more than you spend</under>
                 
@@ -194,12 +221,12 @@
 
                 <section style="display:flex; margin-top: 20px">
                     <img
-                        src="Pictures/bigspender.png"
+                        src="Pictures/bigspenderss.png"
                         alt="big spender"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
+                        style="width: 40px; height: 50; margin-left: 2%; margin: 1% 1%; position: absolute;"
                     />
-                    <h3>Big spender</h3> 
+                    <h3 style = "margin-left: 14%">Big spender</h3> 
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Spend more than 10 000$ one month</under>
                 
@@ -213,9 +240,9 @@
                         src="Pictures/smile.ico"
                         alt="welcome"
                         class="achievemntspicture"
-                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
+                        style="width: 40px; height: 50; margin-left: 2%; margin: 1.5% 1%; position: absolute;"
                     />
-                    <h3>Welcome!</h3>
+                    <h3 style = "margin-left: 14%">Welcome!</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Made an account</under>
                 
@@ -229,9 +256,9 @@
                         src="Pictures/smart.jpg"
                         alt="smart investor"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
+                        style="width: 40px; height: 50; margin-left: 2%; margin: 1.4% 1%; position: absolute;"
                     />
-                    <h3>Smart investor</h3>
+                    <h3 style = "margin-left: 14%">Smart investor</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Have an additional source of income</under>
                 
@@ -245,9 +272,9 @@
                         src="Pictures/investor.png"
                         alt="first budget"
                         class="achievemntspicture"
-                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
+                        style="width: 40px; height: 50; margin-left: 2%; margin: 1.5% 1%; position: absolute;"
                     />
-                    <h3>First budget</h3>
+                    <h3 style = "margin-left: 14%">First budget</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Create your first budget</under>
                 
@@ -261,9 +288,9 @@
                         src="Pictures/person.png"
                         alt="accomplished"
                         class="achievementspicture"
-                        style="width: 40px; height: 40; margin-left: 2%; display: inline-block; margin: 1% 3%;"
+                        style="width: 40px; height: 50; margin-left: 2%; margin: 1.4% 1%; position: absolute;"
                     />
-                    <h3>Accomplished</h3>
+                    <h3 style = "margin-left: 14%">Accomplished</h3>
                 </section>
                 <under style="margin-left: 14%; font-style: italic;">Complete 5 achievements</under>
                 
