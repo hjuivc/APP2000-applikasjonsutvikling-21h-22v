@@ -101,9 +101,6 @@
 
     <!-- Lagt inn autocomplete="off" for å fjerne synlighet av tidligere info -->
     <form action="index.php" method="post" autocomplete="off">
-        <header2>
-            <h1>Contact Us</h1>
-        </header2>
 
         <div>
             <label for="name">Name:<br></label>
