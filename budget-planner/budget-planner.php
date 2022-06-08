@@ -33,35 +33,9 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="planner.css">
     <title>Finance Budget App</title>
-    <style>
-      .contentBox > input, .contentBox > div > div > input {
-        background-color: #f7f1f0;
-        font-size: 25px;
-
-        margin: 0 25px;
-        max-width: 30%;
-        min-height: 30px;
-        border: 0;
-        border-radius: 3px;
-      }
-
-      .planner {
-        max-width: 90%;
-        margin: auto;
-        margin-bottom: 10px;
-      }
-
-      .removeButton {
-        position: relative;
-        top: -4px;
-      }
-
-      .addButton {
-        margin: 0 0 5% 5%;
-      }
-
-    </style>
+    
   </head>
   <body>
     <header>
@@ -159,6 +133,15 @@
 
     </header>
 
+
+    <?php
+      // Tooltips for info span
+      $tooltipExpense = "Click the + button to add a new expense for this month's budget";
+      $tooltipFuture  = "Click the + button to add a long term saving goal";
+      $tooltipIncome  = "Click the + button to add a source of income for this month";
+
+    ?>
+
     <main style="max-width: calc(1100px + 550px + 50px); margin: auto;">
       <h1 style="text-align: center;">Budget Planner</h1>
       <form action="upload-budget.php" method="post">
@@ -178,7 +161,8 @@
 
             </div>
             <button class="addButton" type="button" id="addButton-future"><i class="fas fa-plus-square"></i></button>
-
+            <span class="tooltip" data-tooltip="<?php echo $tooltipFuture ?>">🛈 how to use</span>
+            <button class="submitButton" type="submit">Set goals</button>
           </div>
           <div class="contentBox" style="max-width: 100vw; min-width: calc(100% * 0.4);">
             <h2>Income</h2>
@@ -186,6 +170,7 @@
 
             </div>
             <button class="addButton" type="button" id="addButton-income"><i class="fas fa-plus-square"></i></button>
+            <span class="tooltip" data-tooltip="<?php echo $tooltipIncome ?>">🛈 how to use</span>
           </div>
         </div>
         <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
@@ -213,6 +198,7 @@
 
             </div>
             <button class="addButton" type="button" id="addButton-expense"><i class="fas fa-plus-square"></i></button>
+            <span class="tooltip" data-tooltip="<?php echo $tooltipExpense ?>">🛈 how to use</span>
           </div>
         </div>
       </form>

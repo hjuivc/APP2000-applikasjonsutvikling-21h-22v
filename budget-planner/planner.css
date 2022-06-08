@@ -1,0 +1,51 @@
+.contentBox > input, .contentBox > div > div > input {
+    background-color: #f7f1f0;
+    font-size: 25px;
+
+    margin: 0 25px;
+    max-width: 30%;
+    min-height: 30px;
+    border: 0;
+    border-radius: 3px;
+}
+
+.planner {
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.removeButton {
+    position: relative;
+    top: -4px;
+}
+
+.addButton {
+    margin: 0 0 5% 5%;
+}
+
+.tooltip {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.tooltip::before {
+    --scale: 0;
+    position: absolute;
+    width: 20px;
+    max-width: 150%;
+    transform: translateX(-50%) translateY(25px) scale(var(--scale));
+    transition: 50ms transform;
+    left: 50%;
+    content: attr(data-tooltip);
+    color: white;
+    padding: 2px;
+    width: max-content;
+    background: #262220;
+    border-radius: 2px;
+}
+
+.tooltip:hover::before {
+    --scale: 1;
+}
