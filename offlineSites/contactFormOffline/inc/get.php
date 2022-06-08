@@ -10,20 +10,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleOffline.css"/>
-    <title>Finance Budget App</title>
+    <title>Contact Us</title>
 </head>
     <body>
     <header class="block" style="margin-top: 30px;">
         <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
         <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
+    <h1>Contact</h1>
     <main>
 
     <!-- Lagt inn autocomplete="off" for å fjerne synlighet av tidligere info -->
     <form action="index.php" method="post" autocomplete="off">
-        <header2>
-            <h1>Contact Us</h1>
-        </header2>
 
         <div>
             <label for="name">Name:<br></label>
@@ -66,9 +64,6 @@
                     </li>
                     <li>
                         <a href="../aboutOffline.php">About</a>
-                    </li>
-                    <li>
-                        <a href="index.php">Contact</a>
                     </li>
                 </ul>
                 <p>&copy; 2021 Finance Budget App AS</p>

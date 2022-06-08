@@ -127,7 +127,7 @@
             class="finance-logo"
         />
         
-        <a href="profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
+        <a href="profile.php" style="margin-top: 2%; margin-right: 1%;position: fixed; right: 0">
         <img 
             src="<?php echo $image_src;  ?>"
             alt="profile_photo" 
@@ -218,7 +218,7 @@
                     />
                     <h3>Welcome!</h3>
                 </section>
-                <under style="margin-left: 14%; font-style: italic;">Made an acoount</under>
+                <under style="margin-left: 14%; font-style: italic;">Made an account</under>
                 
                 <!-- Sjekker om $rowsql4 inneholder data, om det er innhold i spørringen sender den ut html koden -->
                 <?php } 

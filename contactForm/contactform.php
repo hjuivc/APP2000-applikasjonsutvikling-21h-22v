@@ -85,7 +85,7 @@
                         />Help
                         </div></a
                     >
-                    <a href="index.html"
+                    <a href="../login/logout.php"
                         ><div class="block sideMenuItem">
                         <img
                             src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
@@ -108,11 +108,13 @@
                     alt="logo_header"
                     class="finance-logo"
                 />
+                <a href="../profile.php" style="margin-top: 2%; margin-right: 1%; position: fixed; right: 0;">
                 <img
-                    src="<?php echo $image_src;  ?>"
-                    alt="profile_photo"
-                    class="profile-logo"
+                src="<?php echo $image_src;  ?>"
+                alt="profile_photo"
+                class="profile-logo"
                 />
+                </a>
     </header>
     <main>
     

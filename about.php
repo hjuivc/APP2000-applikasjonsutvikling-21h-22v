@@ -60,7 +60,7 @@
                   />Help
                 </div></a
               >
-              <a href="index.php"
+              <a href="login/logout.php"
                 ><div class="block sideMenuItem">
                   <img
                     src="https://www.svgrepo.com/show/334066/log-out-circle.svg"
@@ -85,7 +85,7 @@
               class="finance-logo"
           />
           
-          <a href="profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
+          <a href="profile.php" style="margin-top: 2%; margin-right: 1%;position: fixed; right: 0">
           <img 
               src="<?php echo $image_src;  ?>"
               alt="profile_photo" 
@@ -94,8 +94,10 @@
           </a>
           
         </header>
-
-    <main class="block" style="flex-wrap: wrap-reverse;">
+        
+    <main>
+    <h1 style="text-align: center;">Budget</h1>
+      <section class="block" style="flex-wrap: wrap-reverse;">
       <div class="contentBox" style="max-width: 640px;">
         <h2>Why Finance Budgeting App?</h2>
         <p>
@@ -117,6 +119,7 @@
               App, please feel free to <a href="contactForm/index.php"><u>contact and ask us!</u></a>
         </p>
       </div>
+      </section>
     </main>
     <footer>
         <ul>
