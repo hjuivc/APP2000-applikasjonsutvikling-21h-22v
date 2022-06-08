@@ -70,7 +70,7 @@
   </head>
   
   <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
       <img src="../pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
@@ -82,9 +82,8 @@
           <label style="margin-top: 50px;">Confirm e-mail</label>
           <input type="text" name='email' required>
           <a><button type="submit" class="loginButton" value="Delete" name="delete_btn">Delete account</button></a>
-          <p>
-          </p>
-          <h3 style="margin-top: 100px;"><a href="../profile.php">Cancel</a></h3>
+  
+          <button style="margin-top: 100px;" class="loginButton"><a href="../profile.php">Back to profile</a></button>
         </div>
       </form>
     </main>
