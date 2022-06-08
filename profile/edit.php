@@ -14,6 +14,8 @@
   $title_old = $row['title'];
   $name_old = $row['name'];
 
+  $tooltipsavechanges = "You always have to enter e-mail to make changes. Enter a different e-mail to change the current e-mail address.";
+
 	if(isset($_POST['update_btn'])) {
     if($_POST['email'] == True && $_POST['phone'] == True && $_POST['home'] == True && $_POST['title']  == True && $_POST['name']) {
       $email=mysqli_real_escape_string($conn,$_POST['email']);
@@ -458,12 +460,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../main.css" />
     <title>Finance Budget App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   
   <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
       <img src="../pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
@@ -473,7 +474,7 @@
       <form class="block" action="edit.php" method="post">
 
         <div class="contentBox">
-          <label style="margin-top: 50px;">Update e-mail</label>
+          <label style="margin-top: 50px;">Update/confirm e-mail</label>
           <input type="text" name='email'>
           <!-- Må legges inn adresse og telefonnr i databasen så det også kan edites -->
           <label>Update phone number</label>
@@ -484,10 +485,9 @@
           <input type="text" name='title'>
           <label>Update name</label>
           <input type="text" name='name'>
+          <p class="tooltip" data-tooltip="<?php echo $tooltipsavechanges ?>">🛈 How to save changes</p>
           <a><button type="submit" class="loginButton" value="Edit" name="update_btn">Save changes</button></a>
-          <p>
-          </p>
-          <h3 style="margin-top: 100px;"><a href="../profile.php">Cancel</a></h3>
+          <button style="margin-top: 100px;" class="loginButton"><a href="../profile.php">Back to profile</a></button>
         </div>
       </form>
     </main>

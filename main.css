@@ -464,6 +464,32 @@ footer ul a:hover {
   display: none;
 }
 
+.tooltip {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  margin-top: 20px;
+}
+
+.tooltip::before {
+  --scale: 0;
+  position: absolute;
+  width: 20px;
+  max-width: 150%;
+  transform: translateX(-50%) translateY(25px) scale(var(--scale));
+  transition: 50ms transform;
+  content: attr(data-tooltip);
+  color: white;
+  padding: 2px;
+  width: max-content;
+  background: #262220;
+  border-radius: 2px;
+}
+
+.tooltip:hover::before {
+  --scale: 1;
+}
+
 /* profile styling ends here */
 /*
 @media only screen and (min-width: 992px) {
