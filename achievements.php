@@ -218,7 +218,7 @@
                     />
                     <h3>Welcome!</h3>
                 </section>
-                <under style="margin-left: 14%; font-style: italic;">Made an acoount</under>
+                <under style="margin-left: 14%; font-style: italic;">Made an account</under>
                 
                 <!-- Sjekker om $rowsql4 inneholder data, om det er innhold i spørringen sender den ut html koden -->
                 <?php } 
