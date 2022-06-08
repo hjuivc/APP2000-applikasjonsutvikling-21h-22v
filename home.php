@@ -1,6 +1,6 @@
 <?php
 
-  // Lage en cookie for alert box
+  // Lage cookies
   $cookie_name = "alert";
   $cookie_value = "alert";
   setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/");
@@ -9,6 +9,27 @@
   $cookie_value_ach1 = "achievement1";
   setcookie($cookie_name_ach1, $cookie_value_ach1, time() + (86400 * 365), "/");
 
+  $cookie_name_ach2 = "achievement2";
+  $cookie_value_ach2 = "achievement2";
+  setcookie($cookie_name_ach2, $cookie_value_ach2, time() + (86400 * 365), "/");
+
+  $cookie_name_ach3 = "achievement3";
+  $cookie_value_ach3 = "achievement3";
+  setcookie($cookie_name_ach3, $cookie_value_ach3, time() + (86400 * 365), "/");
+
+  $cookie_name_ach4 = "achievement4";
+  $cookie_value_ach4 = "achievement4";
+  setcookie($cookie_name_ach4, $cookie_value_ach4, time() + (86400 * 365), "/");
+
+  $cookie_name_ach5 = "achievement5";
+  $cookie_value_ach5 = "achievement5";
+  setcookie($cookie_name_ach5, $cookie_value_ach5, time() + (86400 * 365), "/");
+
+  $cookie_name_ach6 = "achievement6";
+  $cookie_value_ach6 = "achievement6";
+  setcookie($cookie_name_ach6, $cookie_value_ach6, time() + (86400 * 365), "/");
+
+  // Starte session og oppkobling mot database
   session_start();
   $email = $_SESSION['email'];
 
@@ -260,7 +281,7 @@
               if(!isset($_COOKIE[$cookie_name_ach1])) {
                 echo '<div class="alertAchievement">
                 <span class="closebtn">&times;</span>  
-                <strong>NEW ACHIEVEMENT!</strong> Earn more than you spend.
+                <strong>NEW ACHIEVEMENT!</strong> Net positive! Earn more than you spend.
               </div>';
               }
             }?>
@@ -277,7 +298,122 @@
                   }
                 </script>
                 <!-- Sjekker om $rowsql2 inneholder data, om det er innhold i spørringen sender den ut html koden -->
+      <?php
+        $rowsql2 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '2'");
+        if (mysqli_num_rows($rowsql2) > 0) { 
+          // Legge inn sjekk på cookie for å fjerne varsel
+              if(!isset($_COOKIE[$cookie_name_ach2])) {
+                echo '<div class="alertAchievement">
+                <span class="closebtn">&times;</span>  
+                <strong>NEW ACHIEVEMENT!</strong> Big spender! Spend more than 10 000$ one month.
+              </div>';
+              }
+            }?>
+                <script>
+                  var close = document.getElementsByClassName("closebtn");
+                  var i;
 
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function(){
+                      var div = this.parentElement;
+                      div.style.opacity = "0";
+                      setTimeout(function(){ div.style.display = "none"; }, 600);
+                    }
+                  }
+                </script> 
+            <?php
+        $rowsql3 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '3'");
+        if (mysqli_num_rows($rowsql3) > 0) { 
+          // Legge inn sjekk på cookie for å fjerne varsel
+              if(!isset($_COOKIE[$cookie_name_ach3])) {
+                echo '<div class="alertAchievement">
+                <span class="closebtn">&times;</span>  
+                <strong>NEW ACHIEVEMENT!</strong> Welcome! Made an account.
+              </div>';
+              }
+            }?>
+                <script>
+                  var close = document.getElementsByClassName("closebtn");
+                  var i;
+
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function(){
+                      var div = this.parentElement;
+                      div.style.opacity = "0";
+                      setTimeout(function(){ div.style.display = "none"; }, 600);
+                    }
+                  }
+                </script>  
+        <?php
+        $rowsql4 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '4'");
+        if (mysqli_num_rows($rowsql4) > 0) { 
+          // Legge inn sjekk på cookie for å fjerne varsel
+              if(!isset($_COOKIE[$cookie_name_ach4])) {
+                echo '<div class="alertAchievement">
+                <span class="closebtn">&times;</span>  
+                <strong>NEW ACHIEVEMENT!</strong> Smart investor! Have an additional source of income.
+              </div>';
+              }
+            }?>
+                <script>
+                  var close = document.getElementsByClassName("closebtn");
+                  var i;
+
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function(){
+                      var div = this.parentElement;
+                      div.style.opacity = "0";
+                      setTimeout(function(){ div.style.display = "none"; }, 600);
+                    }
+                  }
+                </script>    
+        <?php
+        $rowsql5 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '5'");
+        if (mysqli_num_rows($rowsql5) > 0) { 
+          // Legge inn sjekk på cookie for å fjerne varsel
+              if(!isset($_COOKIE[$cookie_name_ach5])) {
+                echo '<div class="alertAchievement">
+                <span class="closebtn">&times;</span>  
+                <strong>NEW ACHIEVEMENT!</strong> First budget! Create your first budget.
+              </div>';
+              }
+            }?>
+                <script>
+                  var close = document.getElementsByClassName("closebtn");
+                  var i;
+
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function(){
+                      var div = this.parentElement;
+                      div.style.opacity = "0";
+                      setTimeout(function(){ div.style.display = "none"; }, 600);
+                    }
+                  }
+                </script>          
+            <?php
+        $rowsql6 = mysqli_query( $conn, "SELECT * FROM userachievement WHERE CustomerID = '$id' AND AchievementID = '6'");
+        if (mysqli_num_rows($rowsql6) > 0) { 
+          // Legge inn sjekk på cookie for å fjerne varsel
+              if(!isset($_COOKIE[$cookie_name_ach6])) {
+                echo '<div class="alertAchievement">
+                <span class="closebtn">&times;</span>  
+                <strong>NEW ACHIEVEMENT!</strong> Accomplished! Complete 5 achievements.
+              </div>';
+              }
+            }?>
+                <script>
+                  var close = document.getElementsByClassName("closebtn");
+                  var i;
+
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function(){
+                      var div = this.parentElement;
+                      div.style.opacity = "0";
+                      setTimeout(function(){ div.style.display = "none"; }, 600);
+                    }
+                  }
+                </script>      
+        
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
         <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 50px 0;">
           <h2>Overview</h2>
