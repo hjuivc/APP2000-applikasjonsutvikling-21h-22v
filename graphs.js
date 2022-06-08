@@ -43,6 +43,7 @@ function createChart(canvas, names, data, type) {
     type: chartType,
     data: myData,
     options: {
+      maintainAspectRatioo: false,
       indexAxis: axis,
       plugins: {
         legend: {
