@@ -166,9 +166,8 @@
             <input type='file' name='file' style="padding-left: 50px; padding-bottom: 54px;">
             <input type='submit' value='Last opp' name='but_upload' onclick="hideForm()">
             </form>
-            <button type="submit" class="loginButton"><a href="profile/edit.php">Edit profile</a></button>                        
-            <button type="submit" class="loginButton"><a href="profile/delete.php">Delete account?</a></h3>
-
+            <button class="loginButton"><a href="profile/edit.php">Edit profile</a></button>                        
+            <button class="loginButton"><a href="profile/delete.php">Delete account</a></button>
           </div>
 
           <div class="contentBoxprofile" style="width: 800px;">
