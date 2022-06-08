@@ -180,7 +180,7 @@
       <div class="block" style="width: 100%; flex-wrap: wrap; gap: 50px;">
         <div class="contentBox" style="max-width: 750px; width: 100%; margin: 0;">
           <h2>Monthly budget</h2>
-          <canvas id="largeCanvas"></canvas>
+          <canvas id="largeCanvas" style="height: 80%"></canvas>
         </div>
         <div class="block" style="max-width: 550px; flex-wrap: wrap; gap: 50px;">
           <div class="contentBox" style="margin: 0; min-width: 100%;">
@@ -252,13 +252,7 @@
 
       // Monthly budget
       var largeCanvas = document.getElementById("largeCanvas").getContext("2d");
-      createChart(
-        largeCanvas, 
-        expenseNames, 
-        expenseValues, 
-        TYPE_BAR_HORISONTAL
-      );
-
+      
       // Monthly income
       var smallUpperCanvas = document.getElementById("smallUpperCanvas").getContext("2d");
       createChart(
@@ -267,6 +261,7 @@
         incomeValues, 
         TYPE_BAR_VERTICAL
       );
+
       // Progress bar for saving goal
       <?php
         if($doesGoalExist) {
@@ -275,7 +270,12 @@
           echo "document.getElementById('progressLabel').innerHTML='No saving goals. Create your first saving goal in budget planner!';";
         }
       ?>
-
+      createChart(
+        largeCanvas, 
+        expenseNames, 
+        expenseValues, 
+        TYPE_BAR_HORISONTAL
+      );
     </script>
   </body>
 </html>

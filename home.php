@@ -32,7 +32,6 @@
   $row      = $result->fetch_assoc();
   $lastBudgetID = isset($row["budgetID"])? $row["budgetID"] : 0;
 
-// Remove this comment
 
   $sql = "SELECT goalValue, goalName, goalCreationDate from goal WHERE customerID='$id'
     AND goalDate > CURDATE()
