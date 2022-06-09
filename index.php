@@ -46,7 +46,7 @@
   <body>
     <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
-      <img src="pictures/logo.png" alt="logo" width="300" height="300" />
+      <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
 
     <main class="block" style="flex-wrap: wrap-reverse;">
@@ -74,7 +74,7 @@
           <label>Password</label>
           <input type="password" name='password' required>
           <a><button type="submit" value="login" class="loginButton" name="login_btn">Log in</button></a>
-          <button style="margin-bottom: 10px;"class="loginButton"><a href="register/register.php">Register</a></button>
+          <button style="margin-bottom: 10px;"class="loginButton"><a href="Register/register.php">Register</a></button>
           <button style="margin-top: 5px;"class="loginButton"><a href="forgot-password/forgot-password.php">Forgot password</a></button>
         </div>
       </form>
