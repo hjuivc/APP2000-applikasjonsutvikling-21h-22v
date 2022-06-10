@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 
 // Hente profilbilde fra bruker
