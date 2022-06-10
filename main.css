@@ -447,6 +447,15 @@ footer ul a:hover {
 
 /* profile styling starts here */
 
+#uploadImg {
+  width: 390; 
+  height: 390; 
+  padding: 30px; 
+  text-align: center; 
+  display: block; 
+  border-radius: 15%;
+}
+
 .contentBoxprofile {
   background-color: #c3a6a0;
   margin: 20px 50px;
@@ -632,6 +641,11 @@ footer ul a:hover {
 
   .contentBoxprofile > p {
     font-size: 12px;
+  }
+
+  #uploadImg {
+    width: 82%;
+    height: auto;
   }
 
   footer ul li {
