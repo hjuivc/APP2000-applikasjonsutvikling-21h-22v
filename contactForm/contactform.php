@@ -233,8 +233,6 @@ function config() {
 ?>
 
 <?php
-
-
 $errors = [];
 $inputs = [];
 
@@ -261,6 +259,7 @@ if ($request_method === 'GET') {
         config();
         // set the message
         $_SESSION['message'] =  'Thanks for contacting us! We will be in touch with you shortly.';
+
     } else {
         $_SESSION['errors'] = $errors;
         $_SESSION['inputs'] = $inputs;

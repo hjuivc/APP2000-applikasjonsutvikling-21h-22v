@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // Hente profilbilde fra bruker
@@ -47,6 +48,15 @@ if ($request_method === 'GET') {
         require_once __DIR__ . '/inc/mail.php';
         // set the message
         $_SESSION['message'] =  'Thanks for contacting us! We will be in touch with you shortly.';
+
+        $sql = "INSERT INTO contact (contact_name, contact_email, contact_subject, contact_message) VALUES ('" 
+            . $inputs['name'] . "', '" 
+            . $inputs['email'] . "', '" 
+            . $inputs['subject'] . "', '" 
+            . $inputs['message'] . "');";
+        $conn->query($sql);
+
+
     } else {
         $_SESSION['errors'] =   $errors;
         $_SESSION['inputs'] =   $inputs;
