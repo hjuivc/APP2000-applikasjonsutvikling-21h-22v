@@ -43,6 +43,14 @@ canvas {
   border-radius: 15px;
 }
 
+.contentBox output {
+  font-size: 25px;
+}
+
+.contentBox label {
+  font-size: 25px;
+}
+
 h1 {
   font-size: 48px;
 }
@@ -167,7 +175,7 @@ header {
 #sideMenu {
   display: flex;
   flex-wrap: wrap;
-  width: 420px;
+  width: 380px;
   background-color: #a15c38;
   margin: 100px 0 0;
   border-radius: 0 15px 0 0;
@@ -194,7 +202,6 @@ header {
   height: 50px;
   margin-top:2%;
   margin-right: 1%;
-
 }
 
   /* Header content ends here */
@@ -491,26 +498,145 @@ footer ul a:hover {
 }
 
 /* profile styling ends here */
-/*
-@media only screen and (min-width: 992px) {
+
+/* Styling for mobile size */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
   
-.contentBoxprofile {
-  background-color: #c3a6a0;
-  margin: 20px 50px;
-  border-radius: 15px;
-  width: 1200px;
-}
+  .contentBox > h2 {
+    font-size: 18px;
+  }
 
-.contentBoxprofile > h2 {
-  font-size: 30px;
-  margin: 0 50px 15px;
-}
+  .contentBox > h3 > a {
+    font-size: 12px;
+  }
 
-.contentBoxprofile > p {
-  font-size: 18px;
-  margin: 0 50px 15px;
+  .contentBox > p {
+    font-size: 12px;
+  }
+
+  .contentBox > label {
+    font-size: 18px;
+  }
+
+  .contentBox > input, .contentBox > div > div > input {
+    font-size: 18px;
+  }
+
+  .contentBox output {
+    font-size: 18px;
+  }
+  
+  .contentBox label {
+    font-size: 18px;
+  }
+
+  .loginButton {
+    font-size: 14px;
+  }
+
+  .changeButton {
+    font-size: 14px;
+  }
+
+  .finance-logo {
+    width: 350px;
+  }
+
+  .profile-logo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top:2%;
+    margin-right: 1%;
+  }
+
+  .headerLogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sideMenuItem {
+    font-size: 18px;
+  }
+
+  .sideMenuIcon {
+    width: 25px;
+    height: 25px;
+    margin: -5px 25px 0;
+  }
+
+  #sideMenu {
+    width: 260px;
+    margin: 65px 0 0;
+    height: calc(100vh - 65px);
+  }
+
+  .contentBoxBudgetPlanner > h2 {
+    font-size: 22px;
+  }
+
+  .contentBoxBudgetPlanner > h3 > a {
+    font-size: 12px;
+  }
+
+  .contentBoxBudgetPlanner > label {
+    font-size: 18px;
+  }
+
+  .contentBoxBudgetPlanner > input {
+    font-size: 18px;
+  }
+
+  .contentBoxBudgetPlanner > p {
+    font-size: 12px;
+  }
+
+  .submitButton {
+    font-size: 14px;
+  }
+
+  .contentBoxFAQ > h2 {
+    font-size: 24px;
+  }
+
+  .contentBoxFAQ > h3 > a {
+    font-size: 12px;
+  }
+
+  .contentBoxFAQ > label {
+    font-size: 18px;
+  }
+
+  .contentBoxFAQ > input {
+    font-size: 18px;
+  }
+
+  .contentBoxFAQ > p {
+    font-size: 12px;
+  }
+
+  .contentBoxAchievements > output {
+    font-size: 18px;
+  }
+
+  .contentBoxAchievements > label {
+    font-size: 14px;
+  }
+
+  .contentBoxprofile > h2 {
+    font-size: 24px;
+  }
+
+  .contentBoxprofile > p {
+    font-size: 12px;
+  }
+
+  footer ul li {
+    display: block;
+    padding: 8px;
+    font-size: 22px;
+  }
 }
-.contentBoxprofile > h3 {
-  margin: 0 50px 15px;
-}
-}*/
