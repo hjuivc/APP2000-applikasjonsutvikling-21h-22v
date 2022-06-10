@@ -179,16 +179,16 @@
     <main style="max-width: calc(1100px + 550px + 50px); margin: auto;">
       <h1 style="text-align: center;">Budget</h1>
       <div class="block" style="width: 100%; flex-wrap: wrap; gap: 50px;">
-        <div class="contentBox" style="max-width: 750px; width: 100%; margin: 0;">
+        <div class="contentBox" style="max-width: 750px; width: 100%;">
           <h2>Monthly budget</h2>
           <canvas id="largeCanvas" style="height: 80%"></canvas>
         </div>
         <div class="block" style="max-width: 550px; flex-wrap: wrap; gap: 50px;">
-          <div class="contentBox" style="margin: 0; min-width: 100%;">
+          <div class="contentBox" style="  width: 100%;">
             <h2>Monthly income</h2>
             <canvas id="smallUpperCanvas"></canvas>
           </div>
-          <div class="contentBox" style="margin: 0; min-width: 100%;">
+          <div class="contentBox" style="width: 100%;">
             <h2 id="progressLabel">Saving Goal</h2>
             <div id="progressBar" style="max-width: 80%; margin: auto;"></div>
           </div>
