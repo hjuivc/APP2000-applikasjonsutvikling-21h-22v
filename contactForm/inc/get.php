@@ -88,7 +88,7 @@
                     class="finance-logo"
                 />
 
-                <a href="../profile.php" style="margin-top: 2%; margin-right: 1%;position: absolute; right: 0">
+                <a href="../profile.php" style="margin-top: 2%; margin-right: 1%; position: fixed; right: 0">
                 <img 
                     src="<?php echo $image_src;  ?>"
                     alt="profile_photo" 
