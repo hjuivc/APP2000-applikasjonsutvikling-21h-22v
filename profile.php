@@ -237,6 +237,7 @@
       </ul>
       <p>&copy; 2021 Finance Budget App AS</p>
     </footer>
+
     <script>
       function hideButton() {
         var x = document.getElementById("uploadbutton");
@@ -252,5 +253,6 @@
     }
     </script>
     <script src="main.js"></script>
+    
   </body>
 </html>
