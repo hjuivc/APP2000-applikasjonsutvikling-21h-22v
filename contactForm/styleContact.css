@@ -91,7 +91,7 @@ footer {
   text-align: center;
   position: absolute;
   bottom: 0;
-  height: 4rem;
+  height: 2.5rem;
   border-top: solid 1px black;
   width: 100%;
   margin-bottom: 30px;
@@ -242,7 +242,7 @@ main {
   width: 400px;
   padding: 1rem;
   margin-top: 0%;
-  margin-bottom: 3cm;
+  margin-bottom: 6cm;
   padding-bottom: 0rem;
 }
 
