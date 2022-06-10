@@ -78,7 +78,7 @@ if(isset($_POST["forgot-submit"])) {
     $mail->isHTML(true);
 
     $mail->Username 	= "noreplyfinancebudgetapp@gmail.com";
-    $mail->Password 	= "Gruppe654321";
+    $mail->Password 	= "irpbzvqogiovwatb";
     $mail->SetFrom("no-reply@financeBudgetApp.com");
 
     $mail->Subject 		= "Reset password for Finance Budget App";
