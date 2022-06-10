@@ -141,7 +141,7 @@
       <main>
         <h1 style="text-align: center;">Achievements</h1>
         <div class="block">
-            <div class="contentBoxAchievements" style="max-width: 500px; width: 100%; height: fit-content;">
+            <div class="contentBoxAchievements">
                 <h2>Overview</h2>
                 <label id="contentBox-achievements" style="width: 200px; padding-left: 20px; margin: 10px;">Total Achievements</label>
                 <!-- Legger inn som input for å visualisere hva som skal inn -->
