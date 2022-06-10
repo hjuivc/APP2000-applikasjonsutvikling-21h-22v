@@ -48,6 +48,7 @@ use Stevenmaguire\OAuth2\Client\Provider\Microsoft;
 if (!isset($_GET['code']) && !isset($_GET['provider'])) {
     ?>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>Select Provider:<br>
 <a href='?provider=Google'>Google</a><br>
 <a href='?provider=Yahoo'>Yahoo</a><br>
