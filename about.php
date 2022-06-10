@@ -151,9 +151,6 @@
             <a href="faq.php">FAQ</a>
           </li>
           <li>
-            <a href="about.php">About</a>
-          </li>
-          <li>
             <a href="contactForm/index.php">Contact</a>
           </li>
         </ul>

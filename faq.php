@@ -150,9 +150,6 @@
                     <a href="home.php">Home</a>
                 </li>
                 <li>
-                    <a href="faq.php">FAQ</a>
-                </li>
-                <li>
                     <a href="about.php">About</a>
                 </li>
                 <li>
