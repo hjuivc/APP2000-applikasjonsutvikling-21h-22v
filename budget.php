@@ -184,7 +184,7 @@
           <canvas id="largeCanvas" style="height: 80%"></canvas>
         </div>
         <div class="block" style="max-width: 550px; flex-wrap: wrap; gap: 50px;">
-          <div class="contentBox" style="  width: 100%;">
+          <div class="contentBox" style="width: 100%;">
             <h2>Monthly income</h2>
             <canvas id="smallUpperCanvas"></canvas>
           </div>
