@@ -167,7 +167,7 @@
         <div class="block" style="flex-wrap: wrap-reverse;">       
           <div class="contentBoxprofile" style="max-width: 450px;">
              
-            <img id=uploadImg src='<?php echo $image_src;  ?>' alt="profile_photo" width="390" height="390" style="padding: 30px; text-align: center; display: block; border-radius: 15%;" >
+            <img id=uploadImg src='<?php echo $image_src;  ?>' alt="profile_photo" >
             <br>
             <button type="submit" class="changeButton" id='uploadbutton' onclick="hideButton()"><a>Change photo</a></button>
             <form id='uploadform' method="post" action="" enctype='multipart/form-data'>
