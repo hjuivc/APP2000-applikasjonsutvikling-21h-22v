@@ -39,7 +39,7 @@
                 <a><button type="submit" class="loginButton" name="reset-password-submit" value="Register">Change Password</button></a>
                 <p>
                 </p>
-                <h3 style="margin-top: 100px;"><a href="../index.php">Back to the login page</a></h3>
+                <button class="loginButton"><a href="../index.php">Back to login</a></button>
               </div>
             </form>
             <?php

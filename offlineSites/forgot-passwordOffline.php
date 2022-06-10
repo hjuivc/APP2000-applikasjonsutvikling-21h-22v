@@ -22,7 +22,7 @@
           <a><button type="submit" class="loginButton" name="forgot-submit">Recover</button></a>
           <p>
           </p>
-          <h3 style="margin-top: 100px;"><a href="../index.php">I know my password</a></h3>
+          <button class="loginButton"><a href="../index.php">Back to login</a></button>
         </div>
       </form>
     </main>
