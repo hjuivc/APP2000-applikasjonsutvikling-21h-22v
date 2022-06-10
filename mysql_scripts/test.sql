@@ -4,6 +4,7 @@ USE FinanceBudgetApp; -- Use the created database
 DROP TABLE IF EXISTS Customer;
 DROP TABLE IF EXISTS Images;
 DROP TABLE IF EXISTS UserAchievement;
+DROP TABLE IF EXISTS contact;
 
 CREATE TABLE Customer (
   CustomerID int NOT NULL,
@@ -70,4 +71,13 @@ CREATE TABLE Achievement (
   AchievementName CHAR(50),
   AchievementDescr CHAR(50),
   CONSTRAINT AchievementPK PRIMARY KEY (AchievementID)
+);
+
+CREATE TABLE contact (
+    contact_id INT AUTO_INCREMENT,
+    contact_name VARCHAR(45),
+    contact_email VARCHAR(45),
+    contact_subject VARCHAR(45),
+    contact_message VARCHAR(1000),
+    PRIMARY KEY(contact_id)
 );
