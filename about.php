@@ -1,10 +1,31 @@
+<!-- Profilepicture for about.php -->
+<?php
+  session_start();
+  $email = $_SESSION['email'];
+
+  include 'connect_mysql/connect.php';
+	$conn = OpenCon();
+
+  $sql = "SELECT * FROM Customer WHERE EMail='$email'";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $id = $row['CustomerID'];
+
+  $sqlimage = "SELECT name FROM images WHERE CustomerID='$id'";
+  $resultimage = mysqli_query($conn,$sqlimage);
+  $rowimage = mysqli_fetch_array($resultimage);
+
+  $image = $rowimage['name'];
+  $image_src = "upload/".$image;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <link rel="stylesheet" href="main.css" />
-    <title>Finance Budget App</title>
+    <title>About us</title>
   </head>
   <body>
     <header class="block" style="justify-content: left;">
