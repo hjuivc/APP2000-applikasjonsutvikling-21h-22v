@@ -186,31 +186,35 @@
             <h3>Phone: <?php echo $row['phone'] ?></h3>
             <h3>Address: <?php echo $row['home'] ?></h3>
             <hr style="border: 1px solid black; margin-left: 40px; margin-right: 40px;">
-            <h2 style="margin-top: 30px;">Achievement rank</h2>
+            
+            
             <?php if ($totalPercentage < 34)
                 {?>
+                  <h2 style="margin-top: 30px;">Achievement rank: Bronze</h2>
                   <img
                     src="Pictures/bronze-medal.png"
                     alt="member rank"
-                    style="width: 70px; height: 70; margin-left: 18%; margin-top: 2%;"
+                    style="width: 70px; height: 70; margin-left: 27%; margin-top: 1%;"
                   />
 
                 <?php }
                   elseif ($totalPercentage > 34 && $totalPercentage < 68)
                   { ?>
+                  <h2 style="margin-top: 30px;">Achievement rank: Silver</h2>
                   <img
                     src="Pictures/silver-medal.png"
                     alt="member rank"
-                    style="width: 70px; height: 70; margin-left: 18%; margin-top: 2%;"
+                    style="width: 70px; height: 70; margin-left: 27%; margin-top: 1%;"
                   />
 
                 <?php }
                   elseif ($totalPercentage > 68)
                   { ?>
+                  <h2 style="margin-top: 30px;">Achievement rank: Gold</h2>
                   <img
                     src="Pictures/gold-medal.png"
                     alt="member rank"
-                    style="width: 70px; height: 70; margin-left: 18%; margin-top: 2%;"
+                    style="width: 70px; height: 70; margin-left: 27%; margin-top: 1%;"
                   />
                   <?php } else {
                     
