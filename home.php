@@ -371,8 +371,9 @@ if (mysqli_num_rows($rowsql1) > 0) {
           }
         }
       </script>
+      <h1 style="text-align: center;">Home</h1>
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
-        <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 20px 20px;">
+        <div class="contentBox" style="max-width: 1500px; width: 100%; margin: 20px 30px;">
           <h2>Overview</h2>
           <div style="width: 50%; float: left;">
             <h2 id="progressLabel" style="text-align: center;">Saving goal</h2>
@@ -386,12 +387,12 @@ if (mysqli_num_rows($rowsql1) > 0) {
         </div>
       </div>
       <div class="block" style="width: 90%; margin-left:auto; margin-right:auto;">
-        <div class="contentBox" style="max-width: 725px; width: 100%;  margin: 20px 20px; padding-bottom: 40px;">
+        <div class="contentBox" style="max-width: 725px; width: 100%;  margin: 20px 30px; padding-bottom: 40px;">
           <h2>Budget</h2>
           <canvas id="budgetCanvas"></canvas>
         </div>
             
-        <div class="contentBox" style="max-width: 725px; width: 100%;  margin: 20px 20px;">
+        <div class="contentBox" style="max-width: 725px; width: 100%;  margin: 20px 30px;">
           <h2 style="text-align: center;">Achievements</h2>
           
           <div style="margin: 10px;">

@@ -194,7 +194,6 @@ header {
 .finance-logo {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
 }
   
 .profile-logo {
@@ -628,15 +627,7 @@ footer ul a:hover {
   }
 
   .contentBoxFAQ > p {
-    font-size: 12px;
-  }
-
-  .contentBoxAchievements > output {
-    font-size: 18px;
-  }
-
-  .contentBoxAchievements > label {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .contentBoxprofile > h2 {
