@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="planner.css">
-    <title>Finance Budget App</title>
+    <title>Budget planner</title>
     
   </head>
   <body>
