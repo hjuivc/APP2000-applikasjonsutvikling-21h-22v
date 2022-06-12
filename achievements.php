@@ -162,6 +162,7 @@
                     alt="member rank"
                     style="width: 40px; height: 40; margin-left: 10%; margin-top: 5%;"
                   />
+                <label style="margin: 10px; padding-left: 5px; padding-bottom: 20px;">Bronze</label>
 
                 <?php }
                   elseif ($totalPercentage > 34 && $totalPercentage < 68)
@@ -171,6 +172,7 @@
                     alt="member rank"
                     style="width: 40px; height: 40; margin-left: 10%; margin-top: 5%;"
                   />
+                <label style="margin: 10px; padding-left: 5px; padding-bottom: 20px;">Silver</label>
 
                 <?php }
                   elseif ($totalPercentage > 68)
@@ -178,8 +180,10 @@
                   <img
                     src="Pictures/gold-medal.png"
                     alt="member rank"
-                    style="width: 40px; height: 40; margin-left: 2.5%; margin-top: 0.1%; position: absolute;"
-                  /> 
+                    style="width: 40px; height: 40; margin-left: 10%; margin-top: 5%;"
+                  />
+                <label style="margin: 10px; padding-left: 5px; padding-bottom: 20px;">Gold</label>
+
                   <?php } else {
                     
                   }  ?>
