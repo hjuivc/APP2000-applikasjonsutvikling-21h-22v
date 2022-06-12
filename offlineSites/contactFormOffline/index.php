@@ -28,7 +28,7 @@ if ($request_method === 'GET') {
 
     if (!$errors) {
         // send an email
-        require_once __DIR__ . '/inc/mail.php';
+        // require_once __DIR__ . '/inc/mail.php';
         // set the message
         $_SESSION['message'] =  'Thanks for contacting us! We will be in touch with you shortly.';
 
