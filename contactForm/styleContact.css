@@ -121,9 +121,10 @@ footer ul a:hover {
 /* End of footer styling */
 
 .block {
-  /*display: flex;*/
-  /*color: #262220;
-  font-weight: bold;*/
+  display: flex;
+  flex-wrap: wrap;
+  color: #262220;
+  font-weight: bold;
   justify-content: center;
 }
 
@@ -204,12 +205,15 @@ box-sizing: border-box;
 
   /* center by default */
 body {
+  position: relative;
+  background-color: #f7f1f0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 0;
-  
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 input,
@@ -222,6 +226,7 @@ select {
 li {
   margin-left: 1.5rem;
 }
+
 
 .center {
   display: flex;
@@ -241,7 +246,6 @@ main {
   padding: 1rem;
   margin-top: 0%;
   margin-bottom: 3cm;
-  padding-bottom: 0rem;
 }
 
 

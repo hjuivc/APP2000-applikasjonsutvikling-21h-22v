@@ -451,9 +451,6 @@ if (mysqli_num_rows($rowsql1) > 0) {
     <footer>
       <ul>
         <li>
-          <a href="home.php">Home</a>
-        </li>
-        <li>
           <a href="faq.php">FAQ</a>
         </li>
         <li>
