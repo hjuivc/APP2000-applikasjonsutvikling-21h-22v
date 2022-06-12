@@ -416,6 +416,7 @@ if (mysqli_num_rows($rowsql1) > 0) {
                     alt="member rank"
                     style="width: 40px; height: 40; margin-left: 0.4%; margin-top: 0.4%; position: absolute;"
                   />
+            <Label style="width: 250px; padding-left: 50px; margin: 10px; display: inline-block;">Bronze</label>
 
                 <?php }
                   elseif ($totalPercentage > 34 && $totalPercentage < 68)
@@ -425,6 +426,7 @@ if (mysqli_num_rows($rowsql1) > 0) {
                     alt="member rank"
                     style="width: 40px; height: 40; margin-left: 0.4%; margin-top: 0.4%; position: absolute;"
                   />
+            <Label style="width: 250px; padding-left: 50px; margin: 10px; display: inline-block;">Silver</label>
 
                 <?php }
                   elseif ($totalPercentage > 68)
@@ -434,6 +436,7 @@ if (mysqli_num_rows($rowsql1) > 0) {
                     alt="member rank"
                     style="width: 40px; height: 40; margin-left: 0.4%; margin-top: 0.4%; position: absolute;"
                   />
+            <Label style="width: 250px; padding-left: 50px; margin: 10px; display: inline-block;">Gold</label>
                   <?php } else {
                     
                   }  ?>
