@@ -49,3 +49,8 @@
 .tooltip:hover::before {
     --scale: 1;
 }
+
+.block {
+  flex-wrap: nowrap;
+}
+
