@@ -118,7 +118,7 @@
         </header>
         
     <main>
-    <h1 style="text-align: center;">Budget</h1>
+    <h1 style="text-align: center;">About</h1>
       <section class="block" style="flex-wrap: wrap-reverse;">
       <div class="contentBox" style="max-width: 640px;">
         <h2>Why Finance Budgeting App?</h2>
