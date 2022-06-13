@@ -102,7 +102,7 @@
           />
           
           <img 
-              src="pictures/logo_header.png" 
+              src="Pictures/logo_header.png" 
               alt="logo_header" 
               class="finance-logo"
           />
