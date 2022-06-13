@@ -13,7 +13,7 @@
     <title>Contact Us</title>
 </head>
     <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
         <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
         <img src="Pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
