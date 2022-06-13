@@ -8,7 +8,7 @@
     <title>Forgot password</title>
   </head>
   <body>
-    <header class="block" style="margin-top: 30px;">
+    <header class="block">
       <!-- <h1 class="myTextFont">Finance Budget App</h1> -->
       <img src="../pictures/logo.png" alt="logo" width="300" height="300" />
     </header>
