@@ -29,19 +29,19 @@ Therefore, we wanted to make this app so we could both help ourselves and others
 
 ![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseAchievements.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewBudget.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseBudget.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewContact.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseContact.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewGoal.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseGoal.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewImages.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseImages.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewPasswordReset.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabasePasswordReset.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewTransactions.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseTransactions.png?raw=true)
 
-![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewUserachievement.png?raw=true)
+![alt text](https://github.com/bbbuhtig/APP2000-applikasjonsutvikling-21h-22v/blob/main/previewDatabaseUserachievement.png?raw=true)
 
 
 
